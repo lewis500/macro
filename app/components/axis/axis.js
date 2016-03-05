@@ -39,7 +39,7 @@ const Axis = React.createClass({
 			domain: [0, 1],
 			range: [200, 0],
 			innerTickSize: 6,
-			tickPadding: 3,
+			tickPadding: 10,
 			outerTickSize: 6,
 			orientation: 'left',
 			className: "axis",

@@ -16,28 +16,45 @@
     align-items: center;
 }
 
-
-.main{
-	padding: 20px;
+.main {
+    padding: 20px;
 }
 
-.is-slider .katex-display{
+.is-slider .katex-display {
     // margin: .1em;
     margin: 0;
 }
 
-.main div{
+.main > div {
     margin: 0px 30px;
 }
 
-div.is-slider{
-    background-color: rgba($md-grey-100,.7);
-    box-shadow: 1px 1px  1px rgba($md-grey-300,.8);
-    margin: 2px;
+div.is-slider {
+    background-color: rgba($md-grey-100, .45);
+    box-shadow: .15px .4px 1.5px .5px rgba($md-grey-400, .8);
+    margin: 6px 2px;
     padding: 2px 5px;
+    position: relative;
     // padding: -5px;
 }
 
-input[type=range]{
+input[type=range] {
     margin: 8px 0px;
+}
+
+.is-slider .ticks{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    bottom: 0px;
+    // left: 0%;
+}
+
+.ticks .is-tick {
+    position: absolute;
+    height: 5px;
+    width: 1px;
+    bottom: 12px;
+    // bottom: 0px;
+    background-color: #ccc;
 }
