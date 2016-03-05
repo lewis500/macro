@@ -10,5 +10,4 @@ var template = (
 	  <App />
 	</Provider>
 );
-store.dispatch({type: 'CALC_HISTORY'});
 ReactDOM.render(template, document.getElementById('root'));

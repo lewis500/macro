@@ -1,77 +1,93 @@
-import {
-	connect
-}
-from 'react-redux';
+import { connect } from 'react-redux';
 import React from 'react';
-import Plot from '../plot/plot.js';
 import PureRenderMixin from 'react-addons-pure-render-mixin';
 import d3 from 'd3';
-const {
-	input
-} = React.DOM;
 import './style-app.scss';
+import IslmChart from '../islm/islm';
 
-const AppComponent = React.createClass({
+const sliderComponent = React.createClass({
 	mixins: [PureRenderMixin],
-	onSlide(e) {
-		this.props.setTime(+e.target.value);
+	_onChange(e) {
+		this.props.onChange({
+			value: +e.target.value,
+			variable: this.props.variable
+		});
 	},
-	// go() {
-	// 	d3.timer(() => {
-	// 		this.props.advance();
-	// 		if (!this.props.paused) this.go();
-	// 		return true;
-	// 	}, 25);
-	// },
-	// onClick() {
-	// 	if (this.props.paused) this.go()
-	// 	this.props.pausePlay();
-	// },
 	render() {
+		let { min, max, value, step, variable } = this.props;
 		return (
-			<div className='flex-container main'>
-				<Plot style={{display: 'flex'}}/>
-				<div style={{display: 'flex', width: '100%'}}>
-			    <input type="range" 
-						min="0" 
-						max="100" 
-						step='1' 
-						onChange={this.onSlide} 
-						value={this.props.time}/>
-				</div>
+			<div >
+				<span>{variable}</span>
+				<input 
+					{...{min,max,step,value}} 
+					onChange={this._onChange} 
+					type='range' />
 			</div>
 		);
 	}
 });
-				// <div>
-				// 	<button className='btn btn-large' onClick={this.onClick}>
-				// 		PAUSE_PLAY
-				// 	</button>
-				// </div>
 
-const mapStateToProps = (state) => ({
-	time: state.time,
-	paused: state.paused
+const Slider = React.createFactory(sliderComponent);
+
+const sliders = [
+	['α', 0, 1, .025],
+	['κ', 0, 1, .025],
+	['θ', 0, 1, .025],
+	['γ', 0, 1, .025],
+	['μ', 0, 1, .025],
+	['y_bar', 0, 1, .025],
+	['δ', 0, 1, .025],
+	['Δ', 0, 1, .025]
+];
+
+
+const AppComponent = React.createClass({
+	mixins: [PureRenderMixin],
+	_makeHeader() {
+		return (
+			<div style={{display: 'flex', width: '100%'}}>
+					{
+						_.map(sliders,(e)=>(
+							Slider({
+								min: e[1],
+								max: e[2],
+								key: e[0],
+								step: e[3],
+								variable: e[0],
+								value: this.props[e[0]],
+								onChange: this.props.setVariable
+							})
+						))
+					}
+				</div>
+		);
+	},
+	render() {
+		return (
+			<div className='flex-container main'>
+				{this._makeHeader()}
+				<IslmChart/>
+			</div>
+		);
+	}
 });
 
-const mapActionsToProps = (dispatch) => {
+const mapStateToProps = state => (state);
+
+const mapActionsToProps = dispatch => {
 	return {
-		setTime(time) {
-				dispatch({
-					type: 'SET_TIME',
-					time
-				});
-			},
-			pausePlay() {
-				dispatch({
-					type: 'PAUSE_PLAY'
-				});
-			},
-			advance() {
-				dispatch({
-					type: 'ADVANCE'
-				});
-			}
+		pausePlay() {
+			dispatch({
+				type: 'PAUSE_PLAY'
+			});
+		},
+		setVariable({ value, variable }) {
+			dispatch({
+				type: 'SET_VARIABLE',
+				value,
+				variable
+			});
+		}
 	};
 };
 
