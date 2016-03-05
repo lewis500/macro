@@ -1,3 +1,4 @@
+@import '~material-colors/dist/colors';
 .axis {
     fill: none;
     stroke: #000;
@@ -5,13 +6,13 @@
 }
 
 .axis text {
-    // font: 11px sans-serif;
     fill: #000;
     stroke: none;
 }
 
 .axis line {
-    stroke: #ccc;
+    stroke: $md-grey-300;
+    stroke-dasharray: 1.5,1;
 }
 
 .axis path {

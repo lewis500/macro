@@ -6,23 +6,11 @@ import './style-app.scss';
 import IslmChart from '../islm/islm';
 
 const Katexer = props => {
-	let rendered = katex.renderToString(props.string, {displayMode:true});
+	let rendered = katex.renderToString(props.string, { displayMode: true });
 	return (
-		<p dangerouslySetInnerHTML={ {__html: rendered } } key={props.key}/>
+		<span dangerouslySetInnerHTML={ {__html: rendered } } key={props.key}/>
 	);
 };
-
-// class MathDisplay {
-//     constructor(props) {
-//         this.props = props;
-//     }
-
-//     render() {
-//         var math = katex.renderToString(this.props.data);
-//         return (<p dangerouslySetInnerHTML={ {__html: math} }/>);
-//     }
-// }
-
 
 const sliderComponent = React.createClass({
 	mixins: [PureRenderMixin],
@@ -33,10 +21,10 @@ const sliderComponent = React.createClass({
 		});
 	},
 	render() {
-		let { min, max, value, step, variable } = this.props;
+		let { min, max, value, step, variable, tex } = this.props;
 		return (
-			<div >
-				<span>{variable}</span>
+			<div className='is-slider'>
+				<Katexer string={tex} />
 				<input 
 					{...{min,max,step,value}} 
 					onChange={this._onChange} 
@@ -49,13 +37,13 @@ const sliderComponent = React.createClass({
 const Slider = React.createFactory(sliderComponent);
 
 const sliders = [
-	['α', 0, 1, .025],
-	['κ', 0, 1, .025],
-	['θ', 0, 1, .025],
-	['γ', 0, .5, .025],
-	['μ', 0, .2, .025],
-	['y_bar', 0, 1, .025],
-	['δ', 0, 1, .025]
+	['α', 0, 1, .025, '\\alpha'],
+	['κ', 0, 1, .025, '\\kappa'],
+	['θ', 0, 1, .025, '\\theta'],
+	['γ', 0, .5, .025, '\\gamma'],
+	['μ', 0, .2, .025, '\\mu'],
+	['y_bar', 0, 1, .025, '\\bar{y}'],
+	['δ', 0, 1, .025, '\\delta']
 ];
 
 
@@ -72,6 +60,7 @@ const AppComponent = React.createClass({
 								key: e[0],
 								step: e[3],
 								variable: e[0],
+								tex: e[4],
 								value: this.props[e[0]],
 								onChange: this.props.setVariable
 							})
@@ -82,15 +71,15 @@ const AppComponent = React.createClass({
 	},
 	render() {
 		let strings = [
-		'y = -\\gamma * r',
-		// 'm = \\kappa \\cdot y -\\alpha(r+\\pi_e)',
-		'i = \\frac{ \\kappa \\cdot y - m}{\\alpha}',
-		'r = i + \\pi_e',
-		'\\pi = \\pi_e + \\theta \\cdot(y-\\bar{y})',
-		'\\dot{m} = \\mu - \\pi',
-		'\\dot{\\pi}_e = \\delta \\cdot ( \\pi - \\pi_e)',
+			'y = -\\gamma * r',
+			// 'm = \\kappa \\cdot y -\\alpha(r+\\pi_e)',
+			'i = \\frac{ \\kappa \\cdot y - m}{\\alpha}',
+			'r = i + \\pi_e',
+			'\\pi = \\pi_e + \\theta \\cdot(y-\\bar{y})',
+			'\\dot{m} = \\mu - \\pi',
+			'\\dot{\\pi}_e = \\delta \\cdot ( \\pi - \\pi_e)',
 		];
-		let u = _.map(strings,(string,i) =>Katexer({string, key: i}));
+		let u = _.map(strings, (string, i) => Katexer({ string, key: i }));
 		return (
 			<div className='flex-container main'>
 				<div style={{'textAlign': 'left'}}>

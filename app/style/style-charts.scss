@@ -15,13 +15,18 @@
 }
 
 .legend rect{
-	width: 10px;
+	width: 14px;
 	height: 10px;
 	y: -5px;
-	stroke: none;
+	// stroke: $md-grey-900;
+	// stroke: black;
+	stroke: white;
+	rx: 1px;
+	ry: 1px;
 }
 .legend text{
 	transform: translate(20px,0px);
 	text-anchor: start;
 	alignment-baseline: middle;
 }
+

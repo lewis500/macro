@@ -30,16 +30,17 @@ const makePath = (data, variable) => {
 };
 
 const pathPairs = [
-	['π', col.pink['500']],
-	['r', col['light-blue']['500']],
-	['y', col.indigo['500']],
-	['π_e', col.teal['500']]
+	['π', col.pink['500'], '\\pi'],
+	['r', col['light-blue']['500'], 'r'],
+	['y', col.indigo['500'], 'y'],
+	['π_e', col.teal['500'], '\\pi_e']
 ];
 
 const IslmChart = React.createClass({
 	mixins: [PureRenderMixin],
 	_makeLegend() {
 		return _.map(pathPairs, (e, i) => {
+			let rendered = katex.renderToString(e[2], { displayMode: true });
 			return (
 				<g 
 					key={e[0]}
@@ -91,14 +92,16 @@ const IslmChart = React.createClass({
 							height={height}/>
 
 						<Axis 
-							classname='y-axis'
+							classname='axis'
 							domain={yDomain}
 							range={[height,0]}
 							height={height}
 							orientation='left'
+							innerTickSize={-width}
 						/>
 						<Axis 
-							className='time-axis'
+							className='axis'
+							innerTickSize={-height}
 							domain={xDomain}
 							range={[0,width]}
 							width={width}
