@@ -1,4 +1,11 @@
 TO DO
-+ make a bunch of sliders to set the parameters
-+ play out the whole history
-+ make a d3 axis component
++ plot nominal interest rate
++ show values next to sliders
++ grid
++ adapt axes
++ mathjax
+
+
+
+LATER
++ update package.json

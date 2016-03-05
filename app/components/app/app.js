@@ -5,6 +5,25 @@ import d3 from 'd3';
 import './style-app.scss';
 import IslmChart from '../islm/islm';
 
+const Katexer = props => {
+	let rendered = katex.renderToString(props.string, {displayMode:true});
+	return (
+		<p dangerouslySetInnerHTML={ {__html: rendered } } key={props.key}/>
+	);
+};
+
+// class MathDisplay {
+//     constructor(props) {
+//         this.props = props;
+//     }
+
+//     render() {
+//         var math = katex.renderToString(this.props.data);
+//         return (<p dangerouslySetInnerHTML={ {__html: math} }/>);
+//     }
+// }
+
+
 const sliderComponent = React.createClass({
 	mixins: [PureRenderMixin],
 	_onChange(e) {
@@ -33,11 +52,10 @@ const sliders = [
 	['α', 0, 1, .025],
 	['κ', 0, 1, .025],
 	['θ', 0, 1, .025],
-	['γ', 0, 1, .025],
-	['μ', 0, 1, .025],
+	['γ', 0, .5, .025],
+	['μ', 0, .2, .025],
 	['y_bar', 0, 1, .025],
-	['δ', 0, 1, .025],
-	['Δ', 0, 1, .025]
+	['δ', 0, 1, .025]
 ];
 
 
@@ -63,10 +81,23 @@ const AppComponent = React.createClass({
 		);
 	},
 	render() {
+		let strings = [
+		'y = -\\gamma * r',
+		// 'm = \\kappa \\cdot y -\\alpha(r+\\pi_e)',
+		'i = \\frac{ \\kappa \\cdot y - m}{\\alpha}',
+		'r = i + \\pi_e',
+		'\\pi = \\pi_e + \\theta \\cdot(y-\\bar{y})',
+		'\\dot{m} = \\mu - \\pi',
+		'\\dot{\\pi}_e = \\delta \\cdot ( \\pi - \\pi_e)',
+		];
+		let u = _.map(strings,(string,i) =>Katexer({string, key: i}));
 		return (
 			<div className='flex-container main'>
+				<div style={{'textAlign': 'left'}}>
+				{u}
+				</div>
 				{this._makeHeader()}
-				<IslmChart/>
+				<IslmChart history={this.props.history}/>
 			</div>
 		);
 	}

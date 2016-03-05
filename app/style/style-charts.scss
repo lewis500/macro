@@ -1,4 +1,27 @@
 @import '~material-colors/dist/colors';
-.bg{
-	fill: rgba($md-grey-100,.5);
+.bg {
+    fill: rgba($md-grey-100, .5);
+}
+
+.path {
+    fill: none;
+    // stroke: $md-pink-500;
+}
+
+.zero {
+    fill: none;
+    stroke: $md-grey-400;
+    stroke-dasharray: 3,1;
+}
+
+.legend rect{
+	width: 10px;
+	height: 10px;
+	y: -5px;
+	stroke: none;
+}
+.legend text{
+	transform: translate(20px,0px);
+	text-anchor: start;
+	alignment-baseline: middle;
 }
