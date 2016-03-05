@@ -1,0 +1,60 @@
+@import '~material-colors/dist/colors.scss';
+@import '../../style/variables.scss';
+
+.background{
+	fill: $md-grey-100;
+	opacity: 0.95;
+	// filter: url(#f4)
+}
+
+svg{
+	position: absolute;
+}
+
+#plot{
+	position: relative;
+}
+
+.axis path,
+.axis line {
+  fill: none;
+  stroke: $md-blue-grey-900;
+  stroke-dasharray: 1,1;
+  shape-rendering: crispEdges;
+  opacity: .3;
+}
+
+.x.axis path,.y.axis path {
+	stroke: $md-blue-grey-900;
+	stroke: 2px;
+}
+
+.g-cars{
+	transition: transform .15s ease-out;
+
+}
+
+.canvas{
+	opacity: .95;
+}
+
+.cars-bg{
+	fill: white;
+	filter: url(#f4);
+}
+
+.road{
+	stroke: none;
+	fill: $md-grey-900;
+	filter: url(#f3);
+	display: none;
+}
+
+.car{
+	// filter: url(#f3);
+	stroke: $md-grey-900;
+	// stroke: black;
+	stroke-width: 0.8px;
+	fill: $md-red-a200;
+	transition: all .2s ease-in-out;
+}
