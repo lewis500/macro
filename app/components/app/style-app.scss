@@ -1,22 +1,19 @@
-.flex-container {
-    display: -ms-flexbox;
-    display: -webkit-flex;
+@import '~material-colors/dist/colors';
+.flex-container-column {
     display: flex;
-    -webkit-flex-direction: column;
-    -ms-flex-direction: column;
     flex-direction: column;
-    -webkit-flex-wrap: nowrap;
-    -ms-flex-wrap: nowrap;
-    flex-wrap: nowrap;
-    -webkit-justify-content: flex-start;
-    -ms-flex-pack: start;
+    // flex-wrap: nowrap;
     justify-content: flex-start;
-    -webkit-align-content: stretch;
-    -ms-flex-line-pack: stretch;
-    align-content: stretch;
-    -webkit-align-items: flex-start;
-    -ms-flex-align: flex-start;
-    align-items: flex-start;
+    // align-content: stretch;
+    align-items: center;
+}
+
+.flex-container-row {
+    display: flex;
+    flex-direction: row;
+    // flex-wrap: nowrap;
+    // justify-content: space-around;
+    align-items: center;
 }
 
 
@@ -27,4 +24,20 @@
 .is-slider .katex-display{
     // margin: .1em;
     margin: 0;
+}
+
+.main div{
+    margin: 0px 30px;
+}
+
+div.is-slider{
+    background-color: rgba($md-grey-100,.7);
+    box-shadow: 1px 1px  1px rgba($md-grey-300,.8);
+    margin: 2px;
+    padding: 2px 5px;
+    // padding: -5px;
+}
+
+input[type=range]{
+    margin: 8px 0px;
 }

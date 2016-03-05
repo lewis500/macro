@@ -51,7 +51,7 @@ const AppComponent = React.createClass({
 	mixins: [PureRenderMixin],
 	_makeHeader() {
 		return (
-			<div style={{display: 'flex', width: '100%'}}>
+			<div style={{display: 'flex'}} className='flex-container-column'>
 					{
 						_.map(sliders,(e)=>(
 							Slider({
@@ -79,14 +79,13 @@ const AppComponent = React.createClass({
 			'\\dot{m} = \\mu - \\pi',
 			'\\dot{\\pi}_e = \\delta \\cdot ( \\pi - \\pi_e)',
 		];
-		let u = _.map(strings, (string, i) => Katexer({ string, key: i }));
 		return (
-			<div className='flex-container main'>
-				<div style={{'textAlign': 'left'}}>
-				{u}
+			<div className='flex-container-row main'>
+				<IslmChart history={this.props.history} />
+				<div className='flex-container-column' style={{display:'flex'}}>
+					{_.map(strings, (string, i) => Katexer({ string, key: i }))}
 				</div>
 				{this._makeHeader()}
-				<IslmChart history={this.props.history}/>
 			</div>
 		);
 	}

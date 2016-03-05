@@ -73,7 +73,7 @@ const IslmChart = React.createClass({
 			);
 		}
 		return (
-			<div>
+			<div style={{...this.props.style}}>
 				<svg 
 					className='chart' 
 					width={width+m.left+m.right}
