@@ -24,7 +24,7 @@ const sliderComponent = React.createClass({
 		let { min, max, value, step, variable, tex } = this.props;
 		return (
 			<div className='is-slider'>
-				<Katexer string={tex} />
+				<Katexer string={tex + '=' + d3.round(value,2)} />
 				<div className='ticks'>
 					{_.map(_.range(10), (i) =>{
 						let l = `${i*10}%`;
@@ -78,16 +78,15 @@ const AppComponent = React.createClass({
 	render() {
 		let strings = [
 			'y = -\\gamma * r',
-			// 'm = \\kappa \\cdot y -\\alpha(r+\\pi_e)',
 			'i = \\frac{ \\kappa \\cdot y - m}{\\alpha}',
 			'r = i + \\pi_e',
 			'\\pi = \\pi_e + \\theta \\cdot(y-\\bar{y})',
 			'\\dot{m} = \\mu - \\pi',
 			'\\dot{\\pi}_e = \\delta \\cdot ( \\pi - \\pi_e)',
-				// <IslmChart history={this.props.history} />
 		];
 		return (
 			<div className='flex-container-row main'>
+				<IslmChart history={this.props.history} />
 				{this._makeHeader()}
 				<div className='flex-container-column' style={{display:'flex'}}>
 					{_.map(strings, (string, i) => Katexer({ string, key: i }))}
