@@ -7,26 +7,10 @@ import Axis from '../axis/axis';
 import col from '../../style/colors';
 
 const m = {
-		top: 20,
-		left: 30,
-		bottom: 30,
-		right: 15
-	},
-	width = 500,
-	height = 350;
-
-const xDomain = [0, 100],
-	yDomain = [-1, 1];
-
-const xScale = d3.scale.linear().domain(xDomain).range([0, width]);
-
-const yScale = d3.scale.linear().domain(yDomain).range([height, 0]);
-
-const makePath = (data, variable) => {
-	let pm = d3.svg.line()
-		.x(d => xScale(d.time))
-		.y(d => yScale(d[variable]))
-	return pm(data);
+	top: 20,
+	left: 30,
+	bottom: 30,
+	right: 15
 };
 
 const pathPairs = [
@@ -38,9 +22,35 @@ const pathPairs = [
 
 const IslmChart = React.createClass({
 	mixins: [PureRenderMixin],
+	getInitialState() {
+		return {
+			xDomain: [0, 100],
+			yDomain: [-.5, .5],
+			width: 500,
+			height: 350
+		};
+	},
+	xScale(v) {
+		let { xDomain, width } = this.state;
+		return (v - xDomain[0]) / (xDomain[1] - xDomain[0]) * width;
+	},
+	yScale(v) {
+		let { yDomain, height } = this.state;
+		return height * (yDomain[1] - v) / (yDomain[1] - yDomain[0]);
+	},
+	_path(data, xVar, yVar) {
+		var i = data.length,
+			points = new Array(i);
+		while (i--) {
+			points[i] = [
+				this.xScale(data[i][xVar]),
+				this.yScale(data[i][yVar])
+			];
+		}
+		return "M" + points.join("L");
+	},
 	_makeLegend() {
 		return _.map(pathPairs, (e, i) => {
-			let rendered = katex.renderToString(e[2], { displayMode: true });
 			return (
 				<g 
 					key={e[0]}
@@ -52,6 +62,8 @@ const IslmChart = React.createClass({
 		});
 	},
 	render() {
+		let { width, height, yDomain, xDomain } = this.state;
+		let { yScale, xScale } = this;
 		let paths;
 		if (this.props.history.length > 0) {
 			paths = (
@@ -64,7 +76,7 @@ const IslmChart = React.createClass({
 							<path 
 								className='path'	
 								key={e[0]} 
-								d={makePath(this.props.history,e[0])} 
+								d={this._path(this.props.history,'time',e[0])} 
 								stroke={e[1]}/>
 						);
 					})
@@ -115,7 +127,7 @@ const IslmChart = React.createClass({
 						/>
 						<g 
 							className='legend' 
-							transform='translate(30,15)'>
+							transform={`translate(${width - 50},15)`}>
 							{this._makeLegend()}
 						</g>
 					</g>
