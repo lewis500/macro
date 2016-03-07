@@ -47,8 +47,10 @@ const sliders = [
 	['κ', 0, 1, .025, '\\kappa'],
 	['θ', 0, 1, .025, '\\theta'],
 	['γ', 0, .5, .025, '\\gamma'],
+	['β', 0, 1, .025, '\\beta'],
 	['μ', 0, .2, .025, '\\mu'],
-	['y_bar', 0, 1, .025, '\\bar{y}'],
+	['G', 0, 1, .025, 'G'],
+	['y_bar', -1, 1, .025, '\\bar{y}'],
 	['δ', 0, 1, .025, '\\delta']
 ];
 
@@ -86,7 +88,7 @@ const AppComponent = React.createClass({
 		];
 		return (
 			<div className='flex-container-row main'>
-				<IslmChart history={this.props.history} />
+				<IslmChart history={this.props.history} rStar={this.props.rStar}/>
 				{this._makeHeader()}
 				<div className='flex-container-column' style={{display:'flex'}}>
 					{_.map(strings, (string, i) => Katexer({ string, key: i }))}

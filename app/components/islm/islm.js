@@ -8,7 +8,7 @@ import col from '../../style/colors';
 
 const m = {
 	top: 20,
-	left: 30,
+	left: 45,
 	bottom: 30,
 	right: 15
 };
@@ -24,8 +24,8 @@ const IslmChart = React.createClass({
 	mixins: [PureRenderMixin],
 	getInitialState() {
 		return {
-			xDomain: [0, 100],
-			yDomain: [-.5, .5],
+			xDomain: [1, 100],
+			yDomain: [-.5, .3],
 			width: 500,
 			height: 350
 		};
@@ -61,6 +61,22 @@ const IslmChart = React.createClass({
 			);
 		});
 	},
+	componentWillUpdate(nextProps) {
+		let variables = _.map(pathPairs, p => p[0]),
+			data = nextProps.history,
+			min, val, max;
+		min = val = max = data[0][variables[0]];
+		_.forEach(data, (d) => {
+			_.forEach(variables, (v) => {
+				val = d[v];
+				if (min > val) min = val;
+				if (max < val) max = val;
+			});
+		});
+		if (min != this.state.yDomain[0] && max != this.state.yDomain[1]) {
+			this.setState({ yDomain: [min, max], xDomain: [1, data[data.length - 1].time] });
+		}
+	},
 	render() {
 		let { width, height, yDomain, xDomain } = this.state;
 		let { yScale, xScale } = this;
@@ -68,8 +84,8 @@ const IslmChart = React.createClass({
 		if (this.props.history.length > 0) {
 			paths = (
 				<g 
-				transform={`translate(${m.left},${m.top})`} 
-				clipPath="url(#myClip)">
+					transform={`translate(${m.left},${m.top})`} 
+					clipPath="url(#myClip)">
 				{
 						_.map(pathPairs, (e)=>{
 						return (
@@ -81,6 +97,11 @@ const IslmChart = React.createClass({
 						);
 					})
 				}
+				<line 
+					className='path'
+					stroke={col.green['500']}
+					{...{x1: 0, x2: width, y1: this.yScale(this.props.rStar), y2: this.yScale(this.props.rStar)}}
+					/>
 				</g>
 			);
 		}
@@ -93,8 +114,9 @@ const IslmChart = React.createClass({
 					>
 					<clipPath id="myClip" >
 						<rect 
+							y={-5}
 							width={width} 
-							height={height } />
+							height={height +5} />
 					</clipPath>
 					<g transform={`translate(${m.left},${m.top})`}>
 
@@ -109,6 +131,7 @@ const IslmChart = React.createClass({
 							range={[height,0]}
 							height={height}
 							orientation='left'
+							tickFormat={d3.format("+0.2r")}
 							innerTickSize={-width}
 						/>
 						<Axis 

@@ -3,27 +3,36 @@ import _ from 'lodash';
 import initialState from './initial-state';
 
 const reduceHistory = (state) => {
-	let history = _.reduce(_.range(0, 100), (a) => {
+	let { κ, α, π_e, δ, θ, μ, y_bar, m, γ, Δ, time } = state;
+	let c = κ + α / γ,
+		d = α + κ * γ;
+	// console.log(c,d);
+
+	// let rStar = -y_bar / γ;
+	let rStar = -c / d * y_bar;
+	// console.log(c / d * y_bar);
+	let history = _.reduce(_.range(0, 300), (a) => {
 		let last_state = a[a.length - 1];
 		return [...a, reduceTick(last_state)];
 	}, [state]);
 	return {
 		...state,
-		history
+		history,
+		rStar
 	};
 };
 
 const reduceTick = (state) => {
-	let { κ, α, π, π_e, δ, θ, μ, y_bar, m, γ, Δ, time } = state;
+	let { κ, α, π_e, δ, θ, μ, y, y_bar, m, γ, r, Δ, time, G,β } = state;
 	// our constants
-	let c = κ + α / γ,
-		d = α + κ * γ;
+
 
 	//fundamental variables
-	let r = -(m + α * π_e) / d,
-		y = -γ * r;
-	// y = (m + α * π_e) / c;
-	π = π_e + θ * (y - y_bar);
+	y = G + β*y - γ * r;
+
+	let i = -(m - κ * y) / α,
+		π = π_e + θ * (y - y_bar);
+	r = i - π_e;
 
 	//other variables
 	let π_e_dot = δ * (π - π_e),

@@ -1,10 +1,12 @@
 TO DO
++ start in equilibrium
 + plot nominal interest rate
 + show values next to sliders
 + adapt axes
 + add a brush
-+ create a slider with ticks
 + plot the equilibrium real interest rate and ybar
++ have bounds appear on the sliders once you mouse over, use transitions.
++ format ticks
 
 LATER
 + update package.json
