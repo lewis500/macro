@@ -16,8 +16,8 @@ const m = {
 const pathPairs = [
 	['π', col.pink['500'], '\\pi'],
 	['r', col['light-blue']['500'], 'r'],
-	['y', col.indigo['500'], 'y'],
-	['π_e', col.teal['500'], '\\pi_e']
+	['i', col.teal['500'], 'i'],
+	['x', col.purple['500'], 'x']
 ];
 
 const IslmChart = React.createClass({
@@ -97,11 +97,6 @@ const IslmChart = React.createClass({
 						);
 					})
 				}
-				<line 
-					className='path'
-					stroke={col.green['500']}
-					{...{x1: 0, x2: width, y1: this.yScale(this.props.rStar), y2: this.yScale(this.props.rStar)}}
-					/>
 				</g>
 			);
 		}

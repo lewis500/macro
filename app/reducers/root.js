@@ -2,51 +2,43 @@ import d3 from 'd3';
 import _ from 'lodash';
 import initialState from './initial-state';
 
-const reduceHistory = (state) => {
-	let { κ, α, π_e, δ, θ, μ, y_bar, m, γ, Δ, time } = state;
-	let c = κ + α / γ,
-		d = α + κ * γ;
-	// console.log(c,d);
+console.log(initialState);
 
-	// let rStar = -y_bar / γ;
-	let rStar = -c / d * y_bar;
-	// console.log(c / d * y_bar);
-	let history = _.reduce(_.range(0, 300), (a) => {
+const reduceHistory = (state) => {
+	let history = _.reduce(_.range(0, 60), (a) => {
 		let last_state = a[a.length - 1];
 		return [...a, reduceTick(last_state)];
-	}, [state]);
+	}, [_.omit(state, 'history')]);
 	return {
 		...state,
 		history,
-		rStar
 	};
 };
 
 const reduceTick = (state) => {
-	let { κ, α, π_e, δ, θ, μ, y, y_bar, m, γ, r, Δ, time, G,β } = state;
-	// our constants
+	let { π_e, ȳ, x, y, κ, σ, δ, r̄, i, Δ, time } = state;
 
+	let r = i - π_e; //real interest rate
+	//ONE WAY
+	let ẏ = -1/σ*(r - r̄);
+	y = ẏ * Δ + y;
+	x = y - ȳ;
 
-	//fundamental variables
-	y = G + β*y - γ * r;
-
-	let i = -(m - κ * y) / α,
-		π = π_e + θ * (y - y_bar);
-	r = i - π_e;
-
-	//other variables
-	let π_e_dot = δ * (π - π_e),
-		m_dot = μ - π;
-	π_e = π_e + Δ * π_e_dot;
-	m = m + Δ * m_dot;
-
+	//ANOTHER WAY
+	// let ẋ = -(r - r̄);
+	// x = ẋ * Δ + x;
+	// y = ȳ + x;
+	let π = π_e + κ * x;
+	let π̇_e = δ * (π - π_e);
+	// let π̇_e = δ * (κ * x);
+	π_e = Δ * π̇_e + π_e;
 	return {
 		...state,
-		y,
-		r,
-		π,
+		x,
 		π_e,
-		m,
+		y,
+		π,
+		r,
 		time: time + 1
 	};
 };

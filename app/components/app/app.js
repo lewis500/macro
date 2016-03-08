@@ -21,7 +21,8 @@ const sliderComponent = React.createClass({
 		});
 	},
 	render() {
-		let { min, max, value, step, variable, tex } = this.props;
+		let { min, max, value, variable, tex } = this.props;
+		let step = .01;
 		return (
 			<div className='is-slider'>
 				<Katexer string={tex + '=' + d3.round(value,2)} />
@@ -32,7 +33,7 @@ const sliderComponent = React.createClass({
 					})}
 				</div>
 				<input 
-					{...{min,max,step,value}} 
+					{...{min,max,value,step}} 
 					onChange={this._onChange} 
 					type='range' />
 			</div>
@@ -43,15 +44,13 @@ const sliderComponent = React.createClass({
 const Slider = React.createFactory(sliderComponent);
 
 const sliders = [
-	['α', 0, 1, .025, '\\alpha'],
-	['κ', 0, 1, .025, '\\kappa'],
-	['θ', 0, 1, .025, '\\theta'],
-	['γ', 0, .5, .025, '\\gamma'],
-	['β', 0, 1, .025, '\\beta'],
-	['μ', 0, .2, .025, '\\mu'],
-	['G', 0, 1, .025, 'G'],
-	['y_bar', -1, 1, .025, '\\bar{y}'],
-	['δ', 0, 1, .025, '\\delta']
+	['κ', .01, .6, '\\kappa'],
+	['i', 0, .1, 'i'],
+	['r̄', 0, .1, '\\bar{r}'],
+	['Δ', 0, .15, '\\Delta'],
+	['ȳ', 0, 2.0, '\\bar{y}'],
+	['δ', 0, .5, '\\delta'],
+	['σ', 1, 10, '\\sigma'],
 ];
 
 
@@ -66,9 +65,8 @@ const AppComponent = React.createClass({
 								min: e[1],
 								max: e[2],
 								key: e[0],
-								step: e[3],
 								variable: e[0],
-								tex: e[4],
+								tex: e[3],
 								value: this.props[e[0]],
 								onChange: this.props.setVariable
 							})
@@ -79,16 +77,12 @@ const AppComponent = React.createClass({
 	},
 	render() {
 		let strings = [
-			'y = -\\gamma * r',
-			'i = \\frac{ \\kappa \\cdot y - m}{\\alpha}',
+			'\\dot{x} = 1/\\sigma \\cdot (i - \\pi - \\bar{r})',
 			'r = i + \\pi_e',
-			'\\pi = \\pi_e + \\theta \\cdot(y-\\bar{y})',
-			'\\dot{m} = \\mu - \\pi',
-			'\\dot{\\pi}_e = \\delta \\cdot ( \\pi - \\pi_e)',
 		];
 		return (
 			<div className='flex-container-row main'>
-				<IslmChart history={this.props.history} rStar={this.props.rStar}/>
+				<IslmChart history={this.props.history}/>
 				{this._makeHeader()}
 				<div className='flex-container-column' style={{display:'flex'}}>
 					{_.map(strings, (string, i) => Katexer({ string, key: i }))}
