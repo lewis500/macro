@@ -5,19 +5,36 @@
     // flex-wrap: nowrap;
     justify-content: flex-start;
     // align-content: stretch;
-    align-items: center;
+    // align-items: flex-start;
 }
 
 .flex-container-row {
+    display: -ms-flexbox;
+    display: -webkit-flex;
     display: flex;
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
     flex-direction: row;
-    // flex-wrap: nowrap;
-    // justify-content: space-around;
-    align-items: center;
+    -webkit-flex-wrap: nowrap;
+    -ms-flex-wrap: nowrap;
+    flex-wrap: nowrap;
+    -webkit-justify-content: flex-start;
+    -ms-flex-pack: start;
+    justify-content: flex-start;
+    -webkit-align-content: flex-start;
+    -ms-flex-line-pack: start;
+    align-content: flex-start;
+    -webkit-align-items: flex-start;
+    -ms-flex-align: start;
+    align-items: flex-start;
 }
 
 .main {
-    padding: 20px;
+    padding: 5px;
+}
+
+body {
+    background-color: rgba($md-grey-300, 1);
 }
 
 .is-slider .katex-display {
@@ -26,7 +43,7 @@
 }
 
 .main > div {
-    margin: 0px 30px;
+    margin: 0px 5px;
 }
 
 div.is-slider {
@@ -42,19 +59,43 @@ input[type=range] {
     margin: 8px 0px;
 }
 
-.is-slider .ticks{
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    bottom: 0px;
-    // left: 0%;
+div.my-slider {
+    margin: 15px 0px;
 }
 
-.ticks .is-tick {
-    position: absolute;
-    height: 5px;
-    width: 1px;
-    bottom: 12px;
-    // bottom: 0px;
-    background-color: #ccc;
+.rc-slider-track {
+    background-color: $md-light-blue-500;
+}
+
+.rc-slider-handle {
+    border: solid 2px $md-light-blue-500;
+}
+
+.buttons {
+    text-align: center;
+    horizontal-align: center;
+}
+
+button.btn {
+    margin: 10px;
+    // flex: 1 1 auto;
+    // width:
+    border: 1px solid white;
+    padding: 10px;
+    background: none;
+    color: white;
+    text-align: center;
+    horizontal-align: center;
+    cursor: pointer;
+}
+
+.arrowHead {
+    stroke-width: 5;
+    stroke: #000;
+    stroke-dasharray: 5, 5;
+}
+
+#arrow {
+    stroke-width: 1;
+    stroke-dasharray: 0;
 }

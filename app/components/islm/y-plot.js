@@ -1,34 +1,41 @@
 import { connect } from 'react-redux';
 import React from 'react';
+import { findDOMNode } from 'react-dom';
 import PureRenderMixin from 'react-addons-pure-render-mixin';
 import d3 from 'd3';
 import '../../style/style-charts.scss';
 import Axis from '../axis/axis';
 import col from '../../style/colors';
 
+
 const m = {
 	top: 20,
-	left: 45,
+	left: 55,
 	bottom: 30,
 	right: 15
 };
 
-const pathPairs = [
-	['π', col.pink['500'], '\\pi'],
-	['r', col['light-blue']['500'], 'r'],
-	['i', col.teal['500'], 'i'],
-	['x', col.purple['500'], 'x']
-];
-
-const IslmChart = React.createClass({
+const YPlot = React.createClass({
 	mixins: [PureRenderMixin],
 	getInitialState() {
 		return {
 			xDomain: [1, 100],
 			yDomain: [-.5, .3],
 			width: 500,
-			height: 350
+			height: 160
 		};
+	},
+	componentDidMount() {
+		let domNode = findDOMNode(this);
+		this.parent = domNode.parentElement;
+		this.resize();
+		this.listener = window.addEventListener('resize', this.resize);
+	},
+	resize() {
+		this.setState({ width: this.parent.clientWidth * .9 });
+	},
+	componentWillUnmount() {
+		window.removeEventListener('resize', this.resize)
 	},
 	xScale(v) {
 		let { xDomain, width } = this.state;
@@ -38,7 +45,7 @@ const IslmChart = React.createClass({
 		let { yDomain, height } = this.state;
 		return height * (yDomain[1] - v) / (yDomain[1] - yDomain[0]);
 	},
-	_path(data, xVar, yVar) {
+	pathMaker(data, xVar, yVar) {
 		var i = data.length,
 			points = new Array(i);
 		while (i--) {
@@ -49,55 +56,27 @@ const IslmChart = React.createClass({
 		}
 		return "M" + points.join("L");
 	},
-	_makeLegend() {
-		return _.map(pathPairs, (e, i) => {
-			return (
-				<g 
-					key={e[0]}
-					transform={`translate(0,${i*15})`}>
-					<rect fill={e[1]}/>
-					<text>{e[0]}</text>
-				</g>
-			);
-		});
-	},
-	componentWillUpdate(nextProps) {
-		let variables = _.map(pathPairs, p => p[0]),
-			data = nextProps.history,
-			min, val, max;
-		min = val = max = data[0][variables[0]];
-		_.forEach(data, (d) => {
-			_.forEach(variables, (v) => {
-				val = d[v];
-				if (min > val) min = val;
-				if (max < val) max = val;
-			});
-		});
-		if (min != this.state.yDomain[0] && max != this.state.yDomain[1]) {
-			this.setState({ yDomain: [min, max], xDomain: [1, data[data.length - 1].time] });
-		}
+	componentWillReceiveProps(nextProps) {
+		let { history } = nextProps;
+		let xDomain = [
+			history[0].time,
+			history[history.length - 1].time + 2.5
+		];
+		// let yDomain = d3.extent(nextProps.history, d => d.y);
+
+		let yDomain = [0, d3.max(nextProps.history, d=>d.y)*1.5];
+		this.setState({ xDomain, yDomain })
 	},
 	render() {
 		let { width, height, yDomain, xDomain } = this.state;
 		let { yScale, xScale } = this;
-		let paths;
+		let path;
 		if (this.props.history.length > 0) {
-			paths = (
-				<g 
-					transform={`translate(${m.left},${m.top})`} 
-					clipPath="url(#myClip)">
-				{
-						_.map(pathPairs, (e)=>{
-						return (
-							<path 
-								className='path'	
-								key={e[0]} 
-								d={this._path(this.props.history,'time',e[0])} 
-								stroke={e[1]}/>
-						);
-					})
-				}
-				</g>
+			path = (
+				<path 
+					className='path'	
+					d={this.pathMaker(this.props.history,'time','y')} 
+					/>
 			);
 		}
 		return (
@@ -121,12 +100,13 @@ const IslmChart = React.createClass({
 							height={height}/>
 
 						<Axis 
+							tickArguments={[5]}
 							classname='axis'
 							domain={yDomain}
 							range={[height,0]}
 							height={height}
 							orientation='left'
-							tickFormat={d3.format("+0.2r")}
+							tickFormat={d3.format("0.3r")}
 							innerTickSize={-width}
 						/>
 						<Axis 
@@ -143,17 +123,12 @@ const IslmChart = React.createClass({
 							{...{x1: 0, x2: width, y1: yScale(0), y2: yScale(0)}} 
 							className='zero'
 						/>
-						<g 
-							className='legend' 
-							transform={`translate(${width - 50},15)`}>
-							{this._makeLegend()}
-						</g>
+						{path}
 					</g>
-					{paths}
 				</svg>
 			</div>
 		);
 	}
 });
 
-export default IslmChart;
+export default YPlot;

@@ -2,7 +2,7 @@
 
 <head>
   <meta charset="utf-8">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/css/materialize.min.css">
+  <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/css/materialize.min.css"> -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.5.1/katex.min.css">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.5.1/katex.min.js"></script>
 <!--   <script type="text/x-mathjax-config">
@@ -20,6 +20,9 @@
   <div id="root"></div>
   <svg>
   	<defs>
+      <marker id="arrow" viewbox="0 -5 10 10" refX="5" refU="0" markerWidth="4" marketHeight="4" orient="auto">
+        <path d="M0,-5L10,0L0,5" class="arrowHead"></path>
+      </marker>
   	  <filter id="f4" x="-20%" y="-20%" width="140%" height="140%">
   	    <feOffset result="offOut" in="SourceAlpha" dx="0" dy=".25" />
   	    <feGaussianBlur result="blurOut" in="offOut" stdDeviation="1.5" />

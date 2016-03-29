@@ -5,7 +5,7 @@
 
 .path {
     fill: none;
-    // stroke: $md-pink-500;
+    // marker-end:url(#arrow);
 }
 
 .zero {
@@ -14,19 +14,8 @@
     stroke-dasharray: 3,1;
 }
 
-.legend rect{
-	width: 14px;
-	height: 10px;
-	y: -5px;
-	// stroke: $md-grey-900;
-	// stroke: black;
-	stroke: white;
-	rx: 1px;
-	ry: 1px;
-}
-.legend text{
-	transform: translate(20px,0px);
-	text-anchor: start;
-	alignment-baseline: middle;
-}
 
+.path {
+    fill: none;
+    stroke: $md-light-blue-500;
+}
