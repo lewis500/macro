@@ -16,7 +16,7 @@ const Katexer = props => {
 	);
 };
 
-const sliderComponent = React.createClass({
+const SliderComponent = React.createClass({
 	mixins: [PureRenderMixin],
 	_onChange(e) {
 		this.props.onChange({
@@ -36,7 +36,7 @@ const sliderComponent = React.createClass({
 	}
 });
 
-const Slider = React.createFactory(sliderComponent);
+const Slider = React.createFactory(SliderComponent);
 
 const AppComponent = React.createClass({
 	mixins: [PureRenderMixin],
@@ -59,18 +59,20 @@ const AppComponent = React.createClass({
 			<div className='flex-container-row main'>
 				<div  className='flex-container-column'>
 					<button className="btn" onClick={this.pausePlay}>{this.paused ? 'PLAY' : 'PAUSE'}</button>
-					<YPlot history={this.props.history} time={this.props.time}/>
-					<OtherPlot history={this.props.history} time={this.props.time}/>
+					<div>
+						<YPlot history={this.props.history} time={this.props.time}/>
+						<OtherPlot history={this.props.history} time={this.props.time}/>
+					</div>
 				</div>
 				<div>
-								{Slider({
-									min: 0,
-									max: .05,
-									tex: "i",
-									variable: "i",
-									value: this.props.i,
-									onChange: this.props.setVariable
-								})}
+					{Slider({
+						min: 0,
+						max: .05,
+						tex: "i",
+						variable: "i",
+						value: this.props.i,
+						onChange: this.props.setVariable
+					})}
 				</div>
 			</div>
 		);

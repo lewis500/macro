@@ -7,14 +7,17 @@ const initialState = {
 	π_e: .03,
 	r: 0,
 	π: .03,
+	u: .05,
 
 	//params
 	ȳ: 1.0,
 	r̄: .01,
 	Δ: .075,
 	κ: .1,
-	δ: .05,
-	σ: 1
+	δ: .1,
+	σ: 2,
+	ū: .05,
+	β: 2
 };
 
 export default initialState;

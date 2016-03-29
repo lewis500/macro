@@ -1,50 +1,35 @@
 @import '~material-colors/dist/colors';
-.flex-container-column {
-    display: flex;
-    flex-direction: column;
-    // flex-wrap: nowrap;
-    justify-content: flex-start;
-    // align-content: stretch;
-    // align-items: flex-start;
+
+body {
+    background-color: rgba($md-grey-300, .5);
 }
 
-.flex-container-row {
-    display: -ms-flexbox;
-    display: -webkit-flex;
-    display: flex;
-    -webkit-flex-direction: row;
-    -ms-flex-direction: row;
-    flex-direction: row;
-    -webkit-flex-wrap: nowrap;
-    -ms-flex-wrap: nowrap;
-    flex-wrap: nowrap;
-    -webkit-justify-content: flex-start;
-    -ms-flex-pack: start;
-    justify-content: flex-start;
-    -webkit-align-content: flex-start;
-    -ms-flex-line-pack: start;
-    align-content: flex-start;
-    -webkit-align-items: flex-start;
-    -ms-flex-align: start;
-    align-items: flex-start;
-}
 
 .main {
     padding: 5px;
 }
 
-body {
-    background-color: rgba($md-grey-300, 1);
-}
-
-.is-slider .katex-display {
-    // margin: .1em;
-    margin: 0;
-}
-
 .main > div {
     margin: 0px 5px;
+    // flex: 1 1 50%;
+    flex-basis: 50%;
 }
+
+.flex-container-column {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.flex-container-row {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-content: flex-start;
+    align-items: flex-start;
+}
+
 
 div.is-slider {
     background-color: rgba($md-grey-100, .45);
@@ -53,6 +38,10 @@ div.is-slider {
     padding: 2px 5px;
     position: relative;
     // padding: -5px;
+}
+
+.is-slider .katex-display {
+    margin: 0;
 }
 
 input[type=range] {
@@ -71,15 +60,8 @@ div.my-slider {
     border: solid 2px $md-light-blue-500;
 }
 
-.buttons {
-    text-align: center;
-    horizontal-align: center;
-}
-
 button.btn {
     margin: 10px;
-    // flex: 1 1 auto;
-    // width:
     border: 1px solid white;
     padding: 10px;
     background: none;
@@ -89,13 +71,4 @@ button.btn {
     cursor: pointer;
 }
 
-.arrowHead {
-    stroke-width: 5;
-    stroke: #000;
-    stroke-dasharray: 5, 5;
-}
 
-#arrow {
-    stroke-width: 1;
-    stroke-dasharray: 0;
-}

@@ -64,7 +64,7 @@ const YPlot = React.createClass({
 		];
 		// let yDomain = d3.extent(nextProps.history, d => d.y);
 
-		let yDomain = [0, d3.max(nextProps.history, d=>d.y)*1.5];
+		let yDomain = [0, d3.max(nextProps.history, d => d.u) * 1.5];
 		this.setState({ xDomain, yDomain })
 	},
 	render() {
@@ -73,10 +73,10 @@ const YPlot = React.createClass({
 		let path;
 		if (this.props.history.length > 0) {
 			path = (
-				<path 
-					className='path'	
-					d={this.pathMaker(this.props.history,'time','y')} 
-					/>
+				<g>
+					<path className='path'	d={this.pathMaker(this.props.history,'time','u')} />
+					<path className='path'	d={this.pathMaker(this.props.history,'time','ū')} />
+				</g>
 			);
 		}
 		return (
@@ -106,10 +106,11 @@ const YPlot = React.createClass({
 							range={[height,0]}
 							height={height}
 							orientation='left'
-							tickFormat={d3.format("0.3r")}
+							tickFormat={d3.format("0.1%")}
 							innerTickSize={-width}
 						/>
 						<Axis 
+							tickArguments={[0]}
 							className='axis'
 							innerTickSize={-height}
 							domain={xDomain}
@@ -119,10 +120,7 @@ const YPlot = React.createClass({
 							orientation='bottom'
 							label='time'
 						/>
-						<line 
-							{...{x1: 0, x2: width, y1: yScale(0), y2: yScale(0)}} 
-							className='zero'
-						/>
+
 						{path}
 					</g>
 				</svg>
@@ -130,5 +128,8 @@ const YPlot = React.createClass({
 		);
 	}
 });
+
+// <line {...{x1: 0, x2: width, y1: yScale(0), y2: yScale(0)}} 
+// 	className='zero' />
 
 export default YPlot;

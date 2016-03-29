@@ -13,7 +13,7 @@ const m = {
 	right: 15
 };
 
-const vars = ["π", "i"];
+const vars = ["π", "i", "r̄"];
 
 const OtherPlot = React.createClass({
 	mixins: [PureRenderMixin],
@@ -64,6 +64,9 @@ const OtherPlot = React.createClass({
 		];
 		let values = _.flatten(_.map(nextProps.history, d=> _.map(vars, v=> d[v])));
 		let yDomain = d3.extent(values);
+		yDomain[0] = Math.min(0, yDomain[0])
+		// yDomain = [0,d3.max(values)];
+
 		// let yDomain = d3.extent(nextProps.history.map(d => d3));
 		this.setState({ xDomain, yDomain })
 	},
