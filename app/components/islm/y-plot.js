@@ -109,17 +109,6 @@ const YPlot = React.createClass({
 							tickFormat={d3.format("0.1%")}
 							innerTickSize={-width}
 						/>
-						<Axis 
-							tickArguments={[0]}
-							className='axis'
-							innerTickSize={-height}
-							domain={xDomain}
-							range={[0,width]}
-							width={width}
-							height={height}
-							orientation='bottom'
-							label='time'
-						/>
 
 						{path}
 					</g>

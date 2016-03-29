@@ -13,7 +13,7 @@ const m = {
 	right: 15
 };
 
-const vars = ["π", "i", "r̄"];
+const vars = ["π", "i", "r̄", "π_e"];
 
 const OtherPlot = React.createClass({
 	mixins: [PureRenderMixin],
@@ -109,20 +109,6 @@ const OtherPlot = React.createClass({
 							orientation='left'
 							tickFormat={d3.format(".2p")}
 							innerTickSize={-width}
-						/>
-						<Axis 
-							className='axis'
-							innerTickSize={-height}
-							domain={xDomain}
-							range={[0,width]}
-							width={width}
-							height={height}
-							orientation='bottom'
-							label='time'
-						/>
-						<line 
-							{...{x1: 0, x2: width, y1: yScale(0), y2: yScale(0)}} 
-							className='zero'
 						/>
 						{paths}
 					</g>

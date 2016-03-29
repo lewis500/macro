@@ -1,7 +1,7 @@
 @import '~material-colors/dist/colors';
 
 body {
-    background-color: rgba($md-grey-300, .5);
+    background-color: rgba($md-grey-200, 1);
 }
 
 
@@ -64,7 +64,8 @@ button.btn {
     margin: 10px;
     border: 1px solid white;
     padding: 10px;
-    background: none;
+    width: 100px;
+    background: $md-light-blue-500;
     color: white;
     text-align: center;
     horizontal-align: center;
