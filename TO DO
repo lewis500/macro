@@ -1,19 +1,8 @@
-TO DO
-+ plot nominal interest rate
-+ show values next to sliders
-+ have bounds appear on the sliders once you mouse over, use transitions.
-+ format ticks
-
-
 =====DYNAMIC=====
++ legend
+
 + labels on line ends
 + do faded dots and line segments like you did for the gridlocks vs bottlenecks one
-+ get rid of the equations column
-+ put all the parameter sliders below, only leave the interest rate slider to the right
-+ 
 
 
-
-
-+ make one chart for y, another for i, r, \pi and \pi_e
 + put an arrow on the ends of the lines

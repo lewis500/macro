@@ -17,7 +17,7 @@ const initialState = {
 	δ: .25,
 	σ: 2,
 	ū: .05,
-	β: 2
+	β: 3
 };
 
 export default initialState;
