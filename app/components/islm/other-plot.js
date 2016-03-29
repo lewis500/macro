@@ -11,16 +11,13 @@ const m = {
 	top: 20,
 	left: 55,
 	bottom: 30,
-	right: 15
+	right: 75
 };
 
 const Katexer = React.createClass({
 	mixins: [PureRenderMixin],
 	render() {
 		const rendered = katex.renderToString(this.props.string, { displayMode: true });
-		// let col = d3.hsl(this.props.col);
-		// col.s*=.89;
-		// col.l*=1.1;
 		return (
 			<span className="katex-span" style={{color: this.props.col}} dangerouslySetInnerHTML={ {__html: rendered } } />
 		);
@@ -29,9 +26,9 @@ const Katexer = React.createClass({
 
 const vars = [
 	["r̄", col.green["500"], "\\bar{r}", 0, col.green["600"]],
-	["i", col.red["500"], "i", 12, col.red["600"] ],
-	["π", col.pink["500"], "\\pi", 22, col.pink["600"],],
-	["πₑ", col.indigo['500'], "\\pi_e", 40, col.indigo['600'],],
+	["i", col.indigo["500"], "i", 15, col.indigo["600"]],
+	["π", col.pink["500"], "\\pi", 25, col.pink["600"], ],
+	["πₑ", col.red['500'], "\\pi_e", 40, col.red['600'], ],
 ];
 
 const OtherPlot = React.createClass({
@@ -79,7 +76,7 @@ const OtherPlot = React.createClass({
 		let { yScale, xScale } = this;
 		let { history } = this.props;
 		let last = this.props.history[this.props.history.length - 1];
-		let x0 = xScale(last.time)
+		let x0 = xScale(last.time);
 		let paths = _.map(vars, v => (
 			<g className="g-path" key={v[0]}>
 					<path className='path'	d={this.pathMaker(history,'time',v[0])}  stroke={v[1]}/>
@@ -90,6 +87,20 @@ const OtherPlot = React.createClass({
 								<Katexer string={v[2]} col={v[4]}/>
 							</body>
 						</foreignObject>
+					</g>
+					<g className='g-real-r'>
+						<path 
+							className="real-r" 
+							d={
+								`M${width},${yScale(last.i)}L${width},${yScale(last.πₑ)}`
+							}/>
+							<g transform={`translate(${width}, ${ .5*yScale(last.i) + .5*yScale(last.πₑ) })`}>
+								<foreignObject width="17px" height="40px" y="-.7em" x={5}>
+									<body >
+										<Katexer string={"r"} col={col.green["600"]}/>
+									</body>
+								</foreignObject>
+							</g>
 					</g>
 			</g>
 

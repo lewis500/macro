@@ -44,9 +44,6 @@ foreignObject .katex .vlist>span{
     position: inherit;
 }
 
-// .is-slider .katex-display {
-//     margin: 0;
-// }
 
 input[type=range] {
     margin: 8px 0px;
@@ -83,6 +80,19 @@ button.btn {
 
 span.katex{
     font-size: 1.0em;
+}
+
+path.real-r{
+    stroke-width: 1.2px;
+    stroke: $md-green-700;
+    // marker-end: url(#arrow);
+    // transform: scale(.8);
+    //.style("marker-end", "url(#arrow)")
+}
+
+.arrowHead{
+    // fill: $md-purple-500;
+    stroke: none;
 }
 
 // // .g-path .
