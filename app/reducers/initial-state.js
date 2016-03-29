@@ -18,5 +18,4 @@ const initialState = {
 	σ: 1
 };
 
-
 export default initialState;

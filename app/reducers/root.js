@@ -25,9 +25,6 @@ const reduceTick = (state) => {
 	x = y - ȳ;
 
 	//ANOTHER WAY
-	// let ẋ = -(r - r̄);
-	// x = ẋ * Δ + x;
-	// y = ȳ + x;
 	let π = π_e + κ * x;
 	let π̇_e = δ * (π - π_e);
 	// let π̇_e = δ * (κ * x);

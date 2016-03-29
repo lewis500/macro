@@ -10,3 +10,13 @@ TO DO
 
 LATER
 + update package.json
+
+
+=====DYNAMIC=====
++ set up play/pause button
++ set up d3 timer
++ labels on line ends
++ do faded dots and line segments like you did for the gridlocks vs bottlenecks one
++ get rid of the equations column
++ put all the parameter sliders below, only leave the interest rate slider to the right
++ 
