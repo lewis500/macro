@@ -7,7 +7,6 @@ import '../../style/style-charts.scss';
 import Axis from '../axis/axis';
 import col from '../../style/colors';
 
-
 const m = {
 	top: 20,
 	left: 55,
@@ -56,6 +55,9 @@ const YPlot = React.createClass({
 		}
 		return "M" + points.join("L");
 	},
+	componentDidMount(){
+		d3.select(this.refs.paths).selectAll("path")
+	},
 	componentWillReceiveProps(nextProps) {
 		let { history } = nextProps;
 		let xDomain = [
@@ -70,15 +72,12 @@ const YPlot = React.createClass({
 	render() {
 		let { width, height, yDomain, xDomain } = this.state;
 		let { yScale, xScale } = this;
-		let path;
-		if (this.props.history.length > 0) {
-			path = (
-				<g>
-					<path className='path'	d={this.pathMaker(this.props.history,'time','u')} />
-					<path className='path'	d={this.pathMaker(this.props.history,'time','ū')} />
-				</g>
-			);
-		}
+		let path = (
+			<g ref='paths'>
+				<path className='path'	d={this.pathMaker(this.props.history,'time','u')} stroke={col.blue["500"]} />
+				<path className='path'	d={this.pathMaker(this.props.history,'time','ū')} stroke={col["blue-grey"]["500"]}  />
+			</g>
+		);
 		return (
 			<div style={{...this.props.style}}>
 				<svg 

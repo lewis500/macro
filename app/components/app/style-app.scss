@@ -3,7 +3,9 @@
 body {
     background-color: rgba($md-grey-200, 1);
 }
-
+.foreign body{
+    background-color: none;
+}
 
 .main {
     padding: 5px;
@@ -11,7 +13,6 @@ body {
 
 .main > div {
     margin: 0px 5px;
-    // flex: 1 1 50%;
     flex-basis: 50%;
 }
 
@@ -40,9 +41,13 @@ div.is-slider {
     // padding: -5px;
 }
 
-.is-slider .katex-display {
-    margin: 0;
+foreignObject .katex .vlist>span{
+    position: inherit;
 }
+
+// .is-slider .katex-display {
+//     margin: 0;
+// }
 
 input[type=range] {
     margin: 8px 0px;

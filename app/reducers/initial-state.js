@@ -17,7 +17,9 @@ const initialState = {
 	δ: .25,
 	σ: 2,
 	ū: .05,
-	β: 3
+	β: 3,
 };
+
+initialState.history = [{...initialState}];
 
 export default initialState;

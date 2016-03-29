@@ -5,6 +5,7 @@ import PureRenderMixin from 'react-addons-pure-render-mixin';
 import d3 from 'd3';
 import '../../style/style-charts.scss';
 import Axis from '../axis/axis';
+import col from "../../style/colors"
 
 const m = {
 	top: 20,
@@ -13,7 +14,19 @@ const m = {
 	right: 15
 };
 
-const vars = ["π", "i", "r̄", "π_e"];
+const Katexer = props => {
+	const rendered = katex.renderToString(props.string, { displayMode: true });
+	return (
+		<span dangerouslySetInnerHTML={ {__html: rendered } } />
+	);
+};
+
+const vars = [
+	["π", col.pink["500"], "\\pi"],
+	["i", col.red["500"], "i"],
+	["π_e", col.indigo['500'], "\\pi_e"],
+	["r̄", col.green["500"], "\\bar{r}"],
+];
 
 const OtherPlot = React.createClass({
 	mixins: [PureRenderMixin],
@@ -26,10 +39,19 @@ const OtherPlot = React.createClass({
 		};
 	},
 	componentDidMount() {
-		let domNode = findDOMNode(this);
-		this.parent = domNode.parentElement;
-		this.resize();
-		this.listener = window.addEventListener('resize', this.resize);
+		// let domNode = findDOMNode(this);
+		// this.parent = domNode.parentElement;
+		// this.resize();
+		// this.listener = window.addEventListener('resize', this.resize);
+		// this.lineLabels = d3.select(this.refs.paths)
+		// 	.selectAll(".foreign")
+		// 	.append("foreignObject")
+		// 	.attr({width: 40, height: 50})
+		// 	.append("xhtml:body")
+		// 	.html("<p>hello</p>");
+
+		// .select()
+		// .append("text")
 	},
 	resize() {
 		this.setState({ width: this.parent.clientWidth * .9 });
@@ -62,24 +84,29 @@ const OtherPlot = React.createClass({
 			history[0].time,
 			history[history.length - 1].time + 2.5
 		];
-		let values = _.flatten(_.map(nextProps.history, d=> _.map(vars, v=> d[v])));
+		let values = _.flatten(_.map(nextProps.history, d => _.map(vars, v => d[v[0]])));
 		let yDomain = d3.extent(values);
 		yDomain[0] = Math.min(0, yDomain[0])
-		// yDomain = [0,d3.max(values)];
-
-		// let yDomain = d3.extent(nextProps.history.map(d => d3));
 		this.setState({ xDomain, yDomain })
 	},
 	render() {
 		let { width, height, yDomain, xDomain } = this.state;
 		let { yScale, xScale } = this;
 		let { history } = this.props;
-		let paths;
-		if (history.length > 0) {
-			paths = _.map(vars, v => (
-				<path className='path'	d={this.pathMaker(history,'time',v)} key={v}/>
-			))
-		}
+		let last = this.props.history[this.props.history.length - 1];
+		// vars.sort((a, b) => last[a[0]] > last[b[0]]);
+		let paths = _.map(vars, (v, i) => (
+			<g className="g-path" key={v[0]}>
+					<path className='path'	d={this.pathMaker(history,'time',v[0])}  stroke={v[1]}/>
+					<g className='foreign' transform={`translate(${xScale(last.time)}, ${yScale(last[v[0]])})`}>
+						<foreignObject width="22px" height="50px" y="-10px" x={i*5}>
+							<body >
+								<Katexer string={v[2]}/>
+							</body>
+						</foreignObject>
+					</g>
+				</g>
+		));
 		return (
 			<div style={{...this.props.style}}>
 				<svg 
@@ -110,7 +137,9 @@ const OtherPlot = React.createClass({
 							tickFormat={d3.format(".2p")}
 							innerTickSize={-width}
 						/>
-						{paths}
+						<g ref='paths'>
+							{paths}
+						</g>
 					</g>
 				</svg>
 			</div>
