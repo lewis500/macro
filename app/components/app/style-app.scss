@@ -4,7 +4,7 @@ body {
     background-color: rgba($md-grey-200, 1);
 }
 .foreign body{
-    background-color: none;
+    background-color: rgba($md-grey-300,.6);
 }
 
 .main {
@@ -78,3 +78,17 @@ button.btn {
 }
 
 
+.g-path .katex-span {
+    color: rgba($md-grey-900,.8);
+}
+
+span.katex{
+    font-size: 1.0em;
+    
+}
+
+// // .g-path .
+
+//   line-height: 1.2;
+//   white-space: nowrap;
+//   text-indent: 0;

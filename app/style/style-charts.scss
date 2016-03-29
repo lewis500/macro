@@ -11,11 +11,15 @@
 .zero {
     fill: none;
     stroke: $md-grey-400;
-    stroke-dasharray: 3,1;
+    stroke-dasharray: 3, 1;
 }
-
 
 .path {
     fill: none;
     // stroke: $md-light-blue-500;
+}
+
+.path-link {
+    stroke-width: 1px;
+    stroke-dasharray: 1, 1;
 }

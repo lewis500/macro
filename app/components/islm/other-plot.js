@@ -14,18 +14,21 @@ const m = {
 	right: 15
 };
 
-const Katexer = props => {
-	const rendered = katex.renderToString(props.string, { displayMode: true });
-	return (
-		<span dangerouslySetInnerHTML={ {__html: rendered } } />
-	);
-};
+const Katexer = React.createClass({
+	mixins: [PureRenderMixin],
+	render() {
+		const rendered = katex.renderToString(this.props.string, { displayMode: true });
+		return (
+			<span className="katex-span" dangerouslySetInnerHTML={ {__html: rendered } } />
+		);
+	}
+})
 
 const vars = [
-	["π", col.pink["500"], "\\pi"],
-	["i", col.red["500"], "i"],
-	["π_e", col.indigo['500'], "\\pi_e"],
-	["r̄", col.green["500"], "\\bar{r}"],
+	["r̄", col.green["500"], "\\bar{r}", 0],
+	["i", col.red["500"], "i", 12],
+	["π", col.pink["500"], "\\pi", 22],
+	["π_e", col.indigo['500'], "\\pi_e", 40],
 ];
 
 const OtherPlot = React.createClass({
@@ -37,27 +40,6 @@ const OtherPlot = React.createClass({
 			width: 500,
 			height: 160
 		};
-	},
-	componentDidMount() {
-		// let domNode = findDOMNode(this);
-		// this.parent = domNode.parentElement;
-		// this.resize();
-		// this.listener = window.addEventListener('resize', this.resize);
-		// this.lineLabels = d3.select(this.refs.paths)
-		// 	.selectAll(".foreign")
-		// 	.append("foreignObject")
-		// 	.attr({width: 40, height: 50})
-		// 	.append("xhtml:body")
-		// 	.html("<p>hello</p>");
-
-		// .select()
-		// .append("text")
-	},
-	resize() {
-		this.setState({ width: this.parent.clientWidth * .9 });
-	},
-	componentWillUnmount() {
-		window.removeEventListener('resize', this.resize)
 	},
 	xScale(v) {
 		let { xDomain, width } = this.state;
@@ -94,12 +76,12 @@ const OtherPlot = React.createClass({
 		let { yScale, xScale } = this;
 		let { history } = this.props;
 		let last = this.props.history[this.props.history.length - 1];
-		// vars.sort((a, b) => last[a[0]] > last[b[0]]);
-		let paths = _.map(vars, (v, i) => (
+		let paths = _.map(vars, v => (
 			<g className="g-path" key={v[0]}>
 					<path className='path'	d={this.pathMaker(history,'time',v[0])}  stroke={v[1]}/>
 					<g className='foreign' transform={`translate(${xScale(last.time)}, ${yScale(last[v[0]])})`}>
-						<foreignObject width="22px" height="50px" y="-10px" x={i*5}>
+						<line className="path-link" x1="0" x2={v[3]} y1="0" y2="0" stroke={v[1]} />
+						<foreignObject width="17px" height="50px" y="-.7em" x={v[3]}>
 							<body >
 								<Katexer string={v[2]}/>
 							</body>

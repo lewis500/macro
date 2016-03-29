@@ -58,7 +58,6 @@ const AppComponent = React.createClass({
 		return (
 			<div className='flex-container-row main'>
 				<div  className='flex-container-column'>
-					<Katexer string="\pi_e" />
 					<div>
 						<YPlot history={this.props.history} time={this.props.time}/>
 						<OtherPlot history={this.props.history} time={this.props.time}/>
