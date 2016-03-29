@@ -8,11 +8,11 @@
     // marker-end:url(#arrow);
 }
 
-.zero {
-    fill: none;
-    stroke: $md-grey-400;
-    stroke-dasharray: 3, 1;
-}
+// .zero {
+//     fill: none;
+//     stroke: $md-grey-400;
+//     stroke-dasharray: 10, 2;
+// }
 
 .path {
     fill: none;
@@ -22,4 +22,15 @@
 .path-link {
     stroke-width: 1px;
     stroke-dasharray: 1, 1;
+}
+
+
+.domain{
+    display: none;
+}
+
+.axis text {
+    fill: $md-grey-800;
+    font-size: 11px;
+    stroke: none;
 }

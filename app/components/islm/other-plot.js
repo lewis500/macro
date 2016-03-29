@@ -18,17 +18,20 @@ const Katexer = React.createClass({
 	mixins: [PureRenderMixin],
 	render() {
 		const rendered = katex.renderToString(this.props.string, { displayMode: true });
+		// let col = d3.hsl(this.props.col);
+		// col.s*=.89;
+		// col.l*=1.1;
 		return (
-			<span className="katex-span" dangerouslySetInnerHTML={ {__html: rendered } } />
+			<span className="katex-span" style={{color: this.props.col}} dangerouslySetInnerHTML={ {__html: rendered } } />
 		);
 	}
 })
 
 const vars = [
-	["r̄", col.green["500"], "\\bar{r}", 0],
-	["i", col.red["500"], "i", 12],
-	["π", col.pink["500"], "\\pi", 22],
-	["π_e", col.indigo['500'], "\\pi_e", 40],
+	["r̄", col.green["500"], "\\bar{r}", 0, col.green["600"]],
+	["i", col.red["500"], "i", 12, col.red["600"] ],
+	["π", col.pink["500"], "\\pi", 22, col.pink["600"],],
+	["π_e", col.indigo['500'], "\\pi_e", 40, col.indigo['600'],],
 ];
 
 const OtherPlot = React.createClass({
@@ -83,7 +86,7 @@ const OtherPlot = React.createClass({
 						<line className="path-link" x1="0" x2={v[3]} y1="0" y2="0" stroke={v[1]} />
 						<foreignObject width="17px" height="50px" y="-.7em" x={v[3]}>
 							<body >
-								<Katexer string={v[2]}/>
+								<Katexer string={v[2]} col={v[4]}/>
 							</body>
 						</foreignObject>
 					</g>

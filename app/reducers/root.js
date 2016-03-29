@@ -9,7 +9,7 @@ const reduceTick = (state, action) => {
 	let dt = action.dt / 1000;
 	let r = i - π_e;
 	let ϵ = rand() * .001;
-	let η = rand() * .1;
+	let η = rand() * .01;
 	const ẏ = -1 / σ * (r - r̄) + η;
 	y = ẏ * dt + y ; // with demand shock
 	const x = y - ȳ;

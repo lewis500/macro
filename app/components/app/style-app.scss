@@ -4,7 +4,7 @@ body {
     background-color: rgba($md-grey-200, 1);
 }
 .foreign body{
-    background-color: rgba($md-grey-300,.6);
+    // background-color: rgba($md-grey-300,.6);
 }
 
 .main {
@@ -38,7 +38,6 @@ div.is-slider {
     margin: 6px 2px;
     padding: 2px 5px;
     position: relative;
-    // padding: -5px;
 }
 
 foreignObject .katex .vlist>span{
@@ -84,7 +83,6 @@ button.btn {
 
 span.katex{
     font-size: 1.0em;
-    
 }
 
 // // .g-path .
