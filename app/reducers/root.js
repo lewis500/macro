@@ -5,18 +5,18 @@ let rand = d3.random.normal();
 
 
 const reduceTick = (state, action) => {
-	let { π_e, ȳ, y, ū, κ, σ, δ, β, r̄, i, Δ, time, history } = state;
+	let { πₑ, ȳ, y, ū, κ, σ, δ, β, r̄, i, Δ, time, history } = state;
 	let dt = action.dt / 1000;
-	let r = i - π_e;
+	let r = i - πₑ;
 	let ϵ = rand() * .001;
 	let η = rand() * .01;
 	const ẏ = -1 / σ * (r - r̄) + η;
 	y = ẏ * dt + y ; // with demand shock
 	const x = y - ȳ;
 	const u = Math.max(ū - 1 / β * (Math.exp(x) - 1), .01);
-	const π = π_e + κ * x ;
-	const π̇_e = δ * (π - π_e) + ϵ;
-	π_e = dt * π̇_e + π_e;
+	const π = πₑ + κ * x ;
+	const π̇_e = δ * (π - πₑ) + ϵ;
+	πₑ = dt * π̇_e + πₑ;
 	history = [
 		...history, {
 			y,
@@ -27,7 +27,7 @@ const reduceTick = (state, action) => {
 			ū,
 			π,
 			r̄,
-			π_e,
+			πₑ,
 			time: time + dt
 		}
 	];
@@ -35,7 +35,7 @@ const reduceTick = (state, action) => {
 	return {
 		...state,
 		history,
-		π_e,
+		πₑ,
 		y,
 		ȳ,
 		u,

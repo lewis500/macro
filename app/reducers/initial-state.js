@@ -4,7 +4,7 @@ const initialState = {
 	//variables
 	y: 1.0,
 	i: .03,
-	π_e: .03,
+	πₑ: .03,
 	r: 0,
 	π: .03,
 	u: .05,
@@ -19,6 +19,7 @@ const initialState = {
 	ū: .05,
 	β: 3,
 };
+
 
 initialState.history = [{...initialState}];
 

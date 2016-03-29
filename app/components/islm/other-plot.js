@@ -31,7 +31,7 @@ const vars = [
 	["r̄", col.green["500"], "\\bar{r}", 0, col.green["600"]],
 	["i", col.red["500"], "i", 12, col.red["600"] ],
 	["π", col.pink["500"], "\\pi", 22, col.pink["600"],],
-	["π_e", col.indigo['500'], "\\pi_e", 40, col.indigo['600'],],
+	["πₑ", col.indigo['500'], "\\pi_e", 40, col.indigo['600'],],
 ];
 
 const OtherPlot = React.createClass({
@@ -79,10 +79,11 @@ const OtherPlot = React.createClass({
 		let { yScale, xScale } = this;
 		let { history } = this.props;
 		let last = this.props.history[this.props.history.length - 1];
+		let x0 = xScale(last.time)
 		let paths = _.map(vars, v => (
 			<g className="g-path" key={v[0]}>
 					<path className='path'	d={this.pathMaker(history,'time',v[0])}  stroke={v[1]}/>
-					<g className='foreign' transform={`translate(${xScale(last.time)}, ${yScale(last[v[0]])})`}>
+					<g className='foreign' transform={`translate(${x0}, ${yScale(last[v[0]])})`}>
 						<line className="path-link" x1="0" x2={v[3]} y1="0" y2="0" stroke={v[1]} />
 						<foreignObject width="17px" height="50px" y="-.7em" x={v[3]}>
 							<body >
@@ -90,7 +91,8 @@ const OtherPlot = React.createClass({
 							</body>
 						</foreignObject>
 					</g>
-				</g>
+			</g>
+
 		));
 		return (
 			<div style={{...this.props.style}}>
