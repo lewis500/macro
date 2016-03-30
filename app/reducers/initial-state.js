@@ -3,15 +3,15 @@ const initialState = {
 	time: 0,
 	//variables
 	y: 1.0,
-	i: .03,
+	i: .04,
 	πₑ: .02,
-	r: .01,
+	r: .02,
 	π: .02,
 	u: .05,
 
 	//params
 	ȳ: 1.0,
-	r̄: .01,
+	r̄: .02,
 	ū: .05,
 
 	//\sigmas

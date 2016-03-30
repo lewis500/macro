@@ -17,7 +17,7 @@ const m = {
 const vars = [
 	["u", col.blue["500"], "u", 22, col.blue["600"]],
 	["π", col.pink["500"], "\\pi", 40, col.pink["600"]],
-	["ū", col["blue-grey"]['800'], "\\bar{u}", 0, col["blue-grey"]['800'], ],
+	// ["ū", col["blue-grey"]['800'], "\\bar{u}", 0, col["blue-grey"]['800'], ],
 ];
 
 const Katexer = React.createClass({
