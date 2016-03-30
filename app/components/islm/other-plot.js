@@ -26,9 +26,9 @@ const Katexer = React.createClass({
 
 const vars = [
 	["r̄", col.green["500"], "\\bar{r}", 0, col.green["600"]],
-	["i", col.indigo["500"], "i", 15, col.indigo["600"]],
-	["π", col.pink["500"], "\\pi", 25, col.pink["600"], ],
-	["πₑ", col.red['500'], "\\pi_e", 40, col.red['600'], ],
+	// ["π", col.red["400"], "\\pi", 45, col.red["500"], ],
+	["πₑ", col.red['800'], "\\pi_e", 15, col.red['800'], ],
+	["i", col.indigo["500"], "i", 32, col.indigo["600"]],
 ];
 
 const OtherPlot = React.createClass({
@@ -88,22 +88,7 @@ const OtherPlot = React.createClass({
 							</body>
 						</foreignObject>
 					</g>
-					<g className='g-real-r'>
-						<path 
-							className="real-r" 
-							d={
-								`M${width},${yScale(last.i)}L${width},${yScale(last.πₑ)}`
-							}/>
-							<g transform={`translate(${width}, ${ .5*yScale(last.i) + .5*yScale(last.πₑ) })`}>
-								<foreignObject width="17px" height="40px" y="-.7em" x={5}>
-									<body >
-										<Katexer string={"r"} col={col.green["600"]}/>
-									</body>
-								</foreignObject>
-							</g>
-					</g>
 			</g>
-
 		));
 		return (
 			<div style={{...this.props.style}}>
@@ -112,19 +97,7 @@ const OtherPlot = React.createClass({
 					width={width+m.left+m.right}
 					height={height+m.top+m.bottom}
 					>
-					<clipPath id="myClip" >
-						<rect 
-							y={-5}
-							width={width} 
-							height={height +5} />
-					</clipPath>
 					<g transform={`translate(${m.left},${m.top})`}>
-
-						<rect 
-							className='bg' 
-							width={width} 
-							height={height}/>
-
 						<Axis 
 							tickArguments={[5]}
 							classname='axis'
@@ -136,6 +109,28 @@ const OtherPlot = React.createClass({
 							innerTickSize={-width}
 						/>
 						<g ref='paths'>
+							<g className='g-real-r'>
+								<path 
+									className="real-r" 
+									d={
+										`M${width},${yScale(0)}L${width},${yScale(last.r)}`
+									}/>
+								<path 
+									className="path connector"
+									stroke={vars[2][1]}
+									d={`M${xScale(last.time)},${yScale(last.i)}L${width},${yScale(last.r)}`}/>
+								<path 
+									className="path connector"
+									stroke={vars[1][1]}
+									d={`M${xScale(last.time)},${yScale(last.πₑ)}L${width},${yScale(0)}`}/>	
+								<g transform={`translate(${width}, ${ yScale(last.r*.5)})`}>
+									<foreignObject width="17px" height="40px" y="-.7em" x={5}>
+										<body >
+											<Katexer string={"r"} col={col.green["600"]}/>
+										</body>
+									</foreignObject>
+								</g>
+							</g>
 							{paths}
 						</g>
 					</g>

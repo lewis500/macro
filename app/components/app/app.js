@@ -26,7 +26,7 @@ const SliderComponent = React.createClass({
 	},
 	render() {
 		const { min, max, value, variable, tex } = this.props;
-		const step = .005;
+		const step = .001;
 		return (
 			<div className='is-slider'>
 				<Katexer string={tex + '=' + d3.round(value,2)} />

@@ -1,0 +1,2230 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"subse",
+				"\\subsection{}"
+			],
+			[
+				"li",
+				"\\Leftrightarrow"
+			],
+			[
+				"subs",
+				"\\subsection{}"
+			],
+			[
+				"sub",
+				"\\subsection*{}"
+			],
+			[
+				"text",
+				"\\textwidth"
+			],
+			[
+				"int",
+				"\\int_{}^{}"
+			],
+			[
+				"num-e",
+				"num-exits"
+			],
+			[
+				"num",
+				"num-exits"
+			],
+			[
+				"reduce-",
+				"reduce-history"
+			],
+			[
+				"R",
+				"ROAD-LENGTH"
+			],
+			[
+				"signals",
+				"signals-create"
+			],
+			[
+				"offse",
+				"offset-r"
+			],
+			[
+				"offs",
+				"offset-a"
+			],
+			[
+				"off",
+				"offset-a"
+			],
+			[
+				"time",
+				"time-in-cycle"
+			],
+			[
+				"trans",
+				"translate"
+			],
+			[
+				"roun",
+				"round	Float -> Int"
+			],
+			[
+				"trave",
+				"traveling-grouped"
+			],
+			[
+				"NUM",
+				"num-signals"
+			],
+			[
+				"qu",
+				"queued-xs"
+			],
+			[
+				"next-car",
+				"next-car-x"
+			],
+			[
+				"next",
+				"next-queueing-x"
+			],
+			[
+				"next-re",
+				"next-red-x"
+			],
+			[
+				"nex",
+				"next-queueing"
+			],
+			[
+				"next-",
+				"next-queueing"
+			],
+			[
+				"tra",
+				"traveling-xs"
+			],
+			[
+				"space",
+				"SPACE"
+			],
+			[
+				"travelin",
+				"traveling-xs"
+			],
+			[
+				"new-",
+				"new-queueing"
+			],
+			[
+				"car",
+				"car-num"
+			],
+			[
+				"redu",
+				"redux-devtools-log-monitor"
+			],
+			[
+				"Dev",
+				"DevTools"
+			],
+			[
+				"red",
+				"redux-devtools"
+			],
+			[
+				"redux-",
+				"redux-devtools-dock-monitor"
+			],
+			[
+				"redux",
+				"redux-devtools-dock-monitor"
+			],
+			[
+				"reduce",
+				"reduce-cars"
+			],
+			[
+				"action",
+				"action-names"
+			],
+			[
+				"grid",
+				"grid-size-1"
+			],
+			[
+				"signal",
+				"signals-matrix"
+			],
+			[
+				"sign",
+				"signals"
+			],
+			[
+				"signa",
+				"signal-id"
+			],
+			[
+				"lanes",
+				"lanes-ew"
+			],
+			[
+				"create",
+				"createFactory"
+			],
+			[
+				"ract",
+				"react-dom"
+			],
+			[
+				"line",
+				"linechart"
+			],
+			[
+				"Line",
+				"line-chart"
+			],
+			[
+				"List",
+				"ListDivider"
+			],
+			[
+				"title",
+				"titlePart"
+			],
+			[
+				"Tool",
+				"ToolbarGroup"
+			],
+			[
+				"inter",
+				"interactions"
+			],
+			[
+				"_onMo",
+				"_onMouseDown"
+			],
+			[
+				"prop",
+				"PropTypes"
+			],
+			[
+				"life",
+				"lifeEventsAll"
+			],
+			[
+				"load",
+				"loadLifeEvents"
+			],
+			[
+				"form",
+				"formula_pred"
+			],
+			[
+				"formu",
+				"EN_formula"
+			],
+			[
+				"travel",
+				"traveling"
+			],
+			[
+				"EX_",
+				"EX_formula"
+			],
+			[
+				"cum",
+				"cum_exits"
+			],
+			[
+				"cum_",
+				"cum_entries"
+			],
+			[
+				"ti",
+				"entry_time"
+			],
+			[
+				"entry",
+				"entry_time"
+			],
+			[
+				"entr",
+				"entry_times"
+			],
+			[
+				"cells",
+				"cellsReduce"
+			],
+			[
+				"cars",
+				"carsReduce"
+			],
+			[
+				"math",
+				"mathBox"
+			],
+			[
+				"exit",
+				"exit_point"
+			],
+			[
+				"find",
+				"find_loc"
+			],
+			[
+				"JS",
+				"JSONStream"
+			],
+			[
+				"EN",
+				"EN_memory"
+			],
+			[
+				"loc",
+				"loc_next"
+			],
+			[
+				"SET_",
+				"SET_CYCLE"
+			],
+			[
+				"d",
+				"d_constraints"
+			],
+			[
+				"last",
+				"lastSignal"
+			],
+			[
+				"di",
+				"div"
+			],
+			[
+				"back",
+				"backward_entries"
+			],
+			[
+				"pause",
+				"pausePlay"
+			],
+			[
+				"map",
+				"mapStateToProps"
+			],
+			[
+				"set",
+				"SET_K"
+			],
+			[
+				"emi",
+				"emitChange"
+			],
+			[
+				"imm",
+				"Immutable"
+			],
+			[
+				"forward",
+				"forward_entries"
+			],
+			[
+				"calc",
+				"calc_entry"
+			],
+			[
+				"cal",
+				"calc_table"
+			],
+			[
+				"new",
+				"newSignal"
+			],
+			[
+				"coffee",
+				"coffee_reactify"
+			],
+			[
+				"error",
+				"errorHandler"
+			],
+			[
+				"err",
+				"errorHandler"
+			],
+			[
+				"ta",
+				"tasks (obj)"
+			],
+			[
+				"t",
+				"task (?)"
+			],
+			[
+				"make",
+				"make_signals"
+			],
+			[
+				"time_",
+				"time_stopped"
+			],
+			[
+				"_num",
+				"_num_cars"
+			],
+			[
+				"light",
+				"lights_backward"
+			],
+			[
+				"ligh",
+				"lights_backward"
+			],
+			[
+				"recre",
+				"recreate_cars"
+			],
+			[
+				"recreat",
+				"recreate_signals"
+			],
+			[
+				"res",
+				"reset_signals"
+			],
+			[
+				"assign",
+				"assign_error"
+			],
+			[
+				"assi",
+				"assign_error"
+			],
+			[
+				"eval",
+				"evalAsync"
+			],
+			[
+				"choose",
+				"choose_intersection"
+			],
+			[
+				"turn",
+				"turn_car"
+			],
+			[
+				"lane",
+				"lane_length"
+			],
+			[
+				"set_",
+				"set_beg_lane"
+			],
+			[
+				"inters",
+				"intersections"
+			],
+			[
+				"advan",
+				"advance_final"
+			],
+			[
+				"Cross",
+				"crossRoads"
+			],
+			[
+				"ng-attr-",
+				"ng-attr-transform"
+			],
+			[
+				"font",
+				"font-weight"
+			],
+			[
+				"reset",
+				"reset_offset"
+			],
+			[
+				"nu",
+				"num_signals"
+			],
+			[
+				"ch",
+				"change_signals"
+			],
+			[
+				"lengh",
+				"length-1"
+			],
+			[
+				"md-side",
+				"md-sidenav-left"
+			],
+			[
+				"sche",
+				"sched_pen"
+			],
+			[
+				"con",
+				"constructor"
+			],
+			[
+				"_unique",
+				"_uniqueId	Generates a unique ID. If prefix is passed, the ID will be appended to it"
+			],
+			[
+				"include",
+				"include{file}	latex-document"
+			],
+			[
+				"section",
+				"section{title}	latex-document"
+			],
+			[
+				"begin",
+				"begin{abstract}	latex-document"
+			],
+			[
+				"border-radi",
+				"border-top-right-radius"
+			],
+			[
+				"hili",
+				"hilited"
+			],
+			[
+				"client",
+				"clientWidth"
+			],
+			[
+				"templ",
+				"template"
+			],
+			[
+				"boar",
+				"boarding_paxes"
+			],
+			[
+				"bus",
+				"bus_velocity"
+			],
+			[
+				"dela",
+				"delay_timeout"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "/Users/lewis/Research/islm/islm.sublime-project",
+			"settings":
+			{
+				"buffer_size": 94,
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+		[
+			[
+				[
+					"Packages/LaTeX-Plus/support/LaTex-Plus.sublime-build",
+					""
+				],
+				[
+					"Packages/LaTeX-Plus/support/LaTex-Plus.sublime-build",
+					"Force"
+				]
+			],
+			[
+				"Packages/LaTeX-Plus/support/LaTex-Plus.sublime-build",
+				"Force"
+			]
+		],
+		[
+			[
+				[
+					"Packages/LaTeXing/LaTeX.sublime-build",
+					""
+				],
+				[
+					"Packages/LaTeXing/LaTeX.sublime-build",
+					"Clean up Files"
+				]
+			],
+			[
+				"Packages/LaTeXing/LaTeX.sublime-build",
+				""
+			]
+		],
+		[
+			[
+				[
+					"Packages/LaTeXing/LaTeX.sublime-build",
+					""
+				],
+				[
+					"Packages/LaTeXing/LaTeX.sublime-build",
+					"Clean up Files"
+				],
+				[
+					"Packages/LaTeXTools/LaTeX.sublime-build",
+					""
+				]
+			],
+			[
+				"Packages/LaTeXing/LaTeX.sublime-build",
+				""
+			]
+		],
+		[
+			[
+				[
+					"Packages/LaTeXing/LaTeX.sublime-build",
+					""
+				],
+				[
+					"Packages/LaTeXing/LaTeX.sublime-build",
+					"Primary Quick Build"
+				],
+				[
+					"Packages/LaTeXing/LaTeX.sublime-build",
+					"Choose Quick Build"
+				],
+				[
+					"Packages/LaTeXing/LaTeX.sublime-build",
+					"Clean up Files"
+				]
+			],
+			[
+				"Packages/LaTeXing/LaTeX.sublime-build",
+				"Primary Quick Build"
+			]
+		],
+		[
+			[
+				[
+					"Packages/Python/Python.sublime-build",
+					""
+				],
+				[
+					"Packages/Python/Python.sublime-build",
+					"Syntax Check"
+				]
+			],
+			[
+				"Packages/Python/Python.sublime-build",
+				""
+			]
+		]
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 267.0,
+		"last_filter": "dele",
+		"selected_items":
+		[
+			[
+				"dele",
+				"ANF: Delete Current File"
+			],
+			[
+				"prett",
+				"HTMLPrettify"
+			],
+			[
+				"count",
+				"LaTeXing: Texcount"
+			],
+			[
+				"disable",
+				"Package Control: Disable Package"
+			],
+			[
+				"new",
+				"ANF: New File"
+			],
+			[
+				"rena",
+				"ANF: Rename File"
+			],
+			[
+				"newf",
+				"ANF: New File"
+			],
+			[
+				"disab",
+				"Package Control: Disable Package"
+			],
+			[
+				"tex",
+				"LaTeXing: Texcount"
+			],
+			[
+				"coun",
+				"LaTeXing: Texcount"
+			],
+			[
+				"dsiabl",
+				"Package Control: Disable Package"
+			],
+			[
+				"renam",
+				"ANF: Rename File"
+			],
+			[
+				"inden",
+				"Indentation: Reindent Lines"
+			],
+			[
+				"clean",
+				"Build With: LaTeX - Clean up Files"
+			],
+			[
+				"rebuil",
+				"LaTeXing: Rebuild Cache (Hard)"
+			],
+			[
+				"text",
+				"LaTeXing: Texcount"
+			],
+			[
+				"rename",
+				"ANF: Rename File"
+			],
+			[
+				"texcoun",
+				"LaTeXing: Texcount"
+			],
+			[
+				"texc",
+				"LaTeXing: Changelog"
+			],
+			[
+				"te",
+				"LaTeXing: Texcount"
+			],
+			[
+				"newfi",
+				"ANF: New File"
+			],
+			[
+				"texoun",
+				"LaTeXing: Texcount"
+			],
+			[
+				"rebui",
+				"LaTeXing: Rebuild Cache (Hard)"
+			],
+			[
+				"texco",
+				"LaTeXing: Texcount"
+			],
+			[
+				"cach",
+				"LaTeXing: Rebuild Cache (Hard)"
+			],
+			[
+				"cache",
+				"LaTeXing: Rebuild Cache (Hard)"
+			],
+			[
+				"change",
+				"Changelog"
+			],
+			[
+				"textc",
+				"LaTeXing: Texcount"
+			],
+			[
+				"rbeuil",
+				"LaTeXing: Rebuild Cache (Hard)"
+			],
+			[
+				"build",
+				"Build With: LaTeX"
+			],
+			[
+				"citation",
+				"LaTeXing: Import Citation(s)"
+			],
+			[
+				"",
+				"ANF: Rename File"
+			],
+			[
+				"fold",
+				"LaTeXing: Fold Environment"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"reb",
+				"LaTeXing: Rebuild Cache (Hard)"
+			],
+			[
+				"latexin",
+				"LaTeXing: Texcount"
+			],
+			[
+				"rebu",
+				"LaTeXing: Rebuild Cache (Hard)"
+			],
+			[
+				"latex",
+				"LaTeXing: Fill"
+			],
+			[
+				"references",
+				"Preferences: LaTeXing Settings - Toggle Value"
+			],
+			[
+				"bro",
+				"Preferences: Browse Packages"
+			],
+			[
+				"snippet",
+				"Snippet: LaTeXing Option Dictionary"
+			],
+			[
+				"remove",
+				"Package Control: Remove Package"
+			],
+			[
+				"brows",
+				"Preferences: Browse Packages"
+			],
+			[
+				"setting",
+				"Preferences: Settings - User"
+			],
+			[
+				"key",
+				"Preferences: Key Bindings - User"
+			],
+			[
+				"jump",
+				"LaTeXing: Jump To PDF"
+			],
+			[
+				"quick",
+				"Build: Primary Quick Build"
+			],
+			[
+				"Snippet: ",
+				"Snippet: Cases"
+			],
+			[
+				"late",
+				"Preferences: LaTeXing Settings - Default"
+			],
+			[
+				"latexing",
+				"Preferences: LaTeXing Settings - Default"
+			],
+			[
+				"latexing fil",
+				"LaTeXing: Fill"
+			],
+			[
+				"licens",
+				"LaTeXing: Install License"
+			],
+			[
+				"inst",
+				"Package Control: Install Package"
+			],
+			[
+				"brow",
+				"Preferences: Browse Packages"
+			],
+			[
+				"update",
+				"Package Control: Upgrade/Overwrite All Packages"
+			],
+			[
+				"brwo",
+				"Preferences: Browse Packages"
+			],
+			[
+				"insta",
+				"Package Control: Install Package"
+			],
+			[
+				"NEWFIL",
+				"ANF: New File"
+			],
+			[
+				"delet",
+				"ANF: Delete Current File"
+			],
+			[
+				"jade",
+				"Set Syntax: Jade"
+			],
+			[
+				"copy",
+				"ANF: Copy Current File"
+			],
+			[
+				"choose",
+				"LaTeX-Plus: Choose Build System"
+			],
+			[
+				"isntall",
+				"Package Control: Install Package"
+			],
+			[
+				"new f",
+				"ANF: New File"
+			],
+			[
+				"delete",
+				"ANF: Delete File"
+			],
+			[
+				"todo",
+				"Origami: Restore Saved Layout"
+			],
+			[
+				"styles",
+				"Set Syntax: LESS"
+			],
+			[
+				"enable",
+				"Package Control: Enable Package"
+			],
+			[
+				"npm",
+				"npm: Install Package"
+			],
+			[
+				"disabl",
+				"Package Control: Disable Package"
+			],
+			[
+				"tern",
+				"tern_for_sublime: Select Variable"
+			],
+			[
+				"codec",
+				"CodeComplice: Dump Import Directories"
+			],
+			[
+				"sublimeco",
+				"SublimeCodeIntel: Enable Live Autocompletion for Current Language"
+			],
+			[
+				"dsiable",
+				"Package Control: Disable Package"
+			],
+			[
+				"anf",
+				"ANF: New File"
+			],
+			[
+				"del",
+				"ANF: Delete File"
+			],
+			[
+				"folder",
+				"Project: Add Folder"
+			],
+			[
+				"browse",
+				"Preferences: Browse Packages"
+			],
+			[
+				"vintage",
+				"Set Syntax: Vintageous Command Line"
+			],
+			[
+				"mini",
+				"View: Toggle Minimap"
+			],
+			[
+				"vinta",
+				"View: Toggle Minimap"
+			],
+			[
+				"remove pac",
+				"Package Control: Remove Package"
+			],
+			[
+				"package",
+				"Package Control: Enable Package"
+			],
+			[
+				"color",
+				"Color Picker"
+			],
+			[
+				"evaluate",
+				"Emmet: Evaluate Math Expression"
+			],
+			[
+				"coffee",
+				"Coffee: Display JavaScript"
+			],
+			[
+				"remove pack",
+				"Package Control: Remove Package"
+			],
+			[
+				"remove pa",
+				"Package Control: Remove Package"
+			],
+			[
+				"buick",
+				"Build With: LaTeX - Choose Quick Build"
+			],
+			[
+				"latexing sett",
+				"Preferences: LaTeXing Settings - Default"
+			],
+			[
+				"indent",
+				"Indentation: Reindent Lines"
+			],
+			[
+				"packa",
+				"Preferences: Browse Packages"
+			],
+			[
+				"installp",
+				"Package Control: Install Package"
+			],
+			[
+				"picke",
+				"Color Picker"
+			],
+			[
+				"pret",
+				"HTMLPrettify"
+			],
+			[
+				"coffe",
+				"Coffee: Check Syntax"
+			],
+			[
+				"Prett",
+				"HTMLPrettify"
+			],
+			[
+				"remo",
+				"Emmet: Remove Tag"
+			],
+			[
+				"remove ",
+				"Package Control: Remove Package"
+			],
+			[
+				"typescrip",
+				"TypeScript: FormatDocument"
+			],
+			[
+				"rett",
+				"HTMLPrettify"
+			],
+			[
+				"rpett",
+				"SublimeREPL: Petite Chez Scheme"
+			],
+			[
+				"prettt",
+				"HTMLPrettify: Set Keyboard Shortcuts"
+			],
+			[
+				"Prettt",
+				"HTMLPrettify: Set Keyboard Shortcuts"
+			],
+			[
+				"prtt",
+				"Preferences: Settings - Default"
+			],
+			[
+				"Pret",
+				"HTMLPrettify"
+			],
+			[
+				"pprett",
+				"HTMLPrettify: Set Prettify Preferences"
+			],
+			[
+				"Pprett",
+				"HTMLPrettify: Set Prettify Preferences"
+			],
+			[
+				"install ",
+				"Package Control: Install Package"
+			],
+			[
+				"main",
+				"LaTeXTools: Reconfigure and migrate settings"
+			],
+			[
+				"ma",
+				"SublimeREPL: Matlab"
+			],
+			[
+				"prefer",
+				"HTMLPrettify: Set Prettify Preferences"
+			],
+			[
+				"incom",
+				"AngularJS: Toggle - Disable Built-in Element Completions"
+			],
+			[
+				"install p",
+				"Package Control: Install Package"
+			],
+			[
+				"clear",
+				"LaTeX-Plus: Clean auxiliary files"
+			],
+			[
+				"pr",
+				"Preferences: Settings - User"
+			],
+			[
+				"pett",
+				"Preferences: Settings - Default"
+			],
+			[
+				"pre",
+				"Preferences: Settings - User"
+			],
+			[
+				"pretty",
+				"HTMLPrettify: Set Prettify Preferences"
+			]
+		],
+		"width": 300.0
+	},
+	"console":
+	{
+		"height": 146.0,
+		"history":
+		[
+			"import urllib.request,os,hashlib; h = '7183a2d3e96f11eeadd761d777e62404' + 'e330c659d4bb41d3bdf022e94cab3cd0'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://sublime.wbond.net/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": true
+	},
+	"file_history":
+	[
+		"/Users/lewis/Research/islm/app/reducers/islm.sublime-project",
+		"/Users/lewis/Research/islm/node_modules/lodash-es/isSymbol.js",
+		"/Users/lewis/Research/islm/app/components/islm/other-plot.js",
+		"/Users/lewis/Research/islm/app/style/style-charts.scss",
+		"/Users/lewis/Research/islm/app/components/app/app.js",
+		"/Users/lewis/Research/islm/app/reducers/root.js",
+		"/Users/lewis/Research/islm/app/reducers/initial-state.js",
+		"/Users/lewis/Research/islm/islm.sublime-project",
+		"/Users/lewis/Research/islm/node_modules/lodash/isSymbol.js",
+		"/Users/lewis/Research/islm/node_modules/core-js/modules/es7.map.to-json.js",
+		"/Users/lewis/Research/balances/app/components/market/style-market.scss",
+		"/Users/lewis/Research/balances/index.html",
+		"/Users/lewis/Research/balances/package.json",
+		"/Users/lewis/Research/islm/node_modules/lodash/initial.js",
+		"/Users/lewis/Research/islm/TO DO",
+		"/Users/lewis/Research/thesis/text/practice/conclusion.tex",
+		"/Users/lewis/Research/thesis/text/theory/theory-main.tex",
+		"/Users/lewis/Research/thesis/text/distance/distance-main.tex",
+		"/Users/lewis/Research/thesis/text/distance/deterministic.tex",
+		"/Users/lewis/Research/thesis/text/distance/probabalistic.tex",
+		"/Users/lewis/Research/thesis/text/distance/beta.tex",
+		"/Users/lewis/Desktop/PLANS/plans.sublime-project",
+		"/Users/lewis/Research/thesis/notes/TO DO",
+		"/Users/lewis/Research/thesis/text/distance/transit-model.tex",
+		"/Users/lewis/Research/thesis/text/distance/non-linear.tex",
+		"/Users/lewis/Research/thesis/text/distance/alternative-models.tex",
+		"/Users/lewis/Research/thesis/text/distance/non-lienar.tex",
+		"/Users/lewis/Research/thesis/text/theory/other.tex",
+		"/Users/lewis/Research/thesis/text/distance/intro.tex",
+		"/Users/lewis/Research/thesis/text/distance/evidence.tex",
+		"/Users/lewis/Research/thesis/text/distance/model-one.tex",
+		"/Users/lewis/Research/thesis/notes/OUTLINE",
+		"/Users/lewis/Research/thesis/text/distance/outline-distance",
+		"/Users/lewis/Research/thesis/text/practice/wireless.tex",
+		"/Users/lewis/Research/thesis/text/practice/manual.tex",
+		"/Users/lewis/Research/thesis/text/practice/intro.tex",
+		"/Users/lewis/Research/thesis/text/practice/camera.tex",
+		"/Users/lewis/Research/thesis/text/practice/practice-main.tex",
+		"/Users/lewis/Research/thesis/thesis.sublime-project",
+		"/Users/lewis/Research/thesis/text/practice2.tex",
+		"/Users/lewis/Research/thesis/.gitignore",
+		"/Users/lewis/Research/thesis/text/theory/traffic.tex",
+		"/Users/lewis/Research/thesis/text/theory/static.tex",
+		"/Users/lewis/Research/thesis/text/theory/bottleneck.tex",
+		"/Users/lewis/Research/thesis/text/theory/nef.tex",
+		"/Users/lewis/Downloads/streamplot_demo_features.py",
+		"/Users/lewis/Research/thesis/text/theory/conclusion.tex",
+		"/Users/lewis/Desktop/plan",
+		"/Users/lewis/Research/thesis/text/introduction.tex",
+		"/Users/lewis/Research/thesis/text/theory/schedule.tex",
+		"/Users/lewis/Research/thesis/text/theory/intro.tex",
+		"/Users/lewis/Research/thesis/text/theory4.tex",
+		"/Users/lewis/Research/thesis/text/practice/electronic.tex",
+		"/Users/lewis/Research/thesis/manual",
+		"/Users/lewis/Research/thesis/text/practice/als.tex",
+		"/Users/lewis/Research/thesis/text/practice/practice.sublime-settings",
+		"/Users/lewis/Research/thesis/text/outline",
+		"/Users/lewis/Research/thesis/text/theory/theory.sublime-project",
+		"/Users/lewis/Research/thesis/text/theory/theory5.tex",
+		"/Users/lewis/Research/thesis/text/theory/theory4.tex",
+		"/Users/lewis/Research/thesis/text/theory5.tex",
+		"/Users/lewis/Library/Application Support/Sublime Text 3/Packages/User/Default (OSX).sublime-keymap",
+		"/Users/lewis/Library/Application Support/Sublime Text 3/Packages/User/Preferences.sublime-settings",
+		"/Users/lewis/Library/Application Support/Sublime Text 3/Packages/User/my-snippets/ref.sublime-snippet",
+		"/Users/lewis/Library/Application Support/Sublime Text 3/Packages/User/ref.sublime-settings",
+		"/Users/lewis/Library/Application Support/Sublime Text 3/Packages/Default/Default (OSX).sublime-keymap",
+		"/Users/lewis/Library/Application Support/Sublime Text 3/Packages/Default/Preferences.sublime-settings",
+		"/Users/lewis/Library/Application Support/Sublime Text 3/Packages/LaTeXing/LaTeXing.sublime-settings",
+		"/Users/lewis/Library/Application Support/Sublime Text 3/Packages/User/LaTeXing.sublime-settings",
+		"/Users/lewis/Research/thesis/text/practice.tex",
+		"/Users/lewis/Library/Application Support/Sublime Text 3/Packages/LaTeXing/latexing/api/mendeley.map",
+		"/Users/lewis/Library/Application Support/Sublime Text 3/Packages/User/Default.sublime-keymap",
+		"/Users/lewis/Library/Application Support/Sublime Text 3/Packages/LaTeXing/Default.sublime-keymap",
+		"/Users/lewis/Research/thesis/text/theory3.tex",
+		"/Users/lewis/Research/thesis/text/theory2.tex",
+		"/Users/lewis/Library/Application Support/Sublime Text 3/Packages/WordCount/WordCount.sublime-settings",
+		"/Users/lewis/Library/Application Support/Sublime Text 3/Packages/LaTeX Word Count/LaTeXWordCount.sublime-settings",
+		"/Users/lewis/Research/thesis/text/theory.tex",
+		"/Users/lewis/Research/thesis/text/introduction2.tex",
+		"/Users/lewis/Research/thesis/text/distanceDependent.tex",
+		"/Users/lewis/Research/thesis/main/practice.tex",
+		"/Users/lewis/Research/thesis/main/distanceDependent.tex",
+		"/Users/lewis/Research/thesis/main/theory.tex",
+		"/Users/lewis/Research/thesis/images/distance.svg",
+		"/Users/lewis/Research/thesis/main/practice.bak0",
+		"/Users/lewis/Research/thesis/notes/THOUGHTS",
+		"/Users/lewis/Research/thesis/main/introduction2.tex",
+		"/Users/lewis/Research/thesis/main/introduction.tex",
+		"/Users/lewis/Research/thesis/introduction.tex",
+		"/Users/lewis/Research/thesis/main/introduction",
+		"/Users/lewis/Research/thesis/OUTLINE",
+		"/Users/lewis/Research/thesis/main/lyx/theory.tex",
+		"/Users/lewis/Research/thesis/main/lyx/distanceDependent.tex",
+		"/Users/lewis/Research/thesis/main/practice2.tex",
+		"/Users/lewis/Research/thesis/main/lyx/main.lyx",
+		"/Users/lewis/Research/thesis/main/main.lyx",
+		"/Users/lewis/Research/macro-offsets/app/reducers/root.ls",
+		"/Users/lewis/Research/macro-offsets/app/reducers/reducers.ls",
+		"/Users/lewis/Research/macro-offsets/app/components/cum-chart.ls",
+		"/Users/lewis/Research/macro-offsets/app/reducers/formula-reducer.ls",
+		"/Users/lewis/Research/macro-offsets/TODO",
+		"/Users/lewis/Research/macro-offsets/app/components/header.ls",
+		"/Users/lewis/Research/macro-offsets/app/reducers/mfd-reducer.ls",
+		"/Users/lewis/Research/macro-offsets/app/style/main.scss",
+		"/Users/lewis/Research/macro-offsets/app/components/mfd-chart.ls",
+		"/Users/lewis/Research/macro-offsets/app/components/ring-road.ls",
+		"/Users/lewis/Research/macro-offsets/node_modules/node-sass/src/libsass/src/memory_manager.cpp",
+		"/Users/lewis/Research/macro-offsets/package.json",
+		"/Users/lewis/Research/isttt/TODO",
+		"/Users/lewis/Research/isttt/app/components/cum-chart.ls",
+		"/Users/lewis/Research/isttt/app/components/app.ls",
+		"/Users/lewis/Research/isttt/webpack.config.js",
+		"/Users/lewis/Research/isttt/package.json",
+		"/Users/lewis/Research/isttt/app/components/mfd-chart.ls",
+		"/Users/lewis/Research/isttt/app/reducers/root.ls",
+		"/Users/lewis/Research/isttt/node_modules/classnames/benchmarks/run.js",
+		"/Users/lewis/Research/talk/ring-road/app/style/main.scss",
+		"/Users/lewis/Research/talk/ring-road/app/style/style-charts.scss",
+		"/Users/lewis/Research/talk/ring-road/app/components/mfd-chart.ls",
+		"/Users/lewis/Research/talk/TO DO",
+		"/Users/lewis/Research/talk/slides/slide-1.jade",
+		"/Users/lewis/Research/talk/ring-road/app/components/cum-chart.ls",
+		"/Users/lewis/Research/talk/ring-road/app/reducers/root.ls",
+		"/Users/lewis/Research/talk/ring-road/app/components/app.ls",
+		"/Users/lewis/Research/talk/ring-road/app/components/slider.ls",
+		"/Users/lewis/Research/talk/ring-road/app/main.ls",
+		"/Users/lewis/Research/talk/css/custom.css",
+		"/Users/lewis/Research/multichannel/app/style/style-charts.scss"
+	],
+	"find":
+	{
+		"height": 35.0
+	},
+	"find_in_files":
+	{
+		"height": 93.0,
+		"where_history":
+		[
+			"/Users/lewis/Research/thesis/notes",
+			"/Users/lewis/Research/thesis",
+			"/Users/lewis/Research/diffEQ_new/app",
+			"/Users/lewis/Research/diffEQ_new",
+			"/Users/lewis/Research/bus/app",
+			"/Users/lewis/Research/bus",
+			"/Users/lewis/Research/no_distance",
+			"/Users/lewis/Documents/nerdwallet",
+			"/Users/lewis/Documents/diffeq2",
+			"/Users/lewis/Documents/solver",
+			"/Users/lewis/Documents/solver/js",
+			""
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"800",
+			"400",
+			"700",
+			"32",
+			"15",
+			"real",
+			"rc",
+			"slider",
+			"is-sl",
+			"rece",
+			"mycli",
+			"extent",
+			"button",
+			"btn",
+			"pause",
+			"values",
+			"different",
+			"consider",
+			"veriefied",
+			"drops",
+			"below",
+			"cars",
+			"is",
+			"And",
+			"must",
+			"driving",
+			"system",
+			"follows from the",
+			"logit",
+			"which",
+			"distribution",
+			"sake of",
+			"quantity",
+			"flow",
+			"$.\n",
+			"negative",
+			"simple",
+			"correspondance",
+			"Gamma",
+			"Gugabel",
+			"m",
+			"of",
+			"car",
+			"}\n",
+			"relative",
+			"for",
+			"is",
+			"be",
+			"accord",
+			"advatnage",
+			"that",
+			"is",
+			"*}\n",
+			"rightarrow",
+			"Therefore",
+			"Consequences",
+			"lowers",
+			"its",
+			"becomes",
+			"means",
+			"hat",
+			"that",
+			"varepislon_i",
+			"Gumbel",
+			"beta",
+			"equation",
+			"logic",
+			"will",
+			"location",
+			"hard",
+			"city",
+			"clogged",
+			"reaching",
+			"utilities",
+			"Here",
+			"model",
+			"teh",
+			"very",
+			"likely",
+			"particular",
+			"would",
+			"accept",
+			"assumes",
+			"Section",
+			"means",
+			"COVERING",
+			"prbabalistic",
+			"Rationale",
+			"approach",
+			"fact",
+			"was",
+			"Intuitively",
+			"deterministic",
+			"beta",
+			"ncol",
+			"-1",
+			"width",
+			"compos",
+			"viewport",
+			"flow",
+			"benefit",
+			"and the bifur",
+			"inverse d",
+			"illustrative",
+			"point",
+			"net cost",
+			"^d",
+			"^s",
+			"lmin",
+			"begin",
+			"support",
+			"\\min",
+			"l_{\\max}",
+			"min",
+			"l_{\\min}",
+			"_c",
+			"questi",
+			"established",
+			"optimal",
+			"tolling",
+			"point",
+			"until",
+			"those",
+			"It",
+			"toward",
+			"space",
+			"explains",
+			"several"
+		],
+		"highlight": false,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"_d",
+			"_s",
+			"\\lmax",
+			"\\lmin",
+			"\\ulmin",
+			"",
+			"p",
+			"",
+			"t",
+			"c",
+			"vanpool",
+			"\\ul",
+			"\\phat",
+			"ul",
+			"\\",
+			"\\\\",
+			"",
+			"citep",
+			"../../images",
+			"\\citet{Pigou1920}",
+			"$q",
+			"$Q$",
+			"(q)",
+			"^W",
+			"^V",
+			"^{V}",
+			"^{H}",
+			"^H",
+			"\\hat{v}(k)",
+			"\\hat{v}[",
+			"\\tilde{t}",
+			"\\tilde{w}",
+			"citet",
+			"\\citet",
+			"\\citet{Arnott2013}",
+			"\\citet{SmallChu2003}",
+			"\\citet{Walters1961}",
+			"\\citet{Chu1995}",
+			"\\citet{Henderson1981}",
+			"\\citet{vickrey1969}",
+			"p(t)",
+			"{w}",
+			"$w",
+			"w(t)",
+			"/min",
+			"(min)",
+			"e(",
+			"t(",
+			"a(t",
+			"P",
+			"P(t)",
+			"e'",
+			"(e",
+			"$e",
+			"e(",
+			"T'",
+			"T'(",
+			"T(",
+			"pl.scan",
+			"history",
+			"reds-xs",
+			"_.uniqueId",
+			"_.find-last",
+			"pl.fold",
+			"pl.tail",
+			"pl.find",
+			"pl.partition",
+			"pl.concat",
+			"pl.minimum",
+			"pl.max",
+			"pl.each",
+			"pl.sort-by",
+			"pl.filter",
+			"_.sample",
+			"pl.map",
+			"",
+			"AA",
+			"-",
+			"GRID-SIZE",
+			"LANE-LENGTH",
+			"grid-size",
+			"list",
+			"end",
+			"start",
+			"tail",
+			"head",
+			"first",
+			"md-",
+			"lg-",
+			"md-",
+			"className=",
+			",",
+			":",
+			"cars",
+			"",
+			".name",
+			"[data-layout",
+			"[data-flex",
+			"data-layout",
+			"data-flex",
+			"SS",
+			"UU",
+			"",
+			"S.",
+			"",
+			"intersection",
+			"type",
+			"",
+			"S",
+			"S.",
+			"traveling",
+			"remove",
+			"colors",
+			"receive",
+			"t_ex",
+			"t_en",
+			"",
+			"centroid",
+			"yellow",
+			"",
+			"trbcite",
+			"",
+			"90",
+			"@",
+			"S",
+			" ",
+			"S",
+			"@Hor"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": false
+	},
+	"groups":
+	[
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "/Users/lewis/Research/islm/islm.sublime-project",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 94,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								35,
+								35
+							]
+						],
+						"settings":
+						{
+							"WordCount":
+							{
+								"changes": -1,
+								"modified": true,
+								"selection": true,
+								"status": -1,
+								"syntax": "json"
+							},
+							"syntax": "Packages/JavaScript/JSON.sublime-syntax"
+						},
+						"translation.x": 7.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				}
+			]
+		},
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 22.0
+	},
+	"input":
+	{
+		"height": 29.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			],
+			[
+				1,
+				0,
+				2,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			0.5,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.doc":
+	{
+		"height": 0.0
+	},
+	"output.exec":
+	{
+		"height": 100.0
+	},
+	"output.find_results":
+	{
+		"height": 100.0
+	},
+	"pinned_build_system": "",
+	"project": "islm.sublime-project",
+	"replace":
+	{
+		"height": 40.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"islm",
+				"app/reducers/islm.sublime-project"
+			],
+			[
+				"islm.",
+				"node_modules/lodash-es/isSymbol.js"
+			],
+			[
+				"initial",
+				"app/reducers/initial-state.js"
+			],
+			[
+				"root.js",
+				"app/reducers/root.js"
+			],
+			[
+				"other",
+				"app/components/islm/other-plot.js"
+			],
+			[
+				"islm.js",
+				"node_modules/lodash/isSymbol.js"
+			],
+			[
+				"app.js",
+				"app/components/app/app.js"
+			],
+			[
+				"ap.js",
+				"node_modules/core-js/modules/es7.map.to-json.js"
+			],
+			[
+				"style-ch",
+				"app/style/style-charts.scss"
+			],
+			[
+				"other-p",
+				"app/components/islm/other-plot.js"
+			],
+			[
+				"style-",
+				"app/components/market/style-market.scss"
+			],
+			[
+				"text.js",
+				"app/components/app/text.js"
+			],
+			[
+				"index",
+				"index.html"
+			],
+			[
+				"package",
+				"package.json"
+			],
+			[
+				"text",
+				"app/components/app/text.js"
+			],
+			[
+				"initial-s",
+				"app/reducers/initial-state.js"
+			],
+			[
+				"todo",
+				"TO DO"
+			],
+			[
+				"count",
+				"text/practice/conclusion.tex"
+			],
+			[
+				"distace-main",
+				"text/distance/distance-main.tex"
+			],
+			[
+				"-main",
+				"text/theory/theory-main.tex"
+			],
+			[
+				"determ",
+				"text/distance/deterministic.tex"
+			],
+			[
+				"distance-ma",
+				"text/distance/distance-main.tex"
+			],
+			[
+				"beta",
+				"text/distance/beta.tex"
+			],
+			[
+				"plott",
+				"app/plotter.py"
+			],
+			[
+				"distance-m",
+				"text/distance/distance-main.tex"
+			],
+			[
+				"transit",
+				"text/distance/transit-model.tex"
+			],
+			[
+				"dista",
+				"text/distance/distance-main.tex"
+			],
+			[
+				"distance-",
+				"text/distance/distance-main.tex"
+			],
+			[
+				"transi",
+				"text/distance/transit-model.tex"
+			],
+			[
+				"alter",
+				"text/distance/alternative-models.tex"
+			],
+			[
+				"model",
+				"text/distance/model-one.tex"
+			],
+			[
+				"distance-o",
+				"text/distance/outline-distance"
+			],
+			[
+				"outlin",
+				"notes/OUTLINE"
+			],
+			[
+				"mdoel-o",
+				"text/distance/model-one.tex"
+			],
+			[
+				"dist",
+				"text/distance/distance-main.tex"
+			],
+			[
+				"practice-ma",
+				"text/practice/practice-main.tex"
+			],
+			[
+				"practice-m",
+				"text/practice/practice-main.tex"
+			],
+			[
+				"camera",
+				"text/practice/camera.tex"
+			],
+			[
+				"sublime-",
+				"thesis.sublime-project"
+			],
+			[
+				"pract",
+				"text/practice2.tex"
+			],
+			[
+				"theory",
+				"text/theory/theory-main.tex"
+			],
+			[
+				"intro.",
+				"text/practice/intro.tex"
+			],
+			[
+				"camera.",
+				"text/practice/camera.tex"
+			],
+			[
+				"wire",
+				"text/practice/wireless.tex"
+			],
+			[
+				"manual",
+				"text/practice/manual.tex"
+			],
+			[
+				"manua",
+				"text/practice/manual.tex"
+			],
+			[
+				"intro",
+				"text/introduction.tex"
+			],
+			[
+				"nef",
+				"text/theory/nef.tex"
+			],
+			[
+				"bottl",
+				"text/theory/bottleneck.tex"
+			],
+			[
+				"bottlene",
+				"text/theory/bottleneck.tex"
+			],
+			[
+				"static",
+				"text/theory/static.tex"
+			],
+			[
+				"theory-m",
+				"text/theory/theory-main.tex"
+			],
+			[
+				"schedule",
+				"text/theory/schedule.tex"
+			],
+			[
+				"traffic",
+				"text/theory/traffic.tex"
+			],
+			[
+				"practice.",
+				"text/practice2.tex"
+			],
+			[
+				"other.t",
+				"text/theory/other.tex"
+			],
+			[
+				"practice",
+				"text/practice2.tex"
+			],
+			[
+				"static.",
+				"text/theory/static.tex"
+			],
+			[
+				"conclu",
+				"text/theory/conclusion.tex"
+			],
+			[
+				"practice2.te",
+				"text/practice2.tex"
+			],
+			[
+				"theory4",
+				"text/theory4.tex"
+			],
+			[
+				"theor4",
+				"text/theory4.tex"
+			],
+			[
+				"theory-",
+				"text/theory/theory-main.tex"
+			],
+			[
+				"bottle",
+				"text/theory/bottleneck.tex"
+			],
+			[
+				"theory-ma",
+				"text/theory/theory-main.tex"
+			],
+			[
+				"intro.t",
+				"text/theory/intro.tex"
+			],
+			[
+				"traff",
+				"text/theory/traffic.tex"
+			],
+			[
+				"theorym",
+				"text/theory/theory-main.tex"
+			],
+			[
+				"theory5",
+				"text/theory5.tex"
+			],
+			[
+				"practice2",
+				"text/practice2.tex"
+			],
+			[
+				"practice.t",
+				"text/practice2.tex"
+			],
+			[
+				"theory.t",
+				"text/theory4.tex"
+			],
+			[
+				"practice.te",
+				"text/practice.tex"
+			],
+			[
+				"too",
+				"notes/TO DO"
+			],
+			[
+				"theory3",
+				"text/theory3.tex"
+			],
+			[
+				"theory2",
+				"text/theory2.tex"
+			],
+			[
+				"subli",
+				"thesis.sublime-project"
+			],
+			[
+				"theory4.",
+				"text/theory4.tex"
+			],
+			[
+				"theor",
+				"text/theory4.tex"
+			],
+			[
+				"theory.te",
+				"text/theory.tex"
+			],
+			[
+				"theor2",
+				"text/theory2.tex"
+			],
+			[
+				"distance",
+				"text/distanceDependent.tex"
+			],
+			[
+				"prac",
+				"text/practice.tex"
+			],
+			[
+				"distance.te",
+				"main/distanceDependent.tex"
+			],
+			[
+				"outline",
+				"notes/OUTLINE"
+			],
+			[
+				"practice.tex",
+				"main/practice.tex"
+			],
+			[
+				"out",
+				"notes/OUTLINE"
+			],
+			[
+				"practi",
+				"main/practice2.tex"
+			],
+			[
+				"formul",
+				"app/reducers/formula-reducer.ls"
+			],
+			[
+				"root",
+				"app/reducers/root.ls"
+			],
+			[
+				"reduc",
+				"app/reducers/reducers.ls"
+			],
+			[
+				"formula",
+				"app/reducers/formula-reducer.ls"
+			],
+			[
+				"cum-ch",
+				"app/components/cum-chart.ls"
+			],
+			[
+				"cum-",
+				"app/components/cum-chart.ls"
+			],
+			[
+				"redu",
+				"app/reducers/reducers.ls"
+			],
+			[
+				"formu",
+				"app/reducers/formula-reducer.ls"
+			],
+			[
+				"mfd-re",
+				"app/reducers/mfd-reducer.ls"
+			],
+			[
+				"main.scss",
+				"app/style/main.scss"
+			],
+			[
+				"head",
+				"app/components/header.ls"
+			],
+			[
+				"mfd-ch",
+				"app/components/mfd-chart.ls"
+			],
+			[
+				"ring-road",
+				"app/components/ring-road.ls"
+			],
+			[
+				"ring-ro",
+				"app/components/ring-road.ls"
+			],
+			[
+				"memory",
+				"node_modules/node-sass/src/libsass/src/memory_manager.cpp"
+			],
+			[
+				"red",
+				"app/reducers/reducers.ls"
+			],
+			[
+				"packa",
+				"package.json"
+			],
+			[
+				"slider",
+				"app/components/slider.ls"
+			],
+			[
+				"slider.ls",
+				"app/components/slider.ls"
+			],
+			[
+				"app",
+				"app/components/app.ls"
+			],
+			[
+				"run",
+				"node_modules/classnames/benchmarks/run.js"
+			],
+			[
+				"package.json",
+				"package.json"
+			],
+			[
+				"web",
+				"webpack.config.js"
+			],
+			[
+				"mfd-c",
+				"app/components/mfd-chart.ls"
+			],
+			[
+				"style-c",
+				"app/style/style-charts.scss"
+			],
+			[
+				"slide-",
+				"slides/slide-1.jade"
+			],
+			[
+				"slide-1",
+				"slides/slide-1.jade"
+			],
+			[
+				"to",
+				"TO DO"
+			],
+			[
+				"cum-c",
+				"ring-road/app/components/cum-chart.ls"
+			],
+			[
+				"slide",
+				"slides/slide-1.jade"
+			],
+			[
+				"main.ls",
+				"ring-road/app/main.ls"
+			],
+			[
+				"custom",
+				"css/custom.css"
+			],
+			[
+				"drop-",
+				"app/components/drop-chart.ls"
+			],
+			[
+				"index.html",
+				"index.html"
+			],
+			[
+				"ind",
+				"node_modules/webpack/node_modules/enhanced-resolve/lib/ModulesInDirectoriesPlugin.js"
+			],
+			[
+				"packa.js",
+				"ring-road/package.json"
+			],
+			[
+				"packa.json",
+				"ring-road/package.json"
+			],
+			[
+				"styl",
+				"ring-road/app/style/style-charts.scss"
+			],
+			[
+				"rig-r",
+				"ring-road/app/components/ring-road.ls"
+			],
+			[
+				"slid",
+				"slides/slide-1.jade"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"anal",
+				"~/github/valet-analytics/valet.sublime-project"
+			],
+			[
+				"",
+				"~/github/economics-plot/econPlot.sublime-project"
+			],
+			[
+				"val",
+				"~/github/valet-analytics/valet.sublime-project"
+			]
+		],
+		"width": 380.0
+	},
+	"select_symbol":
+	{
+		"height": 392.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 409.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": false,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 181.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

@@ -14,6 +14,12 @@ const m = {
 	right: 15
 };
 
+const vars = [
+	["r̄", col.green["500"], "\\bar{r}", 0, col.green["600"]],
+	["πₑ", col.red['800'], "\\pi_e", 15, col.red['800'], ],
+	["i", col.indigo["500"], "i", 32, col.indigo["600"]],
+];
+
 const YPlot = React.createClass({
 	mixins: [PureRenderMixin],
 	getInitialState() {
@@ -23,18 +29,6 @@ const YPlot = React.createClass({
 			width: 500,
 			height: 160
 		};
-	},
-	componentDidMount() {
-		let domNode = findDOMNode(this);
-		this.parent = domNode.parentElement;
-		this.resize();
-		this.listener = window.addEventListener('resize', this.resize);
-	},
-	resize() {
-		this.setState({ width: this.parent.clientWidth * .9 });
-	},
-	componentWillUnmount() {
-		window.removeEventListener('resize', this.resize)
 	},
 	xScale(v) {
 		let { xDomain, width } = this.state;
@@ -85,18 +79,7 @@ const YPlot = React.createClass({
 					width={width+m.left+m.right}
 					height={height+m.top+m.bottom}
 					>
-					<clipPath id="myClip" >
-						<rect 
-							y={-5}
-							width={width} 
-							height={height +5} />
-					</clipPath>
 					<g transform={`translate(${m.left},${m.top})`}>
-
-						<rect 
-							className='bg' 
-							width={width} 
-							height={height}/>
 
 						<Axis 
 							tickArguments={[5]}

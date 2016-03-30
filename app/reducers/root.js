@@ -5,7 +5,7 @@ let rand = d3.random.normal();
 
 
 const reduceTick = (state, action) => {
-	let { πₑ, ȳ, y, ū, κ, σ, δ, β, r̄, i, Δ, time, history } = state;
+	let { πₑ, ȳ, y, ū, u, κ, σ, δ, β, r̄, i, Δ, time, history } = state;
 	let dt = action.dt / 1000;
 	let r = i - πₑ;
 	let ϵ = rand() * .001;
@@ -13,7 +13,11 @@ const reduceTick = (state, action) => {
 	const ẏ = -1 / σ * (r - r̄) + η;
 	y = ẏ * dt + y ; // with demand shock
 	const x = y - ȳ;
-	const u = Math.max(ū - 1 / β * (Math.exp(x) - 1), .01);
+	// con
+	const u̇ = 1/β * ẏ;
+	u = u + u̇*dt;
+	// u1 = 
+	const u1 = Math.max(ū - 1 / β * (Math.exp(x) - 1), .01);
 	const π = πₑ + κ * x ;
 	const π̇_e = δ * (π - πₑ) + ϵ;
 	πₑ = dt * π̇_e + πₑ;
@@ -23,6 +27,7 @@ const reduceTick = (state, action) => {
 			ȳ,
 			i,
 			u,
+			u1,
 			r,
 			ū,
 			π,

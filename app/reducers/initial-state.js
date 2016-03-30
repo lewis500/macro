@@ -8,6 +8,7 @@ const initialState = {
 	r: 0,
 	π: .03,
 	u: .05,
+	u1: .05,
 
 	//params
 	ȳ: 1.0,
