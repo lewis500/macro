@@ -3,31 +3,28 @@ import _ from 'lodash';
 import initialState from './initial-state';
 let rand = d3.random.normal();
 
+// const u = Math.max(ū - 1 / β * (Math.exp(x) - 1), .01); //other way to calculate u
 
 const reduceTick = (state, action) => {
-	let { πₑ, ȳ, y, ū, u, κ, σ, δ, β, r̄, i, Δ, time, history } = state;
-	let dt = action.dt / 1000;
-	let r = i - πₑ;
-	let ϵ = rand() * .001;
-	let η = rand() * .01;
-	const ẏ = -1 / σ * (r - r̄) + η;
-	y = ẏ * dt + y ; // with demand shock
-	const x = y - ȳ;
-	// con
-	const u̇ = 1/β * ẏ;
-	u = u + u̇*dt;
-	// u1 = 
-	const u1 = Math.max(ū - 1 / β * (Math.exp(x) - 1), .01);
-	const π = πₑ + κ * x ;
-	const π̇_e = δ * (π - πₑ) + ϵ;
-	πₑ = dt * π̇_e + πₑ;
+	let { πₑ, y, u, time, history } = state;
+	const { σπₑ, σπ, σy, σu, ȳ, ū, r̄, i } = state;
+	const dt = action.dt / 1000;
+	const r = i - πₑ;
+	const ϵ = rand() * .001;
+	const η = rand() * .01;
+	const ẏ = -(r - r̄) / σy + η;
+	y += ẏ * dt; // with demand shock
+	const u̇ = -ẏ / σu;
+	u += u̇ * dt;
+	const π = πₑ + (y - ȳ) / σπ;
+	const π̇_e = (π - πₑ) / σπₑ + ϵ;
+	πₑ += dt * π̇_e;
 	history = [
 		...history, {
 			y,
 			ȳ,
 			i,
 			u,
-			u1,
 			r,
 			ū,
 			π,

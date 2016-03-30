@@ -22,7 +22,7 @@ const Katexer = React.createClass({
 			<span className="katex-span" style={{color: this.props.col}} dangerouslySetInnerHTML={ {__html: rendered } } />
 		);
 	}
-})
+});
 
 const vars = [
 	["r̄", col.green["500"], "\\bar{r}", 0, col.green["600"]],
