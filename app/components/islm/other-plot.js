@@ -36,7 +36,7 @@ const OtherPlot = React.createClass({
 	mixins: [PureRenderMixin],
 	getInitialState() {
 		return {
-			xDomain: [1, 100],
+			xDomain: [0, 7.5],
 			yDomain: [0,.1],
 			width: 500,
 			height: 160
@@ -67,9 +67,6 @@ const OtherPlot = React.createClass({
 			history[0].time,
 			history[history.length - 1].time + 2.5
 		];
-		// let values = _.flatten(_.map(nextProps.history, d => _.map(vars, v => d[v[0]])));
-		// let yDomain = d3.extent(values);
-		// yDomain[0] = Math.min(0, yDomain[0])
 		this.setState({ xDomain })
 	},
 	onChange(ypx){

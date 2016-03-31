@@ -48,10 +48,27 @@ const reduceTick = (state, action) => {
 	};
 };
 
+const reset = (state) => {
+	let z = {
+		time: 5,
+		//variables
+		y: 1.0,
+		i: .04,
+		πₑ: .02,
+		r: .02,
+		π: .02,
+		u: .05
+	};
+	state.history = _.map(_.range(0, 5, .003), time => ({...z, time }))
+	return {...state, ...z };
+};
+
 const rootReduce = (state = initialState, action) => {
 	switch (action.type) {
 		case 'TICK':
 			return reduceTick(state, action);
+		case 'RESET':
+			return reset(state);
 		case 'SET_VARIABLE':
 			return {
 				...state,

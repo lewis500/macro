@@ -10,4 +10,5 @@ var template = (
 	  <App />
 	</Provider>
 );
+store.dispatch({type:'RESET'});
 ReactDOM.render(template, document.getElementById('root'));

@@ -1,6 +1,5 @@
 const initialState = {
-	history: [],
-	time: 0,
+	time: 5,
 	//variables
 	y: 1.0,
 	i: .04,
@@ -22,6 +21,7 @@ const initialState = {
 };
 
 
-initialState.history = [{...initialState}];
+// initialState.history = _
+// [{...initialState, time:1},{...initialState}];
 
 export default initialState;
