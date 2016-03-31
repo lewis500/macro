@@ -53,13 +53,16 @@ const AppComponent = React.createClass({
 				});
 		}
 	},
+	reset(){
+		this.dispatch({type: 'RESET'});
+	},
 	render() {
 		return (
-			<div className='flex-container-row main'>
-				<div  className='flex-container-column'>
-					<OtherPlot />
-					<button className="btn" onClick={this.pausePlay}>{this.paused ? 'PLAY' : 'PAUSE'}</button>
-
+			<div className='flex-container-column'>
+				<OtherPlot />
+				<div className='flex-container-row'>
+					<button className="btn" onClick={this.pausePlay} style={{flexBasis: '50%'}}>{this.paused ? 'PLAY' : 'PAUSE'}</button>
+					<button className="btn" onClick={this.reset} style={{flexBasis: '50%'}}>RESET</button>
 				</div>
 			</div>
 		);
