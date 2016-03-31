@@ -5,8 +5,6 @@ import d3 from 'd3';
 import './style-app.scss';
 import OtherPlot from '../islm/other-plot';
 import d3Timer from 'd3-timer';
-import Rcslider from 'rc-slider';
-import 'rc-slider/assets';
 
 const Katexer = props => {
 	const rendered = katex.renderToString(props.string, { displayMode: false });
