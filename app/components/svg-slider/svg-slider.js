@@ -27,17 +27,17 @@ const SvgSlider = React.createClass({
 			if (dragging) {
 				circ.transition()
 					.duration(200)
-					.attr('r', 5);
+					.attr('r', 6);
 					return;
 			}
 			circ.transition('grow')
 				.duration(700)
 				.ease('cubic')
-				.attr("r", 6)
+				.attr("r", 7.5)
 				.transition('grow')
 				.duration(1000)
 				.ease('cubic')
-				.attr('r', 3.5)
+				.attr('r', 4)
 				.each('end', a);
 		}
 		a();
@@ -50,7 +50,7 @@ const SvgSlider = React.createClass({
 					className='circle-handle' 
 					transform={`translate(0,${ypx})`}
 					stroke={'white'}
-					r={5}/>
+					r={6}/>
 			</g>
 		);
 	}

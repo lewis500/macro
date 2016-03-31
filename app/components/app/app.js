@@ -9,7 +9,7 @@ import Rcslider from 'rc-slider';
 import 'rc-slider/assets';
 
 const Katexer = props => {
-	const rendered = katex.renderToString(props.string, { displayMode: true });
+	const rendered = katex.renderToString(props.string, { displayMode: false });
 	return (
 		<span dangerouslySetInnerHTML={ {__html: rendered } } key={props.key}/>
 	);
@@ -34,11 +34,27 @@ const AppComponent = React.createClass({
 	render() {
 		return (
 			<div className='main'>
-			<div className='flex-container-column' style={{padding:'20px', margin: '20px'}}>
+			<div className='flex-container-column'>
+				<div>
+						<h4>Instructions</h4>
+						<p>Using the blue dot, move <Katexer string="i"/> to keep <Katexer string="\pi"/> and  <Katexer string="u"/> as low as possible. When <Katexer string="r"/> is below <Katexer string="\bar{r}"/>, <Katexer string="u"/> rises (and the converse). When <Katexer string="u"/> is below <Katexer string="\bar{u}"/>, <Katexer string="\pi"/> rises (and the converse).  </p>
+				</div>
 				<OtherPlot />
 				<div className='flex-container-row'>
 					<button className="btn" onClick={this.pausePlay} style={{flexBasis: '50%'}}>{this.paused ? 'PLAY' : 'PAUSE'}</button>
 					<button className="btn" onClick={this.props.reset} style={{flexBasis: '50%'}}>RESET</button>
+				</div>
+				<div>
+					<h4 style={{marginTop: 10}}>Legend</h4>
+					<ul>
+						<li> <Katexer string="i"/> &nbsp; Nominal rate of interest</li>
+						<li> <Katexer string="r"/> &nbsp; Real rate of interest</li>
+						<li> <Katexer string="\bar{r}"/> &nbsp; Natural rate of interest</li>
+						<li> <Katexer string="u"/> &nbsp; Unemployment rate</li>
+						<li> <Katexer string="\bar{u}"/> &nbsp; Non-accelerating inflation rate of unemployment (NAIRU)</li>
+						<li> <Katexer string="\pi"/> &nbsp; Inflation</li>
+						<li> <Katexer string="\pi_e"/> &nbsp; Expected inflation</li>
+					</ul>
 				</div>
 			</div>
 			</div>
