@@ -25,10 +25,10 @@ const Katexer = React.createClass({
 });
 
 const vars = [
-	// ["r̄", col.green["500"], "\\bar{r}", 0, col.green["600"]],
-	// ["π", col.red["400"], "\\pi", 45, col.red["500"], ],
-	["πₑ", col.red['800'], "\\pi_e", 15, col.red['800'], ],
-	["i", col.indigo["500"], "i", 32, col.indigo["600"]],
+	["πₑ", col.red['800'], "\\pi_e", 32, col.red['800'], ],
+	["i", col.indigo["500"], "i", 45, col.indigo["600"]],
+	["u", col.blue["500"], "u", 0, col.blue["600"]],
+	["π", col.pink["500"], "\\pi", 15, col.pink["600"]],
 ];
 
 const OtherPlot = React.createClass({

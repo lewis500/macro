@@ -58,12 +58,7 @@ const AppComponent = React.createClass({
 		return (
 			<div className='flex-container-row main'>
 				<div  className='flex-container-column'>
-					<div>
-						<YPlot history={this.props.history} time={this.props.time}/>
-						<OtherPlot history={this.props.history} time={this.props.time}/>
-					</div>
-				</div>
-				<div>
+					<OtherPlot history={this.props.history} time={this.props.time}/>
 					<button className="btn" onClick={this.pausePlay}>{this.paused ? 'PLAY' : 'PAUSE'}</button>
 					{Slider({
 						min: 0,
