@@ -2,39 +2,55 @@ import React from 'react';
 import PureRenderMixin from 'react-addons-pure-render-mixin';
 import d3 from 'd3';
 import Axis from '../axis/axis';
-import col from "../../style/colors"
+import col from "../../style/colors";
+import d3Timer from 'd3-timer';
+
 
 const SvgSlider = React.createClass({
 	componentDidMount() {
-		let onChange = this.props.onChange;
-		var drag = d3.behavior.drag()
-			.on('drag', () =>{
-				onChange(d3.mouse(this.refs.circle)[1]);
+		const onChange = this.props.onChange;
+		let dragging = false;
+		const drag = d3.behavior.drag()
+			.on('drag', () => {
+				dragging = true;
+				onChange(d3.mouse(this.refs.container)[1]);
 			})
-		d3.select(this.refs.circle)
-			.call(drag);
+			.on('dragend', () => {
+				dragging = false;
+				a();
+			});
+		d3.select(this.refs.container).call(drag);
+		const circ = d3.select(this.refs.container)
+			.select('circle');
+
+		function a() {
+			if (dragging) {
+				circ.transition()
+					.duration(200)
+					.attr('r', 5);
+					return;
+			}
+			circ.transition('grow')
+				.duration(700)
+				.ease('cubic')
+				.attr("r", 6)
+				.transition('grow')
+				.duration(1000)
+				.ease('cubic')
+				.attr('r', 3.5)
+				.each('end', a);
+		}
+		a();
 	},
 	render() {
 		const { domain, height, ypx } = this.props;
 		return (
-			<g className='g-slider' ref="circle" >
-				<g className='g-handle' transform={`translate(0,${ypx})`}>
-					<circle 
-						className='circle-handle' 
-						stroke={'white'}
-						r={5}/>
-				</g>
-				{
-				// <Axis 
-				// 	tickArguments={[5]}
-				// 	classname='axis'
-				// 	domain={domain}
-				// 	range={[height,0]}
-				// 	height={height}
-				// 	orientation='right'
-				// 	tickFormat={d3.format(".2p")}
-				// />
-				}
+			<g className='g-slider' ref="container" >
+				<circle 
+					className='circle-handle' 
+					transform={`translate(0,${ypx})`}
+					stroke={'white'}
+					r={5}/>
 			</g>
 		);
 	}

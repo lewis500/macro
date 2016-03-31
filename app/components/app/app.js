@@ -16,27 +16,6 @@ const Katexer = props => {
 	);
 };
 
-const SliderComponent = React.createClass({
-	mixins: [PureRenderMixin],
-	_onChange(e) {
-		this.props.onChange({
-			value: e,
-			variable: this.props.variable
-		});
-	},
-	render() {
-		const { min, max, value, variable, tex } = this.props;
-		const step = .001;
-		return (
-			<div className='is-slider'>
-				<Katexer string={tex + '=' + d3.round(value,2)} />
-			</div>
-		);
-	}
-});
-
-const Slider = React.createFactory(SliderComponent);
-
 const AppComponent = React.createClass({
 	mixins: [PureRenderMixin],
 	paused: true,
@@ -53,35 +32,26 @@ const AppComponent = React.createClass({
 				});
 		}
 	},
-	reset(){
-		this.dispatch({type: 'RESET'});
-	},
 	render() {
 		return (
-			<div className='flex-container-column'>
+			<div className='main'>
+			<div className='flex-container-column' style={{padding:'20px', margin: '20px'}}>
 				<OtherPlot />
 				<div className='flex-container-row'>
 					<button className="btn" onClick={this.pausePlay} style={{flexBasis: '50%'}}>{this.paused ? 'PLAY' : 'PAUSE'}</button>
-					<button className="btn" onClick={this.reset} style={{flexBasis: '50%'}}>RESET</button>
+					<button className="btn" onClick={this.props.reset} style={{flexBasis: '50%'}}>RESET</button>
 				</div>
+			</div>
 			</div>
 		);
 	}
 });
 
-// {Slider({
-// 	min: 0,
-// 	max: .08,
-// 	tex: "i",
-// 	variable: "i",
-// 	value: this.props.i,
-// 	onChange: this.props.setVariable
-// })}
-
-const mapStateToProps = state => (state);
-
 const mapActionsToProps = dispatch => {
 	return {
+		reset(){
+			dispatch({type: 'RESET'});
+		},
 		tick(dt) {
 			dispatch({
 				type: 'TICK',
@@ -98,4 +68,4 @@ const mapActionsToProps = dispatch => {
 	};
 };
 
-export default connect(mapStateToProps, mapActionsToProps)(AppComponent);
+export default connect(state => state, mapActionsToProps)(AppComponent);

@@ -1,9 +1,8 @@
 {
-  "name": "busControlForm",
-  "version": "1.0.0",
-  "description": "Bus control form",
+  "name": "FederalReserveSimulator",
   "scripts": {
-    "start": "node server.js"
+    "start": "node server.js",
+    "build": "webpack --config webpack.config.prod.js"
   },
   "repository": {
     "type": "git"

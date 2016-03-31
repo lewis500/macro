@@ -5,7 +5,7 @@ var config = require('./webpack.config');
 new WebpackDevServer(webpack(config), {
   publicPath: config.output.publicPath,
   hot: true,
-  contentBase: 'public',
+  // contentBase: 'public',
   // quiet: false,
   noInfo: true,
 

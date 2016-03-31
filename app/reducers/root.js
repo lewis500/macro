@@ -20,6 +20,7 @@ const reduceTick = (state, action) => {
 	//unemployment is not directly consequential
 	const u̇ = -ẏ / σu;
 	u += u̇ * dt;
+	// u = Math.max(u, 0);
 	history = [
 		...history, {
 			y,
