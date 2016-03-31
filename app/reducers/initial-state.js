@@ -15,7 +15,7 @@ const initialState = {
 	ū: .05,
 
 	//\sigmas
-	σπₑ: 1.5,
+	σπₑ: 1.25,
 	σπ: 3,
 	σy: 2,
 	σu: 3,
