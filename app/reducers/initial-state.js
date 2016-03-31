@@ -17,8 +17,8 @@ const initialState = {
 	//\sigmas
 	σπₑ: 1.25,
 	σπ: 3,
-	σy: 2,
-	σu: 3,
+	σy: 1.5,
+	σu: 2,
 };
 
 

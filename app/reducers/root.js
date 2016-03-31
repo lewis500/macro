@@ -57,6 +57,11 @@ const rootReduce = (state = initialState, action) => {
 				...state,
 				[action.variable]: action.value
 			};
+		case 'SET_I':
+			return {
+				...state,
+				i: action.i
+			};
 		default:
 			return state;
 	}

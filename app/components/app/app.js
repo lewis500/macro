@@ -30,7 +30,6 @@ const SliderComponent = React.createClass({
 		return (
 			<div className='is-slider'>
 				<Katexer string={tex + '=' + d3.round(value,2)} />
-				<Rcslider  className='my-slider' {...{min,max,value,step}}  onChange={this._onChange}/>
 			</div>
 		);
 	}
@@ -58,21 +57,23 @@ const AppComponent = React.createClass({
 		return (
 			<div className='flex-container-row main'>
 				<div  className='flex-container-column'>
-					<OtherPlot history={this.props.history} time={this.props.time}/>
+					<OtherPlot />
 					<button className="btn" onClick={this.pausePlay}>{this.paused ? 'PLAY' : 'PAUSE'}</button>
-					{Slider({
-						min: 0,
-						max: .08,
-						tex: "i",
-						variable: "i",
-						value: this.props.i,
-						onChange: this.props.setVariable
-					})}
+
 				</div>
 			</div>
 		);
 	}
 });
+
+// {Slider({
+// 	min: 0,
+// 	max: .08,
+// 	tex: "i",
+// 	variable: "i",
+// 	value: this.props.i,
+// 	onChange: this.props.setVariable
+// })}
 
 const mapStateToProps = state => (state);
 

@@ -6,12 +6,13 @@ import d3 from 'd3';
 import '../../style/style-charts.scss';
 import Axis from '../axis/axis';
 import col from "../../style/colors"
+import SvgSlider from "../svg-slider/svg-slider";
 
 const m = {
 	top: 20,
 	left: 55,
 	bottom: 30,
-	right: 75
+	right: 95
 };
 
 const Katexer = React.createClass({
@@ -25,10 +26,10 @@ const Katexer = React.createClass({
 });
 
 const vars = [
-	["πₑ", col.red['800'], "\\pi_e", 32, col.red['800'], ],
-	["i", col.indigo["500"], "i", 45, col.indigo["600"]],
-	["u", col.blue["500"], "u", 0, col.blue["600"]],
-	["π", col.pink["500"], "\\pi", 15, col.pink["600"]],
+	["πₑ", col.pink['500'], "\\pi_e", 32, col.pink['600'], ],
+	["i", col["light-blue"]["500"], "i", 45, col["light-blue"]["500"]],
+	["u", col.indigo["400"], "u", 0, col.indigo["500"]],
+	["π", col.green["500"], "\\pi", 15, col.green["500"]],
 ];
 
 const OtherPlot = React.createClass({
@@ -36,7 +37,7 @@ const OtherPlot = React.createClass({
 	getInitialState() {
 		return {
 			xDomain: [1, 100],
-			yDomain: [-.5, .3],
+			yDomain: [0,.1],
 			width: 500,
 			height: 160
 		};
@@ -66,14 +67,21 @@ const OtherPlot = React.createClass({
 			history[0].time,
 			history[history.length - 1].time + 2.5
 		];
-		let values = _.flatten(_.map(nextProps.history, d => _.map(vars, v => d[v[0]])));
-		let yDomain = d3.extent(values);
-		yDomain[0] = Math.min(0, yDomain[0])
-		this.setState({ xDomain, yDomain })
+		// let values = _.flatten(_.map(nextProps.history, d => _.map(vars, v => d[v[0]])));
+		// let yDomain = d3.extent(values);
+		// yDomain[0] = Math.min(0, yDomain[0])
+		this.setState({ xDomain })
+	},
+	onChange(ypx){
+		let{height,yDomain} = this.state;
+		this.props.dispatch({
+			type: 'SET_I',
+			i: yDomain[1] - ypx/height*(yDomain[1] - yDomain[0])
+		});
 	},
 	render() {
 		let { width, height, yDomain, xDomain } = this.state;
-		let { yScale, xScale } = this;
+		let { yScale, xScale,onChange } = this;
 		let { history } = this.props;
 		let last = this.props.history[this.props.history.length - 1];
 		let x0 = xScale(last.time);
@@ -97,6 +105,7 @@ const OtherPlot = React.createClass({
 					width={width+m.left+m.right}
 					height={height+m.top+m.bottom}
 					>
+
 					<g transform={`translate(${m.left},${m.top})`}>
 						<Axis 
 							tickArguments={[5]}
@@ -126,7 +135,7 @@ const OtherPlot = React.createClass({
 								<g transform={`translate(${width}, ${ yScale(last.i*.5 + last.πₑ*.5)})`}>
 									<foreignObject width="17px" height="40px" y="-.7em" x={5}>
 										<body >
-											<Katexer string={"r"} col={col.green["600"]}/>
+											<Katexer string={"r"} col={col["blue-grey"]["600"]}/>
 										</body>
 									</foreignObject>
 								</g>
@@ -134,10 +143,18 @@ const OtherPlot = React.createClass({
 							{paths}
 						</g>
 					</g>
+					<g transform={`translate(${width+m.left}, ${m.top})`}>
+						<SvgSlider 
+							ypx={yScale(last.i)}
+							domain={yDomain}
+							height={height}		
+							onChange={onChange}					
+						/>
+					</g>
 				</svg>
 			</div>
 		);
 	}
 });
 
-export default OtherPlot;
+export default connect(state=>state,null)(OtherPlot);
