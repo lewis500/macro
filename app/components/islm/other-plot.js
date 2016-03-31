@@ -35,7 +35,7 @@ const OtherPlot = React.createClass({
 	getInitialState() {
 		return {
 			xDomain: [0, 7.5],
-			yDomain: [0, .1],
+			yDomain: [0, .09],
 			width: 500,
 			height: 190
 		};
