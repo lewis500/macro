@@ -9,16 +9,17 @@ const reduceTick = (state, action) => {
 	let { πₑ, y, u, time, history } = state;
 	const { σπₑ, σπ, σy, σu, ȳ, ū, r̄, i } = state;
 	const dt = action.dt / 1000;
-	const r = i - πₑ;
 	const ϵ = rand() * .001;
 	const η = rand() * .01;
+	const r = i - πₑ;
 	const ẏ = -(r - r̄) / σy + η;
 	y += ẏ * dt; // with demand shock
-	const u̇ = -ẏ / σu;
-	u += u̇ * dt;
 	const π = πₑ + (y - ȳ) / σπ;
 	const π̇_e = (π - πₑ) / σπₑ + ϵ;
 	πₑ += dt * π̇_e;
+	//unemployment is not directly consequential
+	const u̇ = -ẏ / σu;
+	u += u̇ * dt;
 	history = [
 		...history, {
 			y,

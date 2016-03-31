@@ -1,8 +1,2 @@
 =====DYNAMIC=====
-+ legend
-
-+ labels on line ends
-+ do faded dots and line segments like you did for the gridlocks vs bottlenecks one
-
-
-+ put an arrow on the ends of the lines
++ use the same yDomain for both
