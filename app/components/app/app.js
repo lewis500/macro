@@ -35,7 +35,7 @@ const AppComponent = React.createClass({
 			<div className='flex-container-column'>
 				<div>
 						<h4>Instructions</h4>
-						<p>Using the blue dot, move <Katexer string="i"/> to keep <Katexer string="\pi"/> and  <Katexer string="u"/> as low as possible. When <Katexer string="r"/> is below <Katexer string="\bar{r}"/>, <Katexer string="u"/> rises (and the converse). When <Katexer string="u"/> is below <Katexer string="\bar{u}"/>, <Katexer string="\pi"/> rises (and the converse).  </p>
+						<p>Using the blue dot, move <Katexer string="i"/> to keep <Katexer string="\pi"/> and  <Katexer string="u"/> as low as possible. When <Katexer string="r"/> is below <Katexer string="\bar{r}"/>, <Katexer string="u"/> falls (and the converse). When <Katexer string="u"/> is below <Katexer string="\bar{u}"/>, <Katexer string="\pi"/> rises (and the converse).  </p>
 				</div>
 				<OtherPlot />
 				<div className='flex-container-row'>
