@@ -20,8 +20,4 @@ const initialState = {
 	σu: 2,
 };
 
-
-// initialState.history = _
-// [{...initialState, time:1},{...initialState}];
-
 export default initialState;

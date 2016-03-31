@@ -133,13 +133,18 @@ const OtherPlot = React.createClass({
 							tickFormat={d3.format(".2p")}
 							innerTickSize={-width}/>
 						<g className='g-real-r'>
-
-							<path className="real-r" d={`M${width},${yScale(last.πₑ)}L${width},${yScale(this.props.i)}`}/>
+							<g className='g-nairu'>
+								<foreignObject width="17px" height="40px" y="-.7em" x={5}
+									transform={`translate(${-25}, ${ yScale(this.props.ū)})`}	>
+									<body><Katexer string={"\\bar{u}"} col={col["indigo"]["800"]}/></body>
+								</foreignObject>
+								<path className="nairu" d={`M${0},${yScale(this.props.ū)}L${width},${yScale(this.props.ū)}`}/>
+							</g>
 							<g className='g-r-bar'>
 								<path className="r-bar" d={`M${zz},${yScale(last.πₑ)}L${zz},${yScale(this.props.r̄ + last.πₑ)}`}/>
 								<foreignObject width="17px" height="40px" y="-.6em" x={5}
 									transform={`translate(${zz}, ${ yScale(this.props.r̄*.5 + last.πₑ)})`}	>
-									<body><Katexer string={"\\bar{r}"} col={col["grey"]["800"]}/></body>
+									<body><Katexer string={"\\bar{r}"} col={col["blue-grey"]["700"]}/></body>
 								</foreignObject>
 							</g>
 							<path 
@@ -150,10 +155,13 @@ const OtherPlot = React.createClass({
 								className="path connector"
 								stroke={vars[0][1]}
 								d={`M${xScale(last.time)+vars[0][3]+20},${yScale(last.πₑ)}L${width},${yScale(last.πₑ)}`}/>	
-							<foreignObject width="17px" height="40px" y="-.7em" x={5}
-								transform={`translate(${width}, ${ yScale(last.i*.5 + last.πₑ*.5)})`}	>
-								<body><Katexer string={"r"} col={col["blue-grey"]["600"]}/></body>
-							</foreignObject>
+								<g className="g-r">
+									<path className="real-r" d={`M${width},${yScale(last.πₑ)}L${width},${yScale(this.props.i)}`}/>
+									<foreignObject width="17px" height="40px" y="-.7em" x={5}
+										transform={`translate(${width}, ${ yScale(last.i*.5 + last.πₑ*.5)})`}	>
+										<body><Katexer string={"r"} col={col["blue-grey"]["800"]}/></body>
+									</foreignObject>
+								</g>
 						</g>
 						{paths}
 					</g>

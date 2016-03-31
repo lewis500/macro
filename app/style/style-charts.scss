@@ -8,11 +8,6 @@
     // marker-end:url(#arrow);
 }
 
-// .zero {
-//     fill: none;
-//     stroke: $md-grey-400;
-//     stroke-dasharray: 10, 2;
-// }
 .path {
     fill: none;
     // stroke: $md-light-blue-500;
@@ -40,22 +35,52 @@
 
 path.real-r {
     stroke-width: 1.2px;
-    pointer-events: none;
-    stroke: $md-blue-grey-500;
+    stroke: $md-blue-grey-800;
     stroke-dasharray: 1.5, .75;
     marker-end: url(#arrow);
 }
 
 path.r-bar{
     stroke-width: 1.2px;
-    stroke: $md-grey-800;
+    stroke: $md-blue-grey-700;
     stroke-dasharray: 1.5, .75;
     marker-end: url(#arrow2);
 }
 
+#arrow {
+    fill: $md-blue-grey-800;
+    pointer-events: none;
+
+}
+
+#arrow2 {
+    fill: $md-blue-grey-700;
+    pointer-events: none;
+}
+
 .g-r-bar{
+    opacity: .7;
+}
+
+.g-r{
+    opacity: .7;
+}
+
+.g-nairu{
+    opacity: .7;
+}
+
+path.nairu{
+    stroke-width: 1px;
+    stroke-dasharray: 1.5, .8;
+    stroke: $md-indigo-600;
     opacity: .6;
 }
+
+path{
+    pointer-events: none;
+}
+
 
 .circle-handle {
     fill: $md-light-blue-300;
@@ -63,12 +88,3 @@ path.r-bar{
     stroke-width: 1.75px;
 }
 
-#arrow {
-    fill: $md-blue-grey-500;
-    pointer-events: none;
-}
-
-#arrow2 {
-    fill: $md-grey-800;
-    pointer-events: none;
-}

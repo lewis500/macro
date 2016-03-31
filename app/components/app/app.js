@@ -3,7 +3,6 @@ import React from 'react';
 import PureRenderMixin from 'react-addons-pure-render-mixin';
 import d3 from 'd3';
 import './style-app.scss';
-import YPlot from '../islm/y-plot';
 import OtherPlot from '../islm/other-plot';
 import d3Timer from 'd3-timer';
 import Rcslider from 'rc-slider';
