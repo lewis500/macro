@@ -14,7 +14,6 @@ const Katexer = props => {
 };
 
 const AppComponent = React.createClass({
-	mixins: [PureRenderMixin],
 	paused: true,
 	timer: null,
 	pausePlay() {
@@ -81,4 +80,4 @@ const mapActionsToProps = dispatch => {
 	};
 };
 
-export default connect(state => state, mapActionsToProps)(AppComponent);
+export default connect(state => state.data, mapActionsToProps)(AppComponent);

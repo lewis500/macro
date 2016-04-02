@@ -172,4 +172,4 @@ const OtherPlot = React.createClass({
 	}
 });
 
-export default connect(state => state, null)(OtherPlot);
+export default connect(state => state.data)(OtherPlot);

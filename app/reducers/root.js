@@ -67,7 +67,8 @@ const reset = () => {
 	return state;
 };
 
-const rootReduce = (state, action) => {
+
+const reduceData = (state, action) => {
 	switch (action.type) {
 		case 'TICK':
 			return reduceTick(state, action);
@@ -86,6 +87,12 @@ const rootReduce = (state, action) => {
 		default:
 			return state;
 	}
+};
+
+const rootReduce = (state,action)=>{
+	return{
+		data: reduceData(state,action),
+	};
 };
 
 const store = createStore(rootReduce);
