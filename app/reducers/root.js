@@ -68,30 +68,30 @@ const reset = () => {
 };
 
 
-const reduceData = (state, action) => {
+const reduceData = (data, action) => {
 	switch (action.type) {
 		case 'TICK':
-			return reduceTick(state, action);
+			return reduceTick(data, action);
 		case 'RESET':
-			return reset(state);
+			return reset(data);
 		case 'SET_VARIABLE':
 			return {
-				...state,
+				...data,
 				[action.variable]: action.value
 			};
 		case 'SET_I':
 			return {
-				...state,
+				...data,
 				i: action.i
 			};
 		default:
-			return state;
+			return data;
 	}
 };
 
-const rootReduce = (state,action)=>{
+const rootReduce = (state={data: {}},action)=>{
 	return{
-		data: reduceData(state,action),
+		data: reduceData(state.data,action),
 	};
 };
 

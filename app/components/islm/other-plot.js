@@ -9,10 +9,10 @@ import col from "../../style/colors"
 import SvgSlider from "../svg-slider/svg-slider";
 
 const m = {
-	top: 10,
+	top: 5,
 	left: 40,
-	bottom: 15,
-	right: 95
+	bottom: 5,
+	right: 20
 };
 
 const Katexer = React.createClass({
@@ -84,7 +84,7 @@ const OtherPlot = React.createClass({
 		this.listener = window.addEventListener('resize', this.resize);
 	},
 	resize() {
-		this.setState({ width: this.refs.holder.clientWidth * .9 });
+		this.setState({ width: this.refs.holder.clientWidth - m.left-m.right});
 	},
 	componentWillUnmount() {
 		window.removeEventListener('resize', this.resize)

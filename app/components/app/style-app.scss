@@ -61,7 +61,7 @@ button.btn {
     border: 1px solid white;
     padding: 10px;
     width: 100px;
-    background: $md-light-blue-500;
+    background: $md-blue-grey-500;
     color: white;
     text-align: center;
     horizontal-align: center;
@@ -75,4 +75,18 @@ button.btn {
 
 span.katex{
     font-size: 1.0em;
+}
+
+.special{
+    // position: absolute;
+    height: 35px;
+    background: $md-blue-grey-500;
+    width: 100%;
+    color: white;
+    font-weight: 300;
+}
+
+.special h4{
+    font-weight: 300;
+    margin: 8px;
 }
