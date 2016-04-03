@@ -25,7 +25,7 @@ const Katexer = React.createClass({
 
 const Label = React.createClass({
 	mixins: [PureRenderMixin],
-	render(){
+	render() {
 
 	}
 });
@@ -37,22 +37,14 @@ const vars = [
 	["π", col.orange["500"], "\\pi", 15, col.orange["500"]],
 ];
 
-const OtherPlot = React.createClass({
+const Plot = React.createClass({
 	mixins: [PureRenderMixin],
-	getInitialState() {
-		return {
-			xDomain: [0, 7.5],
-			yDomain: [0, .09],
-			width: 0,
-			height: 220
-		};
-	},
 	xScale(v) {
-		const { xDomain, width } = this.state;
+		const { width,xDomain} = this.props;
 		return (v - xDomain[0]) / (xDomain[1] - xDomain[0]) * width;
 	},
 	yScale(v) {
-		const { yDomain, height } = this.state;
+		const { yDomain, height } = this.props;
 		return height * (yDomain[1] - v) / (yDomain[1] - yDomain[0]);
 	},
 	pathMaker(data, xVar, yVar) {
@@ -66,16 +58,8 @@ const OtherPlot = React.createClass({
 		}
 		return "M" + points.join("L");
 	},
-	componentWillReceiveProps(nextProps) {
-		const { history } = nextProps;
-		const xDomain = [
-			history[0].time,
-			history[history.length - 1].time + 2.5
-		];
-		this.setState({ xDomain })
-	},
 	onChange(ypx) {
-		const { height, yDomain } = this.state;
+		const { height, yDomain } = this.props;
 		let i = yDomain[1] - ypx / height * (yDomain[1] - yDomain[0]);
 		i = Math.min(i, yDomain[1]);
 		i = Math.max(i, yDomain[0]);
@@ -84,28 +68,31 @@ const OtherPlot = React.createClass({
 			i
 		});
 	},
+	changePlot(changes) {
+		this.props.dispatch({ type: 'CHANGE_PLOT', changes });
+	},
 	componentDidMount() {
-		let domNode = findDOMNode(this);
+		const domNode = findDOMNode(this);
 		this.resize();
 		window.addEventListener('resize', this.resize);
 	},
 	resize() {
-		this.setState({ width: this.refs.holder.clientWidth - m.left-m.right});
+		const width = this.refs.holder.clientWidth - m.left - m.right;
+		this.changePlot({width});
 	},
 	componentWillUnmount() {
 		window.removeEventListener('resize', this.resize)
 	},
 	render() {
-		let { width, height, yDomain, xDomain } = this.state;
 		let { yScale, xScale, onChange } = this;
-		let { history } = this.props;
+		let { history, width , height, yDomain, xDomain} = this.props;
 		let last = this.props.history[this.props.history.length - 1];
 		let x0 = xScale(last.time);
 		let zz = width * .7 + (xScale(last.time) + 40) * .3;
 		let paths = _.map(vars, v => (
-			<path className='path'	d={this.pathMaker(history,'time',v[0])}  stroke={v[1]}/>
+			<path className='path'	d={this.pathMaker(history,'time',v[0])}  stroke={v[1]} key={v[0]}/>
 		));
-		let connectors = _.map(vars, v=>(
+		let connectors = _.map(vars, v => (
 			<g className='foreign' transform={`translate(${x0}, ${yScale(this.props[v[0]])})`} key={v[0]}>
 				<line className="path connector" x1="0" x2={v[3]} y1="0" y2="0" stroke={v[1]} />
 				<foreignObject width="17px" height="17px" y="-.7em" x={v[3]}>
@@ -178,4 +165,11 @@ const OtherPlot = React.createClass({
 	}
 });
 
-export default connect(state => state.data)(OtherPlot);
+function mapStateToProps(state){
+	return {
+		...state.data,
+		...state.plot
+	};
+}
+
+export default connect(mapStateToProps)(Plot);

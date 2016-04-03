@@ -1,6 +1,7 @@
 import d3 from 'd3';
 import _ from 'lodash';
 import { createStore } from 'redux';
+import plotInitialState from '../components/plot/plot-initial';
 
 const rand = d3.random.normal();
 
@@ -33,13 +34,13 @@ const reduceTick = (state, action) => {
 	history = history.filter(d => (time - d.time) <= 5);
 
 	newState.history = [
-		...history, {...state}
+		...history, {...state }
 	];
 
 	return newState;
 };
 
-const defaultState = {
+const defaultData = {
 	time: 5,
 	//variables
 	y: 1.0,
@@ -61,19 +62,14 @@ const defaultState = {
 	σu: 2,
 };
 
-const reset = () => {
-	const state = defaultState;
-	state.history = _.map(_.range(0, 5, .003), time => ({...state, time }))
-	return state;
-};
-
+defaultData.history = _.map(_.range(0, 5, .003), time => ({...defaultData, time }))
 
 const reduceData = (data, action) => {
 	switch (action.type) {
 		case 'TICK':
 			return reduceTick(data, action);
 		case 'RESET':
-			return reset(data);
+			return defaultData;
 		case 'SET_VARIABLE':
 			return {
 				...data,
@@ -89,13 +85,28 @@ const reduceData = (data, action) => {
 	}
 };
 
-const rootReduce = (state={data: {}},action)=>{
-	return{
-		data: reduceData(state.data,action),
+const reducePlot = (state, action) => {
+	const { data, plot } = state;
+	const { history } = data;
+	const xDomain = [
+		history[0].time,
+		history[history.length - 1].time + 2.5
+	];
+	switch (action.type) {
+		case 'CHANGE_PLOT':
+			return _.assign({}, plot, action.changes, { xDomain });
+		default:
+			return {...plot, xDomain };
+	}
+};
+
+const rootReduce = (state = { data: defaultData, plot: plotInitialState }, action) => {
+	return {
+		data: reduceData(state.data, action),
+		plot: reducePlot(state, action)
 	};
 };
 
 const store = createStore(rootReduce);
-store.dispatch({ type: 'RESET' });
 
 export default store;
