@@ -1,0 +1,79 @@
+@import '~material-colors/dist/colors';
+.bg {
+    fill: rgba($md-grey-100, .5);
+}
+
+.path {
+    fill: none;
+    stroke-width: 1px;
+
+}
+
+.path-link {
+    stroke-dasharray: 1.5, 1;
+}
+
+.domain {
+    display: none;
+}
+
+.axis text {
+    fill: $md-grey-800;
+    font-size: 11px;
+    stroke: none;
+}
+
+.connector {
+    stroke-dasharray: 1.5, 1;
+    opacity: .6;
+}
+
+path.real-r, path.r-bar{
+    // stroke-width: 1px;
+    stroke: $md-cyan-700;
+}
+
+path.real-r {
+    marker-end: url(#arrow);
+}
+
+path.r-bar{
+    marker-end: url(#arrow2);
+}
+
+#arrow {
+    fill: $md-cyan-700;
+    pointer-events: none;
+
+}
+
+#arrow2 {
+    fill: $md-cyan-700;
+    pointer-events: none;
+}
+
+path.nairu{
+    // stroke-width: .7px;
+    // stroke-dasharray: 4, 1;
+    stroke: $md-indigo-300;
+    opacity: .75;
+}
+
+path{
+    pointer-events: none;
+}
+
+
+.circle-handle {
+    fill: $md-light-blue-300;
+    cursor: pointer;
+    stroke-width: 1.75px;
+}
+
+
+.plot span.katex {
+    background: rgba(white,.9);
+    padding: 2px;
+}
+
+

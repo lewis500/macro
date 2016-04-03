@@ -6,12 +6,11 @@ body {
 }
 
 li {
-    // font-weight: 300;
-    // padding: 4px;
-    line-height: 1.8em
+    line-height: 1.8em;
+    margin-top: 4px;
 }
 
-p,li{
+p,ol{
     font-size: 13.5px;
 }
 
@@ -24,15 +23,21 @@ h4{
     text-align: center;
 }
 
+
+
 .main ul {
  list-style-type: none;
+ padding-left: 5px;
+ // padding:
+ margin-right: 8px;
+ font-size: 12px;
  }
 
 .main {
     // padding: 20px;
     margin-top: 30px;
-    margin-left: 25%;
-    width: 50%;
+    margin-left: 22.5%;
+    width: 55%;
 }
 
 .flex-container-column {
@@ -58,14 +63,16 @@ foreignObject .katex .vlist>span{
 
 button.btn {
     margin: 10px;
-    border: 1px solid white;
-    padding: 10px;
+    // border: 2px solid white;
+    border: none;
+    padding: 11px;
     width: 100px;
     background: $md-blue-grey-500;
     color: white;
     text-align: center;
     horizontal-align: center;
     cursor: pointer;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 6px, rgba(0, 0, 0, 0.16) 0px 1px 4px
 }
 
 
@@ -79,14 +86,50 @@ span.katex{
 
 .special{
     // position: absolute;
-    height: 35px;
-    background: $md-blue-grey-500;
+    // height: 35px;
+    // background: $md-blue-grey-100;
     width: 100%;
-    color: white;
     font-weight: 300;
+    background: $md-blue-grey-500;
+    color: white;
+    padding: 5px 0px;
+    margin: 10px 0px 4px;
+    // padding: 
+    // color: $md-grey-900;
+    // background: white;
+    box-shadow: 0px .5px 2px rgba(0,0,0,0.18), 0px 1px 1px rgba(0,0,0,0.18);
+  // border-radius: 2px;
+}
+
+.content{
+    background: white;
+    box-shadow: 0px .5px 2px rgba(0,0,0,0.18), 0px 1px 1px rgba(0,0,0,0.18);
+    padding: 15px 30px;
 }
 
 .special h4{
     font-weight: 300;
     margin: 8px;
+}
+
+.plot-container{
+      justify-content: center;
+      align-content: center;
+      align-items: center;
+      // padding: 20px 10px;
+      // background: $md-grey-100;
+      // box-shadow: 0px .5px 2px rgba(0,0,0,0.18), 0px 1px 1px rgba(0,0,0,0.18);
+}
+
+.blue{
+    background-color: $md-light-blue-500;
+    color: white;
+    padding: 1px 3px;
+    border-radius: 1px;
+}
+
+button:focus {outline:0;}
+
+.legend{
+    justify-content: space-around;
 }

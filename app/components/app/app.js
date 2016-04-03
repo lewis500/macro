@@ -3,15 +3,18 @@ import React from 'react';
 import PureRenderMixin from 'react-addons-pure-render-mixin';
 import d3 from 'd3';
 import './style-app.scss';
-import OtherPlot from '../islm/other-plot';
+import Plot from '../plot/plot';
 import d3Timer from 'd3-timer';
+import col from "../../style/colors"
 
-const Kat = props => {
-	const rendered = katex.renderToString(props.string, { displayMode: false });
-	return (
-		<span dangerouslySetInnerHTML={ {__html: rendered } } key={props.key}/>
-	);
-};
+const Kat = React.createClass({
+	mixins: [PureRenderMixin],
+	render() {
+		const rendered = katex.renderToString(this.props.string, { displayMode: false });
+		const style = this.props.col ? { color: this.props.col } : {};
+		return <span className="katex-span" style={style} dangerouslySetInnerHTML={ {__html: rendered } } />
+	}
+});
 
 const AppComponent = React.createClass({
 	paused: true,
@@ -39,54 +42,59 @@ const AppComponent = React.createClass({
 				</p>
 			</div>
 				<div className='special'>
-					<h4>How the US macroeconomy works</h4>
+					<h4>What causes US recessions and booms?</h4>
 				</div>
-				<div>
+				<div className='content'>
 						<p>
-							Laws, health, learning, demographics, physical capital and luck decide what standard-of-living is <em>possible</em> for Americans to enjoy. But these don't change quickly, so what's behind recessions and booms?  
+							The answer is: the Federal Reserve. The Fed constantly creates money to buy very safe debt.</p>
+						<p>When the Fed suddenly creates money faster,  interest rates (at least short-term ones) fall. Lower rates stimulate spending by making it cheap to borrow or refinance. For example, North Carolina <a href="http://abc11.com/politics/nc-passes-$2-billion-bond-for-infrastructure/1247482/">will soon borrow $2 billion</a> to build infrastructure <a href="http://connect.nc.gov/">because of low interest rates.</a> The extra spending boosts inflation and/or employment. If wages rise more slowly than spending, then hiring jumps but inflation is steady; otherwise, we see higher inflation but little job growth.
 						</p>
-						<p>
-							The answer is: the Federal Reserve. The Fed creates money to buy short-term, safe debt. When they do so quickly, short-term interest rates fall, and total spending in the economy &mdash; called "nominal GDP" or "NGDP" &mdash; rises, because people refinance and borrow. For example, North Carolina <a href="http://abc11.com/politics/nc-passes-$2-billion-bond-for-infrastructure/1247482/">will soon borrow $2 billion</a> to build infrastructure <a href="http://connect.nc.gov/">because of low interest rates.</a> Rising NGDP drags inflation and employment up, too: inflation because sellers raise prices amid brisk spending; employment because wages/salaries don't rise as quickly as sales revenue and tax collections do, which makes firms and public agencies want to hire. The opposite happens when the Fed curbs money-creation.</p>
-						<p>This logic sounds simple: more money => more spending => more jobs/higher prices. But the whole story is murkier, because...
+						INSERT PLOT OF YELLEN YEARS
+						<p>The opposite ensues when the Fed curbs money-creation: spending, inflation and employment fall.</p>
+						INSERT PLOT OF VOLCKER YEARS
+						<p>This logic sounds simple, but things get more complicated for three reasons:
 						</p>
 						<ol>
-							<li>People learn, so if <Kat string="\pi" /> is actual inflation and <Kat string="\pi_e" /> is <em>expected</em> inflation, then over time <Kat string="\pi_e \rightarrow\pi" />. </li>
-							<li>Workers account for expected inflation. If workers expect 3% inflation, to lower unemployment, the Fed must boost NGDP enough to create inflation higher than 4%.</li>
-							<li>Lenders/borrowers account for expected inflation. It's more expensive, in terms of spending power, to pay 3% interest when you expect 0% inflation than to pay 8% interest when you expect 7% inflation. Therefore, if the "nominal" interest rate is <Kat string="i" />, then the "real" interest rate, <Kat string="r=i-\pi_e"/>, is what affects NGDP/inflation/unemployment. </li>
+							<li>People learn, so if <Kat string="\pi" /> is  inflation and <Kat string="\pi_e" /> is <em>expected</em> inflation, then over time <Kat string="\pi_e \rightarrow\pi" />. </li>
+							<li>Workers account for expected inflation. If workers expect 3% inflation, then&mdash;to create jobs&mdash;the Fed must boost spending more than if they expect 1%.</li>
+							<li>Lenders/borrowers account for expected inflation. It's more expensive to pay 3% interest when you expect 0% inflation than to pay 8% interest when you expect 7%. Specifically, if the "nominal" interest rate is <Kat string="i" />, then the "real" interest rate, <Kat string="r=i-\pi_e"/>, is what matters. </li>
 						</ol>
-						<p>These facts lead, in roundabout ways, to two special quantities:
+						<p>These facts lead to two special quantities:
 						</p>	
 							<ol>
-								<li>The <em>natural real interest rate</em>, <Kat string="\bar{r}"/>. If the actual real rate, <Kat string="r"/>, goes below <Kat string="\bar{r}"/>, then NGDP, prices and employment grow faster. When  <Kat string="r"/> exceeds <Kat string="\bar{r}"/>, the opposite happens.</li>
-								<li>The <em>natural unemployment rate</em>, <Kat string="\bar{u}"/>. To keep unemployment below it forever would require higher and higher inflation. </li>
+								<li>The <em>natural real interest rate</em>, <Kat string="\bar{r}"/>. If the real rate, <Kat string="r"/>, goes below <Kat string="\bar{r}"/>, then spending, prices and employment grow faster. When  <Kat string="r"/> exceeds <Kat string="\bar{r}"/>, the opposite happens.</li>
+								<li>The <em>natural unemployment rate</em>, <Kat string="\bar{u}"/>. To keep unemployment below  <Kat string="\bar{u}"/> requires higher and higher inflation, like in Zimbabwe.</li>
 							</ol>
 				</div>
 				<div className='special'>
 					<h4>Instructions</h4>
 				</div>
-				<div>
-						<p>Using the blue dot,control the nominal interest rate <Kat string="i"/> to stabilize <Kat string="\pi"/> (inflation) and <Kat string="u"/> (unemployment). Pay attention to <Kat string="\bar{r}"/> (the natural real interest rate) and <Kat string="\bar{u}"/> (the natural unemployment rate). When <Kat string="r<\bar{r}"/>, unemployment decreases. When <Kat string="u<\bar{u}"/>, inflation increases. </p>
-				</div>
-				<div className='flex-container-row'>
-					<div style={{width: '70%'}}>
-						<OtherPlot />
+				<div className="content">
+						<p>With the <span className="blue">blue</span> dot, control <Kat string="i" col={col["light-blue"]["800"]}/> to stabilize <Kat string="\pi" col={col.teal["500"]}/> and <Kat string="u" col={col.indigo["500"]}/>. Watch <Kat string="\bar{r}"/> and <Kat string="\bar{u}"/>, because when <Kat string="r<\bar{r}"/>, <Kat string="u" col={col.indigo["500"]}/> falls; and when <Kat string="u<\bar{u}"/>, <Kat string="\pi" col={col.teal["500"]}/> rises. </p>
+				<div className='flex-container-row plot-container'>
+					<div style={{width: '75%', padding: '10px'}}>
+						<Plot />
 					</div>
-					<div className='flex-container-column' style={{width: '25%'}}>
+					<div className='flex-container-column' style={{width: '25%', alignItems: 'center'}}>
 						<button className="btn" onClick={this.pausePlay} >{this.paused ? 'PLAY' : 'PAUSE'}</button>
 						<button className="btn" onClick={this.props.reset}>RESET</button>
 					</div>
 				</div>
-				<div>
-					<h4 style={{marginTop: 10}}>Legend</h4>
-					<ul>
-						<li> <Kat string="i"/> &nbsp; Nominal rate of interest</li>
-						<li> <Kat string="r"/> &nbsp; Real rate of interest</li>
-						<li> <Kat string="\bar{r}"/> &nbsp; Natural rate of interest</li>
-						<li> <Kat string="u"/> &nbsp; Unemployment rate</li>
-						<li> <Kat string="\bar{u}"/> &nbsp; Non-accelerating inflation rate of unemployment (NAIRU)</li>
-						<li> <Kat string="\pi"/> &nbsp; Inflation</li>
-						<li> <Kat string="\pi_e"/> &nbsp; Expected inflation</li>
-					</ul>
+				<div className='flex-container-row legend'>
+						<ul>
+							<li> <Kat string="i"/> &nbsp; Nominal interest rate</li>
+							<li> <Kat string="r"/> &nbsp; Real interest rate</li>
+							<li> <Kat string="\bar{r}"/> &nbsp; Natural interest rate</li>
+						</ul>
+						<ul>
+							<li> <Kat string="u"/> &nbsp; Unemployment rate</li>
+							<li> <Kat string="\bar{u}"/> &nbsp; Natural unemployment rate</li>
+						</ul>
+						<ul>
+							<li> <Kat string="\pi"/> &nbsp; Inflation</li>
+							<li> <Kat string="\pi_e"/> &nbsp; Expected inflation</li>
+						</ul>
+				</div>
 				</div>
 			</div>
 			</div>
@@ -96,8 +104,8 @@ const AppComponent = React.createClass({
 
 const mapActionsToProps = dispatch => {
 	return {
-		reset(){
-			dispatch({type: 'RESET'});
+		reset() {
+			dispatch({ type: 'RESET' });
 		},
 		tick(dt) {
 			dispatch({

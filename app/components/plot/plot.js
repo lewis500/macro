@@ -3,14 +3,14 @@ import React from 'react';
 import { findDOMNode } from 'react-dom';
 import PureRenderMixin from 'react-addons-pure-render-mixin';
 import d3 from 'd3';
-import '../../style/style-charts.scss';
+import './style-plot';
 import Axis from '../axis/axis';
 import col from "../../style/colors"
 import SvgSlider from "../svg-slider/svg-slider";
 
 const m = {
 	top: 5,
-	left: 40,
+	left: 32.5,
 	bottom: 5,
 	right: 20
 };
@@ -23,11 +23,18 @@ const Katexer = React.createClass({
 	}
 });
 
+const Label = React.createClass({
+	mixins: [PureRenderMixin],
+	render(){
+
+	}
+});
+
 const vars = [
-	["πₑ", col.pink['500'], "\\pi_e", 32, col.pink['600'], ],
-	["i", col["light-blue"]["500"], "i", 45, col["light-blue"]["500"]],
-	["u", col.indigo["400"], "u", 0, col.indigo["500"]],
-	["π", col.green["500"], "\\pi", 15, col.green["500"]],
+	["πₑ", col.pink['500'], "\\pi_e", 35, col.pink['600'], ],
+	["i", col["light-blue"]["500"], "i", 5, col["light-blue"]["500"]],
+	["u", col.purple["400"], "u", 50, col.purple["500"]],
+	["π", col.orange["500"], "\\pi", 15, col.orange["500"]],
 ];
 
 const OtherPlot = React.createClass({
@@ -41,11 +48,11 @@ const OtherPlot = React.createClass({
 		};
 	},
 	xScale(v) {
-		let { xDomain, width } = this.state;
+		const { xDomain, width } = this.state;
 		return (v - xDomain[0]) / (xDomain[1] - xDomain[0]) * width;
 	},
 	yScale(v) {
-		let { yDomain, height } = this.state;
+		const { yDomain, height } = this.state;
 		return height * (yDomain[1] - v) / (yDomain[1] - yDomain[0]);
 	},
 	pathMaker(data, xVar, yVar) {
@@ -60,15 +67,15 @@ const OtherPlot = React.createClass({
 		return "M" + points.join("L");
 	},
 	componentWillReceiveProps(nextProps) {
-		let { history } = nextProps;
-		let xDomain = [
+		const { history } = nextProps;
+		const xDomain = [
 			history[0].time,
 			history[history.length - 1].time + 2.5
 		];
 		this.setState({ xDomain })
 	},
 	onChange(ypx) {
-		let { height, yDomain } = this.state;
+		const { height, yDomain } = this.state;
 		let i = yDomain[1] - ypx / height * (yDomain[1] - yDomain[0]);
 		i = Math.min(i, yDomain[1]);
 		i = Math.max(i, yDomain[0]);
@@ -79,9 +86,8 @@ const OtherPlot = React.createClass({
 	},
 	componentDidMount() {
 		let domNode = findDOMNode(this);
-		this.parent = domNode.parentElement;
 		this.resize();
-		this.listener = window.addEventListener('resize', this.resize);
+		window.addEventListener('resize', this.resize);
 	},
 	resize() {
 		this.setState({ width: this.refs.holder.clientWidth - m.left-m.right});
@@ -97,31 +103,24 @@ const OtherPlot = React.createClass({
 		let x0 = xScale(last.time);
 		let zz = width * .7 + (xScale(last.time) + 40) * .3;
 		let paths = _.map(vars, v => (
-			<g className="g-path" key={v[0]}>
-					<path className='path'	d={this.pathMaker(history,'time',v[0])}  stroke={v[1]}/>
-					<g className='foreign' transform={`translate(${x0}, ${yScale(last[v[0]])})`}>
-						<line className="path-link" x1="0" x2={v[3]} y1="0" y2="0" stroke={v[1]} />
-						<foreignObject width="17px" height="50px" y="-.7em" x={v[3]}>
-							<body >
-								<Katexer string={v[2]} col={v[4]}/>
-							</body>
-						</foreignObject>
-					</g>
+			<path className='path'	d={this.pathMaker(history,'time',v[0])}  stroke={v[1]}/>
+		));
+		let connectors = _.map(vars, v=>(
+			<g className='foreign' transform={`translate(${x0}, ${yScale(this.props[v[0]])})`} key={v[0]}>
+				<line className="path connector" x1="0" x2={v[3]} y1="0" y2="0" stroke={v[1]} />
+				<foreignObject width="17px" height="17px" y="-.7em" x={v[3]}>
+					<body >
+						<Katexer string={v[2]} col={v[4]}/>
+					</body>
+				</foreignObject>
 			</g>
 		));
 		return (
-			<div style={{...this.props.style}} ref='holder'>
+			<div style={{...this.props.style}} ref='holder' className='plot'>
 				<svg 
 					className='chart' 
 					width={width+m.left+m.right}
 					height={height+m.top+m.bottom}>
-					<g transform={`translate(${width+m.left}, ${m.top})`}>
-						<SvgSlider 
-							ypx={yScale(this.props.i)}
-							domain={yDomain}
-							height={height}		
-							onChange={onChange}/>
-					</g>
 					<g transform={`translate(${m.left},${m.top})`}>
 						<Axis 
 							tickArguments={[5]}
@@ -132,38 +131,45 @@ const OtherPlot = React.createClass({
 							orientation='left'
 							tickFormat={d3.format(".2p")}
 							innerTickSize={-width}/>
-						<g className='g-real-r'>
+
 							<g className='g-nairu'>
-								<foreignObject width="17px" height="40px" y="-.7em" x={5}
-									transform={`translate(${-25}, ${ yScale(this.props.ū)})`}	>
-									<body><Katexer string={"\\bar{u}"} col={col["indigo"]["800"]}/></body>
+								<foreignObject width="17px" height="18px" y="-.7em" x={5}
+									transform={`translate(${width-3}, ${ yScale(this.props.ū)})`}	>
+									<body><Katexer string={"\\bar{u}"} col={col["indigo"]["500"]}/></body>
 								</foreignObject>
 								<path className="nairu" d={`M${0},${yScale(this.props.ū)}L${width},${yScale(this.props.ū)}`}/>
 							</g>
 							<g className='g-r-bar'>
 								<path className="r-bar" d={`M${zz},${yScale(last.πₑ)}L${zz},${yScale(this.props.r̄ + last.πₑ)}`}/>
-								<foreignObject width="17px" height="40px" y="-.6em" x={5}
+								<foreignObject width="17px" height="18px" y="-.6em" x={0}
 									transform={`translate(${zz}, ${ yScale(this.props.r̄*.5 + last.πₑ)})`}	>
-									<body><Katexer string={"\\bar{r}"} col={col["blue-grey"]["700"]}/></body>
+									<body><Katexer string={"\\bar{r}"} col={col["cyan"]["700"]}/></body>
 								</foreignObject>
 							</g>
+							{connectors}
 							<path 
-								className="path connector"
+								className="path connector i"
 								stroke={vars[1][1]}
-								d={`M${xScale(last.time)+vars[1][3]+20},${yScale(last.i)}L${width},${yScale(this.props.i)}`}/>
+								d={`M${xScale(last.time)+vars[1][3]+20},${yScale(this.props.i)}L${width},${yScale(this.props.i)}`}/>
 							<path 
-								className="path connector"
+								className="path connector πₑ"
 								stroke={vars[0][1]}
-								d={`M${xScale(last.time)+vars[0][3]+20},${yScale(last.πₑ)}L${width},${yScale(last.πₑ)}`}/>	
+								d={`M${xScale(last.time)+vars[0][3]+20},${yScale(this.props.πₑ)}L${width},${yScale(this.props.πₑ)}`}/>	
 								<g className="g-r">
 									<path className="real-r" d={`M${width},${yScale(last.πₑ)}L${width},${yScale(this.props.i)}`}/>
-									<foreignObject width="17px" height="40px" y="-.7em" x={5}
+									<foreignObject width="17px" height="18px" y="-.7em" x={0}
 										transform={`translate(${width}, ${ yScale(last.i*.5 + last.πₑ*.5)})`}	>
-										<body><Katexer string={"r"} col={col["blue-grey"]["800"]}/></body>
+										<body><Katexer string={"r"} col={col["cyan"]["700"]}/></body>
 									</foreignObject>
 								</g>
-						</g>
 						{paths}
+						<g transform={`translate(${xScale(last.time)},0)`}>
+							<SvgSlider 
+								ypx={yScale(this.props.i)}
+								domain={yDomain}
+								height={height}		
+								onChange={onChange}/>
+						</g>
 					</g>
 
 				</svg>
