@@ -43,8 +43,8 @@ const OtherPlot = React.createClass({
 		return {
 			xDomain: [0, 7.5],
 			yDomain: [0, .09],
-			width: 500,
-			height: 190
+			width: 0,
+			height: 220
 		};
 	},
 	xScale(v) {

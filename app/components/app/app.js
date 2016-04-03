@@ -47,10 +47,10 @@ const AppComponent = React.createClass({
 				<div className='content'>
 						<p>
 							The answer is: the Federal Reserve. The Fed constantly creates money to buy very safe debt.</p>
-						<p>When the Fed suddenly creates money faster,  interest rates (at least short-term ones) fall. Lower rates stimulate spending by making it cheap to borrow or refinance. For example, North Carolina <a href="http://abc11.com/politics/nc-passes-$2-billion-bond-for-infrastructure/1247482/">will soon borrow $2 billion</a> to build infrastructure <a href="http://connect.nc.gov/">because of low interest rates.</a> The extra spending boosts inflation and/or employment. If wages rise more slowly than spending, then hiring jumps but inflation is steady; otherwise, we see higher inflation but little job growth.
+						<p>When the Fed suddenly creates money faster,  interest rates (at least short-term ones) fall. Lower rates stimulate spending by making it cheap to borrow or refinance. For example, North Carolina <a href="http://abc11.com/politics/nc-passes-$2-billion-bond-for-infrastructure/1247482/">will soon borrow $2 billion</a> to build infrastructure <a href="http://connect.nc.gov/">because of low interest rates.</a> The extra spending boosts inflation and/or employment.
 						</p>
 						INSERT PLOT OF YELLEN YEARS
-						<p>The opposite ensues when the Fed curbs money-creation: spending, inflation and employment fall.</p>
+						<p>The reverse happens when the Fed curbs money-creation: spending, inflation and employment fall.</p>
 						INSERT PLOT OF VOLCKER YEARS
 						<p>This logic sounds simple, but things get more complicated for three reasons:
 						</p>
@@ -59,11 +59,10 @@ const AppComponent = React.createClass({
 							<li>Workers account for expected inflation. If workers expect 3% inflation, then&mdash;to create jobs&mdash;the Fed must boost spending more than if they expect 1%.</li>
 							<li>Lenders/borrowers account for expected inflation. It's more expensive to pay 3% interest when you expect 0% inflation than to pay 8% interest when you expect 7%. Specifically, if the "nominal" interest rate is <Kat string="i" />, then the "real" interest rate, <Kat string="r=i-\pi_e"/>, is what matters. </li>
 						</ol>
-						<p>These facts lead to two special quantities:
-						</p>	
+						<p>These facts lead to two special quantities:</p>	
 							<ol>
-								<li>The <em>natural real interest rate</em>, <Kat string="\bar{r}"/>. If the real rate, <Kat string="r"/>, goes below <Kat string="\bar{r}"/>, then spending, prices and employment grow faster. When  <Kat string="r"/> exceeds <Kat string="\bar{r}"/>, the opposite happens.</li>
-								<li>The <em>natural unemployment rate</em>, <Kat string="\bar{u}"/>. To keep unemployment below  <Kat string="\bar{u}"/> requires higher and higher inflation, like in Zimbabwe.</li>
+								<li>The <em>natural real interest rate</em>, <Kat string="\bar{r}"/>. If the real rate, <Kat string="r"/>, goes below <Kat string="\bar{r}"/>, then spending, prices and employment climb. When  <Kat string="r"/> exceeds <Kat string="\bar{r}"/>, they diminish.</li>
+								<li>The <em>natural unemployment rate</em>, <Kat string="\bar{u}"/>. Keeping unemployment below  <Kat string="\bar{u}"/> creates higher and higher inflation.</li>
 							</ol>
 				</div>
 				<div className='special'>
