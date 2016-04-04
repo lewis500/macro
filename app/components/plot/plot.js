@@ -23,24 +23,17 @@ const Katexer = React.createClass({
 	}
 });
 
-const Label = React.createClass({
-	mixins: [PureRenderMixin],
-	render() {
-
-	}
-});
-
 const vars = [
 	["πₑ", col.pink['500'], "\\pi_e", 35, col.pink['600'], ],
 	["i", col["light-blue"]["500"], "i", 5, col["light-blue"]["500"]],
-	["u", col.purple["400"], "u", 50, col.purple["500"]],
+	["u", col.indigo["500"], "u", 50, col.indigo["500"]],
 	["π", col.orange["500"], "\\pi", 15, col.orange["500"]],
 ];
 
 const Plot = React.createClass({
 	mixins: [PureRenderMixin],
 	xScale(v) {
-		const { width,xDomain} = this.props;
+		const { width, xDomain } = this.props;
 		return (v - xDomain[0]) / (xDomain[1] - xDomain[0]) * width;
 	},
 	yScale(v) {
@@ -78,14 +71,14 @@ const Plot = React.createClass({
 	},
 	resize() {
 		const width = this.refs.holder.clientWidth - m.left - m.right;
-		this.changePlot({width});
+		this.changePlot({ width });
 	},
 	componentWillUnmount() {
 		window.removeEventListener('resize', this.resize)
 	},
 	render() {
 		let { yScale, xScale, onChange } = this;
-		let { history, width , height, yDomain, xDomain} = this.props;
+		let { history, width, height, yDomain, xDomain } = this.props;
 		let last = this.props.history[this.props.history.length - 1];
 		let x0 = xScale(last.time);
 		let zz = width * .7 + (xScale(last.time) + 40) * .3;
@@ -165,11 +158,9 @@ const Plot = React.createClass({
 	}
 });
 
-function mapStateToProps(state){
-	return {
-		...state.data,
-		...state.plot
-	};
-}
+const mapStateToProps = state => ({
+	...state.data,
+	...state.plot
+});
 
 export default connect(mapStateToProps)(Plot);

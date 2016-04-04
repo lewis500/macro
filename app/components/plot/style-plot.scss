@@ -5,7 +5,7 @@
 
 .path {
     fill: none;
-    stroke-width: 1px;
+    stroke-width: 1.5px;
 
 }
 
@@ -26,10 +26,11 @@
 .connector {
     stroke-dasharray: 1.5, 1;
     opacity: .6;
+    stroke-width: 1px;
 }
 
 path.real-r, path.r-bar{
-    // stroke-width: 1px;
+    stroke-width: 1.5px;
     stroke: $md-cyan-700;
 }
 
@@ -53,10 +54,10 @@ path.r-bar{
 }
 
 path.nairu{
-    // stroke-width: .7px;
-    // stroke-dasharray: 4, 1;
-    stroke: $md-indigo-300;
-    opacity: .75;
+    stroke-width: 1px;
+    stroke-dasharray: 1, 1;
+    stroke: $md-indigo-400;
+    opacity: .8;
 }
 
 path{

@@ -2,6 +2,7 @@ import d3 from 'd3';
 import _ from 'lodash';
 import { createStore } from 'redux';
 import plotInitialState from '../components/plot/plot-initial';
+import macroData from './data'
 
 const rand = d3.random.normal();
 
@@ -85,26 +86,36 @@ const reduceData = (data, action) => {
 	}
 };
 
-const reducePlot = (state, action) => {
-	const { data, plot } = state;
-	const { history } = data;
-	const xDomain = [
-		history[0].time,
-		history[history.length - 1].time + 2.5
-	];
+const reducePlot = (plot, data, action) => {
 	switch (action.type) {
 		case 'CHANGE_PLOT':
-			return _.assign({}, plot, action.changes, { xDomain });
-		default:
+			return _.assign({}, plot, action.changes);
+		case 'RESET':
+		case 'TICK':
+			const h = data.history,
+				xDomain = [
+					h[0].time,
+					h[h.length - 1].time + 2.5
+				];
 			return {...plot, xDomain };
+		default:
+			return plot
+	}
+};
+
+const reduceMacro = (macro, action) => {
+	switch (action.type) {
+		case 'CHANGE_MACRO':
+			return {...macro, ...action.changes };
+		default:
+			return macro;
 	}
 };
 
 const rootReduce = (state = { data: defaultData, plot: plotInitialState }, action) => {
-	return {
-		data: reduceData(state.data, action),
-		plot: reducePlot(state, action)
-	};
+	const data = reduceData(state.data, action),
+		plot = reducePlot(state.plot, data, action);
+	return { data, plot, macroData };
 };
 
 const store = createStore(rootReduce);

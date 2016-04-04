@@ -34,42 +34,37 @@ const AppComponent = React.createClass({
 	render() {
 		return (
 			<div className='main'>
-			<h1>Low interest rates aren't easy money</h1>
+			<h1>Money</h1>
 			<div className='flex-container-column'>
-			<div>
-				<p>
-					"Low interest rates are generally a sign that money has been tight..." <br/> -Milton Friedman
-				</p>
-			</div>
 				<div className='special'>
 					<h4>What causes US recessions and booms?</h4>
 				</div>
 				<div className='content'>
+						<div className='pic'>
+							<img src="https://upload.wikimedia.org/wikipedia/commons/8/8d/Marriner_S._Eccles_Federal_Reserve_Board_Building.jpg" height="200px"/>
+						</div>
 						<p>
-							The answer is: the Federal Reserve. The Fed constantly creates money to buy very safe debt.</p>
-						<p>When the Fed suddenly creates money faster,  interest rates (at least short-term ones) fall. Lower rates stimulate spending by making it cheap to borrow or refinance. For example, North Carolina <a href="http://abc11.com/politics/nc-passes-$2-billion-bond-for-infrastructure/1247482/">will soon borrow $2 billion</a> to build infrastructure <a href="http://connect.nc.gov/">because of low interest rates.</a> The extra spending boosts inflation and/or employment.
+							The answer is: the Federal Reserve. The Fed constantly creates money to buy very safe debt from big banks, and this is most of what explains the economy's swings.</p>
+						<p>When the Fed suddenly creates money faster,  interest rates (at least short-term ones) fall. This boosts spending by making it cheap to borrow or refinance. For example, North Carolina <a href="http://abc11.com/politics/nc-passes-$2-billion-bond-for-infrastructure/1247482/">will soon borrow $2 billion</a> to build infrastructure <a href="http://connect.nc.gov/">because of low interest rates.</a> The extra spending boosts inflation and/or employment. When the Fed doesn't create money fast enough, spending falls. It might do this on purpose to cut inflation <a href="http://www.carnegie-rochester.rochester.edu/Nov04-pdfs/GK.pdf">like in the early 80's,</a> or by accident <a href="http://fee.org/articles/the-great-depression-according-to-milton-friedman/">like in the 30's.</a>
 						</p>
-						INSERT PLOT OF YELLEN YEARS
-						<p>The reverse happens when the Fed curbs money-creation: spending, inflation and employment fall.</p>
-						INSERT PLOT OF VOLCKER YEARS
-						<p>This logic sounds simple, but things get more complicated for three reasons:
+						<p>This logic sounds simple, but things get  complicated for three reasons:
 						</p>
 						<ol>
 							<li>People learn, so if <Kat string="\pi" /> is  inflation and <Kat string="\pi_e" /> is <em>expected</em> inflation, then over time <Kat string="\pi_e \rightarrow\pi" />. </li>
 							<li>Workers account for expected inflation. If workers expect 3% inflation, then&mdash;to create jobs&mdash;the Fed must boost spending more than if they expect 1%.</li>
-							<li>Lenders/borrowers account for expected inflation. It's more expensive to pay 3% interest when you expect 0% inflation than to pay 8% interest when you expect 7%. Specifically, if the "nominal" interest rate is <Kat string="i" />, then the "real" interest rate, <Kat string="r=i-\pi_e"/>, is what matters. </li>
+							<li>Borrowers account for expected inflation. If the "nominal" interest rate is <Kat string="i" /> (the number quoted), then the inflation-adjusted "real" interest rate, <Kat string="r=i-\pi_e"/>, is what matters. So nominal rate is lower than it looks, practically speaking, if expected inflation is high.</li>
 						</ol>
-						<p>These facts lead to two special quantities:</p>	
+						<p>These facts lead, in a roundabout way, to two special quantities:</p>	
 							<ol>
-								<li>The <em>natural real interest rate</em>, <Kat string="\bar{r}"/>. If the real rate, <Kat string="r"/>, goes below <Kat string="\bar{r}"/>, then spending, prices and employment climb. When  <Kat string="r"/> exceeds <Kat string="\bar{r}"/>, they diminish.</li>
-								<li>The <em>natural unemployment rate</em>, <Kat string="\bar{u}"/>. Keeping unemployment below  <Kat string="\bar{u}"/> creates higher and higher inflation.</li>
+								<li>The <em>natural real interest rate</em>, <Kat string="\bar{r}"/>. If the real rate, <Kat string="r"/>, goes below <Kat string="\bar{r}"/>, then spending clims and unemployment falls. When  <Kat string="r"/> exceeds <Kat string="\bar{r}"/>, they do the opposite.</li>
+								<li>The <em>natural unemployment rate</em>, <Kat string="\bar{u}"/>. If unemployment falls below  <Kat string="\bar{u}"/>, inflation accelerates. If it exceeds <Kat string="\bar{u}"/>, then inflation falls.</li>
 							</ol>
 				</div>
 				<div className='special'>
-					<h4>Instructions</h4>
+					<h4>Simulation</h4>
 				</div>
 				<div className="content">
-						<p>With the <span className="blue">blue</span> dot, control <Kat string="i" col={col["light-blue"]["800"]}/> to stabilize <Kat string="\pi" col={col.teal["500"]}/> and <Kat string="u" col={col.indigo["500"]}/>. Watch <Kat string="\bar{r}"/> and <Kat string="\bar{u}"/>, because when <Kat string="r<\bar{r}"/>, <Kat string="u" col={col.indigo["500"]}/> falls; and when <Kat string="u<\bar{u}"/>, <Kat string="\pi" col={col.teal["500"]}/> rises. </p>
+						<p>This simulation applies the ideas above to a simple economy. With the <span className="blue">blue</span> dot, control <Kat string="i" col={col["light-blue"]["800"]}/> to stabilize <Kat string="\pi" col={col.orange["500"]}/> and <Kat string="u" col={col.indigo["500"]}/>. Watch <Kat string="\bar{r}" col={col.teal["600"]}/> and <Kat string="\bar{u}" col={col.indigo["500"]}/>, because when <Kat string="r<\bar{r}" col={col.teal["600"]}/>, <Kat string="u" col={col.indigo["500"]}/> falls; and when <Kat string="u<\bar{u}" col={col.indigo["500"]}/>, <Kat string="\pi" col={col.orange["500"]}/> rises.</p>
 				<div className='flex-container-row plot-container'>
 					<div style={{width: '75%', padding: '10px'}}>
 						<Plot />
@@ -94,6 +89,7 @@ const AppComponent = React.createClass({
 							<li> <Kat string="\pi_e"/> &nbsp; Expected inflation</li>
 						</ul>
 				</div>
+				<p>If you find the game hard, try this two-step strategy: (i) change <Kat string="i"/> to make <Kat string="u=\bar{u}"/>; (ii) change  <Kat string="i"/> to make <Kat string="r=\bar{r}"/>.  </p>
 				</div>
 			</div>
 			</div>

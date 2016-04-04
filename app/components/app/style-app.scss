@@ -25,6 +25,22 @@ h4{
 
 
 
+.pic { 
+    margin-top: 15px;
+    width: 100%; 
+    height: 150px; 
+    overflow: hidden; 
+    position: relative;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 6px, rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    border: solid 3px white;
+    margin-bottom: 15px;
+    // margin-top:
+}
+.pic img { 
+    margin-top: -50px;
+    width: 100%;
+}
+
 .main ul {
  list-style-type: none;
  padding-left: 5px;
@@ -105,6 +121,10 @@ span.katex{
     background: white;
     box-shadow: 0px .5px 2px rgba(0,0,0,0.18), 0px 1px 1px rgba(0,0,0,0.18);
     padding: 15px 30px;
+}
+
+.content p{
+    // padding: 1px 5px;
 }
 
 .special h4{
