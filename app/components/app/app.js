@@ -34,7 +34,7 @@ const AppComponent = React.createClass({
 	render() {
 		return (
 			<div className='main'>
-			<h1>Money</h1>
+			<h1 style={{'horizonal-align': 'center'}}>Macroeconomics in one lesson</h1>
 			<div className='flex-container-column'>
 				<div className='special'>
 					<h4>What causes US recessions and booms?</h4>
@@ -54,17 +54,17 @@ const AppComponent = React.createClass({
 				<div className='content'>
 						<p>To see how the Fed decides what to do, we'll simulate a simple economy. It has four rules:</p>
 						<ol>
-							<li>People predict what inflation will be from experience. So if <Kat string="\pi" /> is <em>current</em> inflation and <Kat string="\pi_e" /> is <em>expected</em> inflation, then over time <Kat string="\pi_e \rightarrow\pi" />. In other words, the expectation tends toward what's actually happening. </li>
+							<li>People predict what inflation will be from experience. So if <Kat string="\pi" /> is <em>current</em> inflation and <Kat string="\pi_e" /> is <em>expected</em> inflation, then over time <Kat string="\pi_e \rightarrow\pi" />.</li>
 							<li>The "real" interest rate, which takes expected inflation into account, is what matters to employment. If the "nominal" interest rate is <Kat string="i" /> (the rate at which you actually borrow), then the real interest rate <Kat string="r"/> is given by <Kat string="r=i-\pi_e"/>. So if <Kat string="\pi_e"/> rises, then <Kat string="i"/> needs to rise to have the same effect, and vice versa.</li>
 							<li>There is a "natural" real interest rate, <Kat string="\bar{r}"/>. If the real rate drops below <Kat string="\bar{r}"/>, then unemployment falls. And when <Kat string="r"/> exceeds <Kat string="\bar{r}"/>, unemployment climbs.</li>
-							<li>There is a "natural" unemployment rate, <Kat string="\bar{u}"/>. If unemployment <Kat string="u"/> drops below  <Kat string="\bar{u}"/>, then inflation rises (because workers bid up wages). If  <Kat string="u"/> exceeds <Kat string="\bar{u}"/>, then inflation falls. In the US, <Kat string="\bar{u}"/> is around 4%. In European countries with strong unions, it's higher.</li>
+							<li>There is a "natural" unemployment rate, <Kat string="\bar{u}"/>. If unemployment <Kat string="u"/> drops below  <Kat string="\bar{u}"/>, then inflation rises (because workers bid up wages). If  <Kat string="u"/> exceeds <Kat string="\bar{u}"/>, then inflation falls.</li>
 							</ol>
 				</div>
 				<div className='special'>
 					<h4>A simulation</h4>
 				</div>
 				<div className="content">
-						<p>This simulation applies the ideas above to a simple economy. With the <span className="blue">blue</span> dot, control <Kat string="i" col={col["light-blue"]["800"]}/> to stabilize <Kat string="\pi" col={col.orange["500"]}/> and <Kat string="u" col={col.indigo["500"]}/>. Watch <Kat string="\bar{r}" col={col.teal["600"]}/> and <Kat string="\bar{u}" col={col.indigo["500"]}/>, because when <Kat string="r<\bar{r}" col={col.teal["600"]}/>, <Kat string="u" col={col.indigo["500"]}/> falls; and when <Kat string="u<\bar{u}" col={col.indigo["500"]}/>, <Kat string="\pi" col={col.orange["500"]}/> rises.</p>
+						<p>This simulation applies the ideas above to a simple economy. With the <span className="blue">blue</span> dot, control <Kat string="i" col={col["light-blue"]["800"]}/> to stabilize <Kat string="\pi" col={col.orange["500"]}/> and <Kat string="u" col={col.indigo["500"]}/>. Watch <Kat string="\bar{r}" col={col.teal["600"]}/> and <Kat string="\bar{u}" col={col.indigo["500"]}/>, because when <Kat string="r<\bar{r}" col={col.teal["600"]}/>, <Kat string="u" col={col.indigo["500"]}/> falls; and when <Kat string="u<\bar{u}" col={col.indigo["500"]}/>, <Kat string="\pi" col={col.orange["500"]}/> rises. To reach a stable equilibrium, try a two-step plan: (i) change <Kat string="i"/> to make <Kat string="u=\bar{u}"/>; (ii) change  <Kat string="i"/> to make <Kat string="r=\bar{r}"/>. </p>
 				<div className='flex-container-row plot-container'>
 					<div style={{width: '75%', padding: '10px'}}>
 						<Plot />
@@ -89,7 +89,6 @@ const AppComponent = React.createClass({
 							<li> <Kat string="\pi_e"/> &nbsp; Expected inflation</li>
 						</ul>
 				</div>
-				<p>If you find the game hard, try this two-step strategy: (i) change <Kat string="i"/> to make <Kat string="u=\bar{u}"/>; (ii) change  <Kat string="i"/> to make <Kat string="r=\bar{r}"/>.  </p>
 				</div>
 			</div>
 			</div>
