@@ -15,12 +15,15 @@ const reduceTick = (state, action) => {
 	const r = i - πₑ;
 	const ẏ = -(r - r̄) / σy + η;
 	y += ẏ * dt; // with demand shock
+	// y = Math.min(y, ȳ+ū*σu);
+	y = Math.min(y, ȳ + Math.log(1+ū*σu))
 	const π = πₑ + (y - ȳ) / σπ;
 	const π̇_e = (π - πₑ) / σπₑ + ϵ;
 	πₑ += dt * π̇_e;
-	//unemployment is not directly consequential
-	const u̇ = -ẏ / σu;
-	u += u̇ * dt;
+	// const u̇ = -ẏ / σu;
+	// u += u̇ * dt;
+	// u = ū -(y - ȳ)/σu;
+	u = ū - (Math.exp(y-ȳ)-1)/σu;
 	const newState = {
 		...state,
 		πₑ,

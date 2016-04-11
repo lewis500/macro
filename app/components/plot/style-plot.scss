@@ -54,10 +54,10 @@ path.r-bar{
 }
 
 path.nairu{
-    stroke-width: 1px;
-    stroke-dasharray: 1, 1;
-    stroke: $md-indigo-400;
-    opacity: .8;
+    stroke-width: 1.3px;
+    // stroke-dasharray: 10, 2;
+    stroke: $md-indigo-200;
+    opacity: .38;
 }
 
 path{
