@@ -71,6 +71,7 @@ const Plot = React.createClass({
 	},
 	resize() {
 		const width = this.refs.holder.clientWidth - m.left - m.right;
+		// const height = this.refs.holder.parentElement.parentElement.clientHeight - m.bottom - m.top;
 		this.changePlot({ width });
 	},
 	componentWillUnmount() {
@@ -96,7 +97,7 @@ const Plot = React.createClass({
 			</g>
 		));
 		return (
-			<div style={{...this.props.style}} ref='holder' className='plot'>
+			<div ref='holder' className='plot'>
 				<svg 
 					className='chart' 
 					width={width+m.left+m.right}

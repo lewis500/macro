@@ -6,6 +6,7 @@ import './style-app.scss';
 import Plot from '../plot/plot';
 import d3Timer from 'd3-timer';
 import col from "../../style/colors"
+import PicFrame from '../pic/pic';
 
 const Kat = React.createClass({
 	mixins: [PureRenderMixin],
@@ -68,17 +69,13 @@ const AppComponent = React.createClass({
 				<div className="content">
 						<p>With the <span className="blue">blue</span> dot, control <Kat string="i" col={col["light-blue"]["800"]}/> to stabilize <Kat string="\pi" col={col.orange["500"]}/> and <Kat string="u" col={col.indigo["500"]}/>. Watch <Kat string="\bar{r}" col={col.teal["600"]}/> and <Kat string="\bar{u}" col={col.indigo["500"]}/>, because when <Kat string="r<\bar{r}" col={col.teal["600"]}/>, <Kat string="u" col={col.indigo["500"]}/> falls; and when <Kat string="u<\bar{u}" col={col.indigo["500"]}/>, <Kat string="\pi" col={col.orange["500"]}/> rises. To reach a stable equilibrium, try a two-step plan: (i) change <Kat string="i"/> to make <Kat string="u=\bar{u}"/>; (ii) change  <Kat string="i"/> to make <Kat string="r=\bar{r}"/>. </p>
 				<div className='flex-container-row plot-container'>
-					<div style={{width: '75%', padding: '10px'}}>
+					<div style={{width: '75%', padding: '10px'}} >
 						<Plot />
 					</div>
-					<div className='flex-container-column' style={{width: '25%', alignItems: 'center'}}>
+					<div className='flex-container-column' style={{width: '25%', alignItems: 'flex-start'}}>
 						<button className="btn" onClick={this.pausePlay} >{this.paused ? 'PLAY' : 'PAUSE'}</button>
 						<button className="btn" onClick={this.props.reset}>RESET</button>
-						<div className='img-container'>
-							{
-								<img src="./app/yellen-unemployment-01.png"/>
-							}
-						</div>
+						<PicFrame π={this.props.π} u={this.props.u} paused={this.paused}/>
 					</div>
 				</div>
 				<div className='flex-container-row legend'>
