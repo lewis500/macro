@@ -65,7 +65,7 @@ const AppComponent = React.createClass({
 				<div className='content'>
 						<ol>
 							<li>People predict inflation from experience. If <KK S="\pi"col={CC.π} /> is inflation and <KK S="\pi_e" col={CC.π_e}/> is <em>expected</em> inflation, then over time <KK S="\pi_e" col={CC.π_e}/> <KK S="\rightarrow"/> <KK S="\pi" col={CC.π}/>.</li>
-							<li>The "real" interest rate, which takes expected inflation <KK S="\pi_e" col={CC.π_e}/> into accounted, is what matters. If the "nominal" rate is <KK S="i" col={CC.i} /> (the rate advertised), then the real rate is <KK S="r=i-\pi_e" col={CC.r}/>.</li>
+							<li>The "real" interest rate, which takes expected inflation <KK S="\pi_e" col={CC.π_e}/> into account, is what matters. If the "nominal" rate is <KK S="i" col={CC.i} /> (the rate advertised), then the real rate is <KK S="r=i-\pi_e" col={CC.r}/>.</li>
 							<li>There is a "natural" real interest rate, <KK S="\bar{r}" col={CC.r}/>. If the real rate, <KK S='r' col={CC.r} />, drops below <KK S="\bar{r}" col={CC.r}/>, then unemployment falls. When <KK S="r" col={CC.r}/> exceeds <KK S="\bar{r}" col={CC.r}/>, unemployment climbs.</li>
 							<li>There is a "natural" unemployment rate, <KK S="\bar{u}" col={CC.u}/>. If unemployment <KK S="u" col={CC.u}/> drops below  <KK S="\bar{u}" col={CC.u}/>, then inflation rises (because workers bid up wages). If  <KK S="u" col={CC.u}/> exceeds <KK S="\bar{u}" col={CC.u}/>, then inflation falls.</li>
 						</ol>
