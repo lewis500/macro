@@ -46,14 +46,15 @@ const AppComponent = React.createClass({
 				<div className='title'>
 					<div className='title-container'>
 						<h2>Federal Reserve Simulator</h2>
+						by <a href="http://lewislehe.com">Lewis Lehe</a> (of <a href="http://setosa.io">Setosa</a>)
 					</div>
 				</div>
 			<div className='flex-container-column'>
 				<div className='content'>
 						<p>
-							The Federal Reserve constantly creates money to buy very safe debt. When it suddenly creates money faster,  short-term interest rates fall, which boosts spending. For example, North Carolina <a href="http://abc11.com/politics/nc-passes-$2-billion-bond-for-infrastructure/1247482/">will soon borrow $2 billion</a> to build school buildings <a href="http://connect.nc.gov/">because of low interest rates.</a> The extra spending boosts inflation and employment. Inflation and employment fall when the Fed creates money more slowly.
+							The Federal Reserve constantly creates money to buy very safe debt. When it suddenly creates money faster,  short-term interest rates fall, which boosts spending. For example, North Carolina <a href="http://abc11.com/politics/nc-passes-$2-billion-bond-for-infrastructure/1247482/">will soon borrow $2 billion</a> to build school buildings <a href="http://connect.nc.gov/">because of low interest rates.</a> The extra spending boosts inflation and employment, which, likewise, fall when the Fed creates less money.
 						</p>
-						<p>To illustrate, we'll simulate an economy with four rules, and choose the interest rate.</p>
+						<p>To illustrate, we'll simulate an economy from four rules and choose the interest rate.</p>
 				</div>
 				<div className='special'>
 					<h4>Four rules</h4>
@@ -106,27 +107,39 @@ const AppComponent = React.createClass({
 				</div>
 				</div>
 				<div className='special'>
-					<h4>Food for thought</h4>
+					<h4>Discussion</h4>
 				</div>
 				<div className="content">
-					<p>This is a very simple model. It is unrealistic in several ways, like you can get 0% unemployment and you can't <a href="http://www.brookings.edu/blogs/ben-bernanke/posts/2016/03/18-negative-interest-rates">set negative interest rates</a>. Also, in real life, the Fed has more tools than <KK S="i" col={CC.i}/>: it can <a href="http://www.brookings.edu/blogs/ben-bernanke/posts/2016/03/24-rate-pegs">set long-term interest rates</a> or do quantitative easing. The simulation just shows the Fed's main trade-offs. To learn more about macroeconomics, check out David Romer's <a href="http://www.amazon.com/Advanced-Macroeconomics-McGraw-Hill-Series-Economics/dp/0073511374">Advanced Macroeconomics</a>. Please don't email me about <a href="http://econlog.econlib.org/archives/2006/09/my_latest_paper.html">Austrian economics</a> or other alternative theories, as I am a only a transportation student with a side interest in macro.</p>
-					<p>One misunderstanding I <em>will</em> address is the idea that <a href="http://www.businessinsider.com/ben-bernanke-on-federal-reserve-hurting-savers-2015-10">the Fed hurts "savers" with low interest rates.</a> The complaint has three problems:</p>
+					<p>This is a very simple model. It is unrealistic in many ways: you can get 0% unemployment; you can't <a href="http://www.brookings.edu/blogs/ben-bernanke/posts/2016/03/18-negative-interest-rates">set negative interest rates</a>; the natural rates of unemployment and interest don't change (to make play easier). Moreover, in real life, the Fed has more tools than <KK S="i" col={CC.i}/>: it can <a href="http://www.brookings.edu/blogs/ben-bernanke/posts/2016/03/24-rate-pegs">set long-term interest rates</a> or do quantitative easing. But what the simulation does accomplish is to show the Fed's  trade-offs.</p>
+					<p>To learn more about macro, subscribe to <a href="https://itunes.apple.com/us/podcast/macro-musings/id1099277290?mt=2" >David Beckworth's new podcast</a> or read <a href="http://www.brookings.edu/blogs/ben-bernanke">Ben Bernanke's</a> and <a href="http://www.themoneyillusion.com/">Scott Sumner's</a> blogs.	To read more about macroeconomics, check out David Romer's <a href="http://www.amazon.com/Advanced-Macroeconomics-McGraw-Hill-Series-Economics/dp/0073511374">Advanced Macroeconomics</a>. Please don't email me about <a href="http://econlog.econlib.org/archives/2006/09/my_latest_paper.html">Austrian economics</a> or other alternative theories.
+					</p>
+				</div>
+				<div className='special'>
+					<h4>A rant</h4>
+				</div>
+				<div className="content">
+					<p>As a parting shot I couldn't resist, I'll address the idea <a href="http://www.businessinsider.com/ben-bernanke-on-federal-reserve-hurting-savers-2015-10">the Fed hurts "savers" with low interest rates.</a> The complaint has three problems:</p>
 					<ol>
 						<li>
-							The Fed could only make <KK S="r" col={CC.r}/> higher than <KK S="\bar{r}" col={CC.r} /> temporarily without getting ever-worsening unemployment. Try it in the simulation. The Fed cannot control <KK S="\bar{r}" col={CC.r} />.
+							The Fed could only make <KK S="r" col={CC.r}/> higher than <KK S="\bar{r}" col={CC.r} /> at the cost of ever-worsening unemployment.
 						</li>
-						<li>The Fed has legal mandates to keep employment high and inflation low. No law guarantees a return on safe, liquid assets.</li>
+						<li>The Fed has legal mandates to keep employment high and inflation low.</li>
 						<li>
-							"Saver" is not an identity. Anyone holding money in the bank can instead pay off debt, buy securities, buy real estate or spend.  Unfortunately, if many people want to hold money and few safe borrowers want to invest, then returns to money will be low &mdash; even with a gold standard or free banking.
+							"Saver" is not an identity. Anyone holding money in the bank can instead pay off debt, buy securities, buy real estate or spend.  If many people want to hold money and few safe borrowers want to invest, then returns to holding money will be low.
 						</li>
 					</ol>
-					<p>Savers' real enemies are (i) fund managers who collect fees but can't beat index funds; and (ii) lawyers and politicians who abuse the legal system&mdash;like intellectual property and <a href="http://www.planningreport.com/2015/12/21/new-ceqa-study-reveals-widespread-abuse-legal-process-non-environmentalists">land-use law</a>&mdash;in ways that scare off investment in new products, infrastructure and homes.</p>
+					<p>Savers' real enemies are (i) <a href="http://www.bloombergview.com/articles/2016-04-11/those-tiny-fees-make-your-financial-adviser-rich">fund managers</a> who underperform index funds; and (ii) lawyers and officials who abuse the legal system&mdash;especially patent and <a href="http://www.planningreport.com/2015/12/21/new-ceqa-study-reveals-widespread-abuse-legal-process-non-environmentalists">land-use law</a>&mdash;in ways that block investment.</p>
 				</div>
 			</div>
+			<p>Created with React, d3.js, Redux, WebPack and Babel.</p>
 			</div>
 		);
 	}
 });
+
+	{
+
+				}
 
 const mapActionsToProps = dispatch => {
 	return {
