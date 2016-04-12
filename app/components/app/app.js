@@ -51,6 +51,9 @@ const AppComponent = React.createClass({
 				</div>
 			<div className='flex-container-column'>
 				<div className='content'>
+						<div className='pic'>
+							<img src="https://upload.wikimedia.org/wikipedia/commons/8/8d/Marriner_S._Eccles_Federal_Reserve_Board_Building.jpg" height="200px"/>
+						</div>
 						<p>
 							The Federal Reserve constantly creates money to buy very safe debt. When it suddenly creates money faster,  short-term interest rates fall, which boosts spending. For example, North Carolina <a href="http://abc11.com/politics/nc-passes-$2-billion-bond-for-infrastructure/1247482/">will soon borrow $2 billion</a> to build school buildings <a href="http://connect.nc.gov/">because of low interest rates.</a> The extra spending boosts inflation and employment, which, likewise, fall when the Fed creates less money.
 						</p>
