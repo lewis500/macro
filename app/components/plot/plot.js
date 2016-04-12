@@ -9,10 +9,10 @@ import col from "../../style/colors"
 import SvgSlider from "../svg-slider/svg-slider";
 
 const m = {
-	top: 5,
+	top: 10,
 	left: 32.5,
 	bottom: 5,
-	right: 20
+	right: 25
 };
 
 const Katexer = React.createClass({
@@ -24,10 +24,10 @@ const Katexer = React.createClass({
 });
 
 const vars = [
-	["πₑ", col.pink['500'], "\\pi_e", 35, col.pink['600'], ],
+	["πₑ", col.orange['600'], "\\pi_e", 35, col.orange['700'], ],
 	["i", col["light-blue"]["500"], "i", 5, col["light-blue"]["500"]],
 	["u", col.indigo["500"], "u", 50, col.indigo["500"]],
-	["π", col.orange["500"], "\\pi", 15, col.orange["500"]],
+	["π", col.pink["500"], "\\pi", 15, col.pink["500"]],
 ];
 
 const Plot = React.createClass({
@@ -97,7 +97,8 @@ const Plot = React.createClass({
 			</g>
 		));
 		return (
-			<div ref='holder' className='plot'>
+			<div>
+			<div ref='holder' className='plot-inner-container'>
 				<svg 
 					className='chart' 
 					width={width+m.left+m.right}
@@ -155,6 +156,8 @@ const Plot = React.createClass({
 
 				</svg>
 			</div>
+			</div>
+
 		);
 	}
 });

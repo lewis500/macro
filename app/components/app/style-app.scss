@@ -95,7 +95,8 @@ foreignObject .katex .vlist>span{
 
 
 button.btn {
-    margin: 10px 0px;
+    // margin: 10px 0px;
+    margin-bottom: 10px;
     // border: 2px solid white;
     border: none;
     padding: 11px;
@@ -114,7 +115,8 @@ button.btn {
 }
 
 span.katex{
-    font-size: 1.0em;
+    // font-size: 1.0em;
+    font-size:14px;
 }
 
 .special{
@@ -138,10 +140,8 @@ span.katex{
     background: white;
     box-shadow: 0px .5px 2px rgba(0,0,0,0.18), 0px 1px 1px rgba(0,0,0,0.18);
     padding: 15px 30px;
-}
+  // background: rgba(#eee,1);
 
-.content p{
-    // padding: 1px 5px;
 }
 
 .special h4{
@@ -153,9 +153,29 @@ span.katex{
       // justify-content: center;
       // align-content: center;
       // align-items: center;
-      // padding: 20px 10px;
-      // background: $md-grey-100;
-      // box-shadow: 0px .5px 2px rgba(0,0,0,0.18), 0px 1px 1px rgba(0,0,0,0.18);
+      // position 
+      width: 75%;
+      margin-right: 25px;
+      // background: white;
+      // box-sizing: border-box;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px .5px 4px, rgba(0, 0, 0, 0.16) 0px .5px 2px;
+}
+
+.plot-container>div{
+      // padding: 20px 20px;
+      // padding: 10px 20px;
+      padding: 25px 25px 25px 20px;
+
+    // width: 100%;
+    // height: 100%;
+}
+
+
+.plot-inner-container{
+    // padding: 8px;
+    // margin: 8px;
+    // width: 100%;
+    // height: 100%;
 }
 
 .blue{
@@ -177,18 +197,42 @@ button:focus {outline:0;}
     // height: 100%; 
     // width: 100%;
     margin: 3px 0px;
-    height: 150px; 
-    // posit
+    // height: 150px; 
+    // position: relative;
+    // background-image: url("./app/yellen-killing-it-01.png"); background-size: 100% 100%;
+    // background-size: cover;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .img-container{
-    box-sizing: border-box;
-    border: solid 4px white;
-    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 6px, rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    width: 100%;
+    height: 175px;
+    // height: 100%;
+    // height: 100%;
+
 }
 
 .img-container img{
-    width: 100%;
-    // position: absolute;
-    // height: 100%;
+    // width: auto;
+    text-align: center;
+
+    max-height: 100%;
+    max-width: 100%;
+    width: auto;
+
+    display: block;
+    box-sizing: border-box;
+    border: solid 5px white;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 6px, rgba(0, 0, 0, 0.16) 0px 1px 4px;
+}
+
+.img-face.show{
+    opacity: 1;
+    transition: opacity .2s ease-in-out;
+}
+
+.img-face.hide{
+    opacity: 0;
+    transition: opacity .2s ease-in-out;
 }

@@ -12,8 +12,8 @@
 
 .axis line {
     stroke: $md-grey-300;
-    opacity: .6;
-    // stroke-dasharray: 5,1;
+    opacity: .4;
+    stroke-dasharray: 1,1;
 }
 
 .axis path {
