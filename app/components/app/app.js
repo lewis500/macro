@@ -33,6 +33,7 @@ const AppComponent = React.createClass({
   	setTimeout(()=>{
   		this.pausePlay();
   	}, 2200);
+  	!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');
   },
   pausePlay() {
     if (!(this.paused = !this.paused)) {
@@ -49,6 +50,8 @@ const AppComponent = React.createClass({
   render() {
     return (
       <div className='main'>
+		  <a href="https://twitter.com/share" className="twitter-share-button" data-via="LewisLehe">Tweet</a>
+
 			<div className='title'>
 				<div className='title-container'>
 					<h2>Federal Reserve Simulator</h2>
