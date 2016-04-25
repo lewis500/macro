@@ -6,16 +6,15 @@ body {
 }
 
 li {
-    line-height: 1.8em;
-    margin-top: 4px;
+    line-height: 1.83em;
 }
 
-p,ol{
+p,ol,ul{
     font-size: 13.5px;
 }
 
 p{
-    line-height: 1.7em;
+    line-height: 1.83em;
 }
 
 h4{
@@ -64,18 +63,18 @@ h4{
 }
 
 .main ul {
- list-style-type: none;
- padding-left: 5px;
+ list-style-type: circle;
+ // padding-left: 10px;
  // padding:
- margin-right: 8px;
- font-size: 12px;
+ // margin-right: 8px;
+ // font-size: 13px;
  }
 
 .main {
     // padding: 20px;
     margin-top: 15px;
-    margin-left: 22.5%;
-    width: 55%;
+    margin-left: 20%;
+    width: 60%;
 }
 
 .flex-container-column {
@@ -87,10 +86,10 @@ h4{
 .flex-container-row {
     display: flex;
     flex-direction: row;
-    flex-wrap: nowrap;
-    justify-content: flex-start;
-    align-content: flex-start;
-    align-items: flex-start;
+    // flex-wrap: nowrap;
+    justify-content: flex-around;
+    // align-content: flex-start;
+    // align-items: flex-start;
 }
 
 
@@ -167,12 +166,7 @@ span.katex{
 }
 
 .plot-container>div{
-      // padding: 20px 20px;
-      // padding: 10px 20px;
-      padding: 25px 25px 25px 20px;
-
-    // width: 100%;
-    // height: 100%;
+      padding: 18px 25px 0px 8px;
 }
 
 
@@ -193,7 +187,14 @@ span.katex{
 button:focus {outline:0;}
 
 .legend{
-    justify-content: space-around;
+    // justify-content: space-between;
+}
+.legend div{
+    flex: 1;
+}
+
+.legend p, .legend li{
+    font-size: 13px;
 }
 
 
@@ -212,7 +213,7 @@ button:focus {outline:0;}
 
 .img-container{
     width: 100%;
-    height: 175px;
+    height: 200px;
     // height: 100%;
     // height: 100%;
 

@@ -14,7 +14,8 @@ const PicFrame = React.createClass({
 		if(!this.props.paused) this.beenPlayed = true;
 	},
 	render() {
-		let c = 'img-face ' + (this.beenPlayed ?  'show' : 'hide');
+		let c = 'img-face ' 
+		// + (this.beenPlayed ?  'show' : 'hide');
 
 		const asdf = (
 			<div className='img-container'>
