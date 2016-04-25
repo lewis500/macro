@@ -74,17 +74,17 @@ const AppComponent = React.createClass({
 						</div>
 						<div>
 							<ul>
-								<li> <KK S="i" col={CC.i}/> &nbsp; Nominal interest rate</li>
-								<li> <KK S="r" col={CC.r}/> &nbsp; Real interest rate</li>
-								<li> <KK S="\bar{r}" col={CC.r}/> &nbsp; Natural interest rate</li>
-								<li> <KK S="u" col={CC.u}/> &nbsp; Unemployment rate</li>
+								<li> <KK S="i" col={CC.i}/> &nbsp; nominal interest rate</li>
+								<li> <KK S="r" col={CC.r}/> &nbsp; real interest rate</li>
+								<li> <KK S="\bar{r}" col={CC.r}/> &nbsp; natural interest rate</li>
+								<li> <KK S="u" col={CC.u}/> &nbsp; unemployment rate</li>
 							</ul>
 						</div>
 						<div>
 							<ul>
-								<li> <KK S="\bar{u}" col={CC.u}/> &nbsp; Natural unemployment rate</li>
-								<li> <KK S="\pi" col={CC.π}/> &nbsp; Inflation</li>
-								<li> <KK S="\pi_e" col={CC.π_e}/> &nbsp; Expected inflation</li>
+								<li> <KK S="\bar{u}" col={CC.u}/> &nbsp; natural unemployment rate</li>
+								<li> <KK S="\pi" col={CC.π}/> &nbsp; inflation</li>
+								<li> <KK S="\pi_e" col={CC.π_e}/> &nbsp; expected inflation</li>
 							</ul>
 						</div>
 					</div>
